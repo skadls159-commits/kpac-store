@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무료자료 | 한국정책자문센터 KPAC</title>
+<meta name="description" content="정책자금 실전 가이드북을 카카오톡으로 받아보세요. 한국정책자문센터가 제공하는 정책자금 실전 정보.">
+<link rel="icon" href="img-kpac-logo-v.png">
+<link rel="stylesheet" href="main.css">
+<style>
+  .page-hero{background:radial-gradient(900px 480px at 88% -15%, rgba(61,107,255,.32), transparent 55%),
+    radial-gradient(700px 420px at 5% 100%, rgba(139,92,246,.25), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 58px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 84px),
+    linear-gradient(155deg, #0B1130 0%, #131A4D 55%, #1B245F 100%);color:#fff;padding:150px 0 70px;}
+  .page-hero .eyebrow{color:var(--blue-300);}
+  .page-hero .eyebrow::before{background:var(--blue-300);}
+  .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.3;max-width:680px;color:#fff;}
+  .page-hero p{margin-top:18px;color:rgba(255,255,255,.65);font-size:16px;max-width:560px;line-height:1.8;}
+
+  .ebook-block{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
+  .ebook-cover{
+    aspect-ratio:3/4;background:linear-gradient(160deg,var(--navy-900),var(--navy-950));
+    border:1px solid var(--line-dark);display:flex;flex-direction:column;justify-content:space-between;
+    padding:34px;position:relative;
+  }
+  .ebook-cover::before{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.25);}
+  .ebook-cover .k{width:44px;filter:brightness(0) invert(1);}
+  .ebook-cover .title{color:#fff;font-size:22px;font-weight:800;line-height:1.4;}
+  .ebook-cover .sub{color:var(--accent-teal);font-family:var(--font-en);font-style:normal;font-weight:600;font-size:12px;letter-spacing:.08em;}
+  .ebook-copy h2{font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.4;margin-bottom:18px;}
+  .ebook-copy p{font-size:15.5px;color:var(--ink-500);line-height:1.85;margin-bottom:14px;}
+  .ebook-list{margin-top:22px;margin-bottom:28px;}
+  .ebook-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-700);margin-bottom:12px;}
+  .ebook-list li::before{content:"—";color:var(--navy-900);font-weight:700;}
+  @media (max-width:860px){.ebook-block{grid-template-columns:1fr;}}
+
+  .channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .channel-card{background:#fff;padding:36px 28px;text-align:center;transition:transform .25s var(--ease),box-shadow .25s var(--ease);position:relative;z-index:1;}
+  .channel-card:hover{transform:translateY(-6px);box-shadow:0 20px 36px rgba(11,17,48,.10);z-index:2;}
+  .channel-card .ic{width:46px;height:46px;margin:0 auto 18px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--navy-900);}
+  .channel-card:nth-child(1) .ic{background:rgba(61,107,255,.1);color:var(--accent-blue);}
+  .channel-card:nth-child(2) .ic{background:rgba(139,92,246,.1);color:var(--accent-purple);}
+  .channel-card:nth-child(3) .ic{background:rgba(6,182,212,.1);color:var(--accent-teal);}
+  .channel-card{position:relative;overflow:hidden;}
+  .channel-card::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple),var(--accent-teal));
+    transform:scaleX(0);transition:transform .35s var(--ease);}
+  .channel-card:hover::after{transform:scaleX(1);}
+  .ebook-cover{border-radius:14px;box-shadow:0 30px 60px rgba(11,17,48,.25);}
+  .ebook-cover::after{content:"";position:absolute;inset:0;border-radius:14px;
+    background:radial-gradient(120% 100% at 80% 0%,rgba(61,107,255,.35),transparent 60%);pointer-events:none;}
+  .ebook-list li{transition:transform .2s var(--ease);}
+  .ebook-list li:hover{transform:translateX(4px);}
+  .channel-card h3{font-size:16px;font-weight:800;margin-bottom:8px;}
+  .channel-card p{font-size:13px;color:var(--ink-500);margin-bottom:20px;line-height:1.6;}
+  @media (max-width:768px){.channel-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="nav-logo">
+      <img src="img-kpac-logo-v.png" alt="KPAC 로고">
+      <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="services.html#fund">정책자금</a>
+      <a href="about.html">회사소개</a>
+      <a href="services.html">서비스</a>
+      <a href="cases.html">성공사례</a>
+      <a href="resources.html" class="active">무료자료</a>
+      <a href="contact.html">상담문의</a>
+      <a href="contact.html" class="nav-cta">무료 상담 신청 <span class="btn-arrow">→</span></a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">FREE RESOURCES</div>
+    <h1>상담 전에,<br>먼저 알아두면 좋은 정보</h1>
+    <p>정책자금을 처음 알아보는 대표님도 쉽게 이해할 수 있도록 정리했습니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap ebook-block reveal">
+    <div class="ebook-cover">
+      <div>
+        <img class="k" src="img-kpac-logo-v.png" alt="KPAC">
+      </div>
+      <div>
+        <div class="sub">FREE GUIDE</div>
+        <div class="title">정책자금<br>실전 가이드북</div>
+      </div>
+    </div>
+    <div class="ebook-copy">
+      <div class="eyebrow">E-BOOK</div>
+      <h2>정책자금 실전 가이드북,<br>카카오톡으로 보내드립니다</h2>
+      <p>정책자금이 처음이라면 무엇부터 준비해야 할지 막막하실 겁니다. 카카오톡 채널로 문의 남겨주시면 가이드북을 바로 보내드립니다. 궁금한 점은 그 자리에서 바로 여쭤보셔도 됩니다.</p>
+      <ul class="ebook-list">
+        <li>정책자금 종류별 특징과 신청 조건</li>
+        <li>심사에서 감점되는 흔한 실수</li>
+        <li>재무제표 준비 시 체크리스트</li>
+        <li>업종·매출 규모별 추천 자금 유형</li>
+      </ul>
+      <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-navy">카카오톡에서 가이드북 받기 <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">TALK TO US</div>
+      <h2>편한 채널로 문의하세요</h2>
+    </div>
+    <div class="channel-grid reveal">
+      <div class="channel-card">
+        <div class="ic">☎</div>
+        <h3>전화 상담</h3>
+        <p>연중무휴 24시간<br>1866-1912</p>
+        <a href="tel:18661912" class="btn btn-outline-dark">전화 걸기</a>
+      </div>
+      <div class="channel-card">
+        <div class="ic">💬</div>
+        <h3>카카오톡 상담</h3>
+        <p>실시간 1:1 채팅으로<br>빠르게 답변드립니다</p>
+        <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-outline-dark">채팅 시작</a>
+      </div>
+      <div class="channel-card">
+        <div class="ic">📝</div>
+        <h3>1:1 진단 신청서</h3>
+        <p>사이트에서 바로 작성<br>맞춤 진단 결과 안내</p>
+        <a href="contact.html" class="btn btn-outline-dark">신청서 작성</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="img-kpac-logo-h.png" alt="KPAC 로고" style="filter:brightness(0) invert(1);">
+        <p>한국정책자문센터는 정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전 과정을 함께하는 종합 경영자문 기관입니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>바로가기</h4>
+          <a href="about.html">회사소개</a>
+          <a href="services.html">서비스</a>
+          <a href="cases.html">성공사례</a>
+          <a href="resources.html">무료자료</a>
+        </div>
+        <div class="footer-col">
+          <h4>상담 문의</h4>
+          <a href="tel:18661912">TEL. 1866-1912</a>
+          <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a href="contact.html">1:1 진단 신청서</a>
+        </div>
+        <div class="footer-col">
+          <h4>회사 정보</h4>
+          <li>한국정책자문센터 (KPAC)</li>
+          <li>대표 : 이남인</li>
+          <li>사업자등록번호 : 111-13-97163</li>
+          <li>업태 : 전문, 과학 및 기술서비스업</li>
+          <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
+          <li>주소 : 경기도 남양주시 두물로11번길 40-26,<br>6층 606호(별내동, 대경빌딩)</li>
+          <li>이메일 : info@kpac.store</li>
+          <li>대표전화 : 1866-1912</li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 <b>신청을 자문·대행하는 컨설팅 서비스</b>를 제공하며,
+      <b>대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
+      신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
+      <p><b>수수료 안내</b> · 계약 시 착수 자문료가 발생하며, 자금이 실제로 승인·실행된 경우에 한해 승인 금액의 5%를 성공 보수로 청구합니다.
+      상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KPAC(한국정책자문센터). All rights reserved.</span>
+      <span class="footer-links"><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html">개인정보처리방침</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

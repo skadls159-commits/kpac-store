@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상담문의 | 한국정책자문센터 KPAC</title>
+<meta name="description" content="한국정책자문센터 무료 상담 문의. 전화 1866-1912, 카카오톡 상담, 1:1 진단 신청서.">
+<link rel="icon" href="img-kpac-logo-v.png">
+<link rel="stylesheet" href="main.css">
+<style>
+  .page-hero{background:radial-gradient(900px 480px at 88% -15%, rgba(61,107,255,.32), transparent 55%),
+    radial-gradient(700px 420px at 5% 100%, rgba(139,92,246,.25), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 58px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 84px),
+    linear-gradient(155deg, #0B1130 0%, #131A4D 55%, #1B245F 100%);color:#fff;padding:150px 0 70px;}
+  .page-hero .eyebrow{color:var(--blue-300);}
+  .page-hero .eyebrow::before{background:var(--blue-300);}
+  .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.3;max-width:680px;color:#fff;}
+  .page-hero p{margin-top:18px;color:rgba(255,255,255,.65);font-size:16px;max-width:560px;line-height:1.8;}
+
+  .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);}
+  .contact-panel{padding:56px 48px;}
+  .contact-panel.dark{background:var(--navy-950);color:#fff;}
+  .contact-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .contact-panel:not(.dark) .contact-item{border-bottom:1px solid var(--line);}
+  .contact-item:last-child{border-bottom:none;}
+  .contact-ic{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .contact-panel:not(.dark) .contact-ic{background:var(--paper-2);}
+  .contact-item h3{font-size:14px;font-weight:700;margin-bottom:4px;}
+  .contact-item p{font-size:13.5px;color:var(--ink-400);}
+  .contact-panel:not(.dark) .contact-item p{color:var(--ink-500);}
+  .contact-item a.big{font-family:var(--font-en);font-weight:700;font-size:19px;color:#fff;display:inline-block;margin-top:4px;}
+  .contact-panel:not(.dark) .contact-item a.big{color:var(--navy-900);}
+
+  .form-panel h2{font-size:22px;font-weight:800;margin-bottom:8px;}
+  .form-panel > p{font-size:13.5px;color:var(--ink-500);margin-bottom:28px;line-height:1.7;}
+  .form-panel .btn{width:100%;justify-content:center;margin-bottom:12px;}
+
+  .contact-panel.dark .btn-outline-light{border-color:rgba(255,255,255,.35);color:#fff;}
+  .contact-panel.dark .btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .contact-layout{border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(11,17,48,.10);}
+  .contact-panel.dark{
+    background:radial-gradient(120% 120% at 90% -10%, rgba(61,107,255,.3), transparent 55%),
+               linear-gradient(160deg,#0B1130,#1B245F);
+  }
+  .contact-item{transition:transform .25s var(--ease);}
+  .contact-item:hover{transform:translateX(4px);}
+  .contact-panel.dark .contact-item:nth-child(2) .contact-ic{background:rgba(61,107,255,.22);}
+  .contact-panel.dark .contact-item:nth-child(3) .contact-ic{background:rgba(139,92,246,.22);}
+  .contact-panel.dark .contact-item:nth-child(4) .contact-ic{background:rgba(6,182,212,.22);}
+  .form-panel{position:relative;}
+  .form-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple),var(--accent-teal));}
+
+  /* --- lead form --- */
+  .lead-form{margin-top:8px;}
+  .lf-row{margin-bottom:16px;}
+  .lf-row label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-700);margin-bottom:7px;}
+  .lf-row label span{color:#e5484d;}
+  .lf-row input[type=text],.lf-row input[type=tel],.lf-row select{
+    width:100%;padding:12px 14px;font-family:inherit;font-size:14px;color:var(--ink-900);
+    border:1px solid var(--line-strong);border-radius:8px;background:#fff;
+    transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+  }
+  .lf-row input:focus,.lf-row select:focus{
+    outline:none;border-color:var(--accent-blue);box-shadow:0 0 0 3px rgba(61,107,255,.12);
+  }
+  .lf-radio{display:flex;gap:18px;}
+  .lf-radio label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:13.5px;color:var(--ink-700);margin-bottom:0;cursor:pointer;}
+  .lf-radio input{accent-color:var(--accent-blue);}
+
+  .lf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+
+  .lf-consent{margin:18px 0;}
+  .lf-consent label{display:flex;gap:9px;align-items:flex-start;font-size:11.5px;color:var(--ink-500);line-height:1.6;cursor:pointer;font-weight:400;}
+  .lf-consent input{margin-top:2px;flex-shrink:0;accent-color:var(--accent-blue);}
+
+  .lf-submit{width:100%;justify-content:center;margin-bottom:0;}
+  .lf-submit:disabled{opacity:.5;cursor:not-allowed;}
+  .lf-msg{margin-top:12px;font-size:13px;line-height:1.6;display:none;padding:12px 14px;border-radius:8px;}
+  .lf-msg.show{display:block;}
+  .lf-msg.ok{background:rgba(6,182,212,.1);color:#0e7490;border:1px solid rgba(6,182,212,.3);}
+  .lf-msg.err{background:rgba(229,72,77,.08);color:#c1272d;border:1px solid rgba(229,72,77,.25);}
+
+  .lf-alt{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);text-align:center;}
+  .lf-alt span{display:block;font-size:12.5px;color:var(--ink-500);margin-bottom:12px;}
+  .lf-alt .btn{width:100%;justify-content:center;}
+
+  @media (max-width:860px){.contact-layout{grid-template-columns:1fr;}.contact-panel{padding:40px 26px;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="nav-logo">
+      <img src="img-kpac-logo-v.png" alt="KPAC 로고">
+      <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="services.html#fund">정책자금</a>
+      <a href="about.html">회사소개</a>
+      <a href="services.html">서비스</a>
+      <a href="cases.html">성공사례</a>
+      <a href="resources.html">무료자료</a>
+      <a href="contact.html" class="active">상담문의</a>
+      <a href="contact.html" class="nav-cta">무료 상담 신청 <span class="btn-arrow">→</span></a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">CONTACT</div>
+    <h1>지금 바로<br>무료 상담을 받아보세요</h1>
+    <p>자금·투자·M&amp;A·세무·법률·채권·채무 — 어떤 고민이든 괜찮습니다. 초기 상담은 완전 무료입니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-layout reveal">
+      <div class="contact-panel dark">
+        <h2 style="font-size:22px;font-weight:800;margin-bottom:28px;">연락처</h2>
+
+        <div class="contact-item">
+          <div class="contact-ic">☎</div>
+          <div>
+            <h3>전화 상담 · 연중무휴 24시간</h3>
+            <a class="big" href="tel:18661912">1866-1912</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-ic">💬</div>
+          <div>
+            <h3>카카오톡 채널 상담</h3>
+            <p>실시간 1:1 채팅 상담</p>
+            <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-outline-light" style="margin-top:10px;padding:10px 18px;font-size:13px;">채팅 시작하기</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-ic">🏢</div>
+          <div>
+            <h3>한국정책자문센터 (KPAC)</h3>
+            <p>대표 : 이남인</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-panel form-panel">
+        <h2>1:1 진단·상담 신청</h2>
+        <p>간단한 정보만 남겨주시면, 담당 전문가가 확인 후 빠르게 연락드립니다. 상담 내용은 외부에 공유되지 않습니다.</p>
+
+        <form id="leadForm" class="lead-form" novalidate>
+          <div class="lf-row">
+            <label for="f_name">대표자명 <span>*</span></label>
+            <input type="text" id="f_name" name="name" required placeholder="홍길동">
+          </div>
+          <div class="lf-row">
+            <label for="f_phone">연락처 <span>*</span></label>
+            <input type="tel" id="f_phone" name="phone" required inputmode="numeric" placeholder="010-0000-0000">
+          </div>
+          <div class="lf-row">
+            <label for="f_industry">업종</label>
+            <select id="f_industry" name="industry">
+              <option value="">선택해주세요</option>
+              <option>제조업</option>
+              <option>도소매업</option>
+              <option>서비스업</option>
+              <option>건설업</option>
+              <option>음식·숙박업</option>
+              <option>IT·소프트웨어</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <div class="lf-row">
+            <label for="f_bizno">사업자등록번호</label>
+            <input type="text" id="f_bizno" name="biz_no" inputmode="numeric" placeholder="000-00-00000">
+          </div>
+          <div class="lf-row">
+            <label for="f_region">지역</label>
+            <select id="f_region" name="region">
+              <option value="">선택해주세요</option>
+              <option>서울</option><option>경기</option><option>인천</option>
+              <option>부산</option><option>대구</option><option>광주</option>
+              <option>대전</option><option>울산</option><option>세종</option>
+              <option>강원</option><option>충북</option><option>충남</option>
+              <option>전북</option><option>전남</option><option>경북</option>
+              <option>경남</option><option>제주</option>
+            </select>
+          </div>
+          <div class="lf-row">
+            <label>국세·지방세 체납 여부</label>
+            <div class="lf-radio">
+              <label><input type="radio" name="f_arrears" value="아니오"> 없음</label>
+              <label><input type="radio" name="f_arrears" value="예"> 있음</label>
+            </div>
+          </div>
+
+          <label class="lf-hp" aria-hidden="true">
+            남기지 마세요<input type="checkbox" id="a_yes" tabindex="-1" autocomplete="off">
+          </label>
+
+          <div class="lf-consent">
+            <label><input type="checkbox" id="f_agree" required> <span>상담을 위한 개인정보 수집·이용에 동의합니다. (수집항목: 성명·연락처·업종·지역 / 목적: 상담 및 정책자금 진단 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank" style="text-decoration:underline;">개인정보처리방침</a></span></label>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-gold lf-submit">진단 신청하기 <span class="btn-arrow">→</span></button>
+          <div id="formMsg" class="lf-msg" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="lf-alt">
+          <span>먼저 자료부터 보고 싶으시다면</span>
+          <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-outline-dark">카카오톡에서 가이드북 받기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="img-kpac-logo-h.png" alt="KPAC 로고" style="filter:brightness(0) invert(1);">
+        <p>한국정책자문센터는 정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전 과정을 함께하는 종합 경영자문 기관입니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>바로가기</h4>
+          <a href="about.html">회사소개</a>
+          <a href="services.html">서비스</a>
+          <a href="cases.html">성공사례</a>
+          <a href="resources.html">무료자료</a>
+        </div>
+        <div class="footer-col">
+          <h4>상담 문의</h4>
+          <a href="tel:18661912">TEL. 1866-1912</a>
+          <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a href="contact.html">1:1 진단 신청서</a>
+        </div>
+        <div class="footer-col">
+          <h4>회사 정보</h4>
+          <li>한국정책자문센터 (KPAC)</li>
+          <li>대표 : 이남인</li>
+          <li>사업자등록번호 : 111-13-97163</li>
+          <li>업태 : 전문, 과학 및 기술서비스업</li>
+          <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
+          <li>주소 : 경기도 남양주시 두물로11번길 40-26,<br>6층 606호(별내동, 대경빌딩)</li>
+          <li>이메일 : info@kpac.store</li>
+          <li>대표전화 : 1866-1912</li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 <b>신청을 자문·대행하는 컨설팅 서비스</b>를 제공하며,
+      <b>대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
+      신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
+      <p><b>수수료 안내</b> · 계약 시 착수 자문료가 발생하며, 자금이 실제로 승인·실행된 경우에 한해 승인 금액의 5%를 성공 보수로 청구합니다.
+      상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KPAC(한국정책자문센터). All rights reserved.</span>
+      <span class="footer-links"><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html">개인정보처리방침</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+(function(){
+  // 기존 자동화DB(Google Apps Script) 웹훅 — 제출 시 자금톡 CRM + 텔레그램 알림 연동
+  var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwIfwL3rdpX-wxP9lGZYVeedDixkfqqSHUi6SncaEB_WqE9899qtJsDNYi7uPmtyoOo/exec';
+
+  var form = document.getElementById('leadForm');
+  if (!form) return;
+  var msg = document.getElementById('formMsg');
+  var btn = document.getElementById('submitBtn');
+
+  // 연락처 자동 하이픈
+  document.getElementById('f_phone').addEventListener('input', function(e){
+    var v = e.target.value.replace(/\D/g,'').slice(0,11);
+    if (v.length > 7) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+    else if (v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
+    e.target.value = v;
+  });
+
+  // 사업자등록번호 자동 하이픈
+  document.getElementById('f_bizno').addEventListener('input', function(e){
+    var v = e.target.value.replace(/\D/g,'').slice(0,10);
+    if (v.length > 5) v = v.slice(0,3)+'-'+v.slice(3,5)+'-'+v.slice(5);
+    else if (v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
+    e.target.value = v;
+  });
+
+  function show(kind, text){
+    msg.className = 'lf-msg show ' + kind;
+    msg.textContent = text;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (document.getElementById('a_yes').checked) return; // honeypot
+
+    var name = document.getElementById('f_name').value.trim();
+    var phone = document.getElementById('f_phone').value.trim();
+
+    if (!name) { show('err','대표자명을 입력해 주세요.'); return; }
+    if (phone.replace(/\D/g,'').length < 10) { show('err','연락처를 정확히 입력해 주세요.'); return; }
+    if (!document.getElementById('f_agree').checked) { show('err','개인정보 수집·이용 동의가 필요합니다.'); return; }
+
+    var params = new URLSearchParams(window.location.search);
+    var payload = {
+      name: name,
+      phone: phone,
+      industry: document.getElementById('f_industry').value,
+      biz_no: document.getElementById('f_bizno').value,
+      region: document.getElementById('f_region').value,
+      tax_arrears: (document.querySelector('input[name=f_arrears]:checked') || {}).value || '',
+      source: 'kpac_site_contact',
+      channel: params.get('src') || params.get('utm_source') || 'kpac_store',
+      submitted_at: new Date().toISOString(),
+      lead_id: 'H' + Date.now().toString(36) + Math.random().toString(36).slice(2,8)
+    };
+
+    btn.disabled = true;
+    show('ok', '전송 중입니다...');
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'text/plain;charset=utf-8'}, // Apps Script CORS preflight 회피
+      body: JSON.stringify(payload)
+    }).then(function(){
+      form.reset();
+      show('ok','신청이 접수되었습니다. 담당자가 순차적으로 연락드리겠습니다.');
+    }).catch(function(){
+      show('err','전송에 실패했습니다. 번거로우시겠지만 1866-1912 또는 카카오톡으로 문의해 주세요.');
+    }).finally(function(){
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>
