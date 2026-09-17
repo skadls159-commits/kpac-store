@@ -14,7 +14,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="index.html" class="nav-logo">
-      <img src="img-kpac-logo-v.png" alt="KPAC 로고">
+      <img src="img-kpac-logo-v.png" alt="KPAC" width="34" height="34">
       <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
     </a>
     <nav class="nav-links">
@@ -147,12 +147,188 @@
   </div>
 </section>
 
+<!-- ===================== 기업 생애주기 성장 로드맵 ===================== -->
+<section class="section section-dark" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">CORPORATE LIFECYCLE ROADMAP</div>
+      <h2>업력 단계마다<br>열리고 닫히는 문이 다릅니다</h2>
+      <p>자금·지원사업·투자·인증은 각각 받을 수 있는 시기가 정해져 있습니다. 순서를 설계해야 한도가 쌓입니다.</p>
+    </div>
+
+    <!-- 성장 곡선 -->
+    <div class="lc-curve reveal">
+      <svg viewBox="0 0 1200 190" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="lcLine" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3D6BFF"/>
+            <stop offset="45%" stop-color="#8B5CF6"/>
+            <stop offset="75%" stop-color="#06B6D4"/>
+            <stop offset="100%" stop-color="#E0A62A"/>
+          </linearGradient>
+          <linearGradient id="lcFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3D6BFF" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#3D6BFF" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,150 C140,150 160,120 300,116 C440,112 450,86 600,80 C750,74 760,40 900,32 C1030,25 1070,20 1200,14 L1200,190 L0,190 Z" fill="url(#lcFill)"/>
+        <path d="M0,150 C140,150 160,120 300,116 C440,112 450,86 600,80 C750,74 760,40 900,32 C1030,25 1070,20 1200,14" fill="none" stroke="url(#lcLine)" stroke-width="3"/>
+        <line x1="900" y1="10" x2="900" y2="190" stroke="#E0A62A" stroke-width="1.5" stroke-dasharray="5 5" opacity=".7"/>
+      </svg>
+      <span class="lc-dot" style="left:12.5%;top:calc(150/190*100%)"></span>
+      <span class="lc-dot" style="left:37.5%;top:calc(110/190*100%)"></span>
+      <span class="lc-dot" style="left:62.5%;top:calc(76/190*100%)"></span>
+      <span class="lc-dot" style="left:87.5%;top:calc(28/190*100%)"></span>
+      <span class="lc-axis-y">기업 가치 · 조달 가능 규모</span>
+      <span class="lc-pivot">업력 7년 · 최대 분기점</span>
+    </div>
+
+    <!-- 단계 헤더 -->
+    <div class="lc-stages reveal">
+      <div class="lc-stage s1"><b>창업기</b><small>설립 ~ 업력 3년</small></div>
+      <div class="lc-stage s2"><b>초기 성장기</b><small>업력 3 ~ 5년</small></div>
+      <div class="lc-stage s3"><b>성장기</b><small>업력 5 ~ 7년</small></div>
+      <div class="lc-stage s4"><b>도약기</b><small>업력 7년 이상</small></div>
+    </div>
+
+    <!-- 매트릭스 -->
+    <div class="lc-matrix reveal">
+
+      <div class="lc-row">
+        <div class="lc-label">
+          <span class="lc-cat">GRANT</span>
+          <b>정부 지원사업</b>
+          <small>갚지 않는 돈<br>경쟁률이 높음</small>
+        </div>
+        <div class="lc-cells">
+          <div class="lc-cell c1">
+            <div class="lc-item"><b>예비창업패키지 · 초기창업패키지</b><span>각 최대 1억 · 예비창업자~업력 3년</span></div>
+            <div class="lc-item"><b>청년창업사관학교</b><span>1억 · 만 39세 이하</span></div>
+            <div class="lc-item"><b>프리팁스 시드트랙</b><span>5천만원 · 업력 3년 이내</span></div>
+          </div>
+          <div class="lc-cell c2">
+            <div class="lc-item"><b>팁스(TIPS) 일반트랙</b><span>2026년 5억 → 8억 상향 · 자부담 30%</span></div>
+            <div class="lc-item"><b>창업성장기술개발(디딤돌 R&amp;D)</b><span>1.2억/1년 · 업력 7년 이내 · 국비 80%</span></div>
+            <div class="lc-item"><b>데이터·클라우드·혁신 바우처</b><span>500~5천만원</span></div>
+          </div>
+          <div class="lc-cell c3">
+            <div class="lc-item"><b>포스트팁스(Post-TIPS)</b><span>5억 · 팁스 성공기업 · 7년 이내</span></div>
+            <div class="lc-item"><b>창업도약패키지</b><span>2~3억 · 업력 3~7년</span></div>
+            <div class="lc-item"><b>스마트공장 · 수출바우처</b><span>최대 7억 · 자부담 30~50%</span></div>
+          </div>
+          <div class="lc-cell c4">
+            <div class="lc-item"><b>팁스 딥테크트랙</b><span>후속투자 5억 이상 · 12개 신산업</span></div>
+            <div class="lc-item"><b>산업부·지자체 R&amp;D 과제</b><span>대형 과제 · 컨소시엄 구성</span></div>
+            <div class="lc-item"><b>혁신형 중소기업 방송광고</b><span>TV 4,500만 50% 지원</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-label">
+          <span class="lc-cat">LOAN</span>
+          <b>정책자금 융자·보증</b>
+          <small>갚는 돈<br>한도가 누적됨</small>
+        </div>
+        <div class="lc-cells">
+          <div class="lc-cell c1">
+            <div class="lc-item"><b>청년전용창업자금</b><span>만 39세 이하 · 최대 1~2억</span></div>
+            <div class="lc-item"><b>혁신창업사업화자금</b><span>업력 7년 미만</span></div>
+            <div class="lc-item"><b>기술보증기금 창업보증</b><span>담보 없이 보증서 발급</span></div>
+          </div>
+          <div class="lc-cell c2">
+            <div class="lc-item"><b>혁신창업사업화자금(운전·시설)</b><span>운전 연 5억 · 직접대출 연 60억</span></div>
+            <div class="lc-item"><b>기보 기술평가보증</b><span>인증 취득 시 보증한도 확대</span></div>
+            <div class="lc-item"><b>신용보증기금 일반보증</b><span>연매출 3억 이상 기업 중심</span></div>
+          </div>
+          <div class="lc-cell c3">
+            <div class="lc-item"><b>개발기술사업화자금</b><span>연 30억 (혁신성장 60억)</span></div>
+            <div class="lc-item"><b>혁신창업사업화자금 마지막 구간</b><span>업력 7년 도달 전 반드시 소진</span></div>
+            <div class="lc-item"><b>기보·신보 보증한도 증액</b><span>이노비즈 취득 시 20억 → 최대 50억</span></div>
+          </div>
+          <div class="lc-cell c4">
+            <div class="lc-item"><b>신성장기반자금</b><span>업력 7년 이상 · 직접 60억</span></div>
+            <div class="lc-item"><b>신시장진출지원자금</b><span>수출 · 신사업 전환 기업</span></div>
+            <div class="lc-item"><b>재도약지원자금</b><span>구조개선 · 사업전환 · 재창업</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-label">
+          <span class="lc-cat">EQUITY</span>
+          <b>투자유치 라운드</b>
+          <small>지분을 주고<br>받는 돈</small>
+        </div>
+        <div class="lc-cells">
+          <div class="lc-cell c1">
+            <div class="lc-item"><b>엔젤 · 시드 라운드</b><span>업력 3년 이내가 표준</span></div>
+            <div class="lc-item"><b>액셀러레이터 · 개인투자조합</b><span>소액 투자 + 보육 · 소득공제</span></div>
+            <div class="lc-item"><b>IR 자료 · 밸류에이션</b><span>사업계획서와 IR 덱은 문법이 다름</span></div>
+          </div>
+          <div class="lc-cell c2">
+            <div class="lc-item"><b>프리A · 시리즈 A</b><span>VC 본격 진입 구간</span></div>
+            <div class="lc-item"><b>팁스 선행 투자 요건</b><span>수도권 2억 · 비수도권 1억 이상</span></div>
+            <div class="lc-item"><b>Term Sheet · 주주간계약</b><span>조건 하나가 다음 라운드를 막음</span></div>
+          </div>
+          <div class="lc-cell c3">
+            <div class="lc-item"><b>시리즈 B</b><span>매출·유닛이코노믹스 증명</span></div>
+            <div class="lc-item"><b>전략적 투자(SI)·대기업 협업</b><span>창업도약패키지 협업형 연계</span></div>
+            <div class="lc-item"><b>투자와 융자의 병행 설계</b><span>지분 희석과 이자 부담의 균형</span></div>
+          </div>
+          <div class="lc-cell c4">
+            <div class="lc-item"><b>시리즈 C 이상 · 프리 IPO</b><span>기관투자 · FI 유치</span></div>
+            <div class="lc-item"><b>M&amp;A 매각 자문</b><span>기업가치 평가 · SPA</span></div>
+            <div class="lc-item"><b>IPO 준비 · 가업승계</b><span>코스닥 상장요건 · 세무 연계</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lc-row">
+        <div class="lc-label">
+          <span class="lc-cat">CERTIFICATE</span>
+          <b>기업인증</b>
+          <small>자금의 한도와<br>금리를 바꾸는 열쇠</small>
+        </div>
+        <div class="lc-cells">
+          <div class="lc-cell c1">
+            <div class="lc-item"><b>연구개발전담부서 → 기업부설연구소</b><span>인력 1명당 2,500만원 세액공제</span></div>
+            <div class="lc-item"><b>벤처기업 확인</b><span>법인세 5년 50% 감면</span></div>
+            <div class="lc-item"><b>특허 · 상표 출원</b><span>기술평가 가점</span></div>
+          </div>
+          <div class="lc-cell c2">
+            <div class="lc-item"><b>이노비즈(기술혁신형)</b><span>업력 3년 이상 · 현장평가 700점</span></div>
+            <div class="lc-item"><b>메인비즈(경영혁신형)</b><span>경영 전반 혁신 역량 평가</span></div>
+            <div class="lc-item"><b>인증 취득 시 세제</b><span>법인세 10% 공제 · 대출금리 우대</span></div>
+          </div>
+          <div class="lc-cell c3">
+            <div class="lc-item"><b>이노비즈 등급 상향</b><span>14등급제 · A등급 이상 목표</span></div>
+            <div class="lc-item"><b>보증한도 우대</b><span>기보 50억 · 서울보증 30억</span></div>
+            <div class="lc-item"><b>특허 우선심사</b><span>심사기간 1년 → 3개월</span></div>
+          </div>
+          <div class="lc-cell c4">
+            <div class="lc-item"><b>강소기업 · 글로벌 강소기업</b><span>메인비즈 신청기준 완화 대상</span></div>
+            <div class="lc-item"><b>해외규격 인증 · ISO</b><span>수출 필수 관문</span></div>
+            <div class="lc-item"><b>중견기업 전환 대비</b><span>사라지는 혜택 사전 점검</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="lc-foot reveal">
+      <p>표준 설계안입니다. 실제 적용 단계·조달 가능 금액·지원사업 공고 일정은 기업의 재무 상태·업종·지역·연도별 공고에 따라 달라집니다.</p>
+      <a href="contact.html" class="btn btn-gold">우리 회사는 지금 어느 단계인지 진단받기 <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== INSTAGRAM REELS ===================== -->
 <section class="section section-tight">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:32px;">
-      <div class="eyebrow">INSTAGRAM REELS</div>
-      <h2>대표님이 직접 설명하는 정책자금 인사이트</h2>
+      <div class="eyebrow">CONTENT</div>
+      <h2>대표가 직접 설명하는<br>정책자금 인사이트</h2>
       <p>말이 아니라 영상으로 확인하세요. 인스타그램에서 더 맞은 릴스를 보실 수 있습니다.</p>
     </div>
     <div class="reel-grid reel-grid-5 reveal">
@@ -187,46 +363,24 @@
         <div class="reel-caption">직종별<br>정책자금</div>
       </a>
     </div>
-    <div class="reel-more-line reveal">
-      <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener" class="btn btn-outline-dark">인스타그램에서 더 많은 릴스 보기 <span class="btn-arrow">→</span></a>
+    <div class="channel-row reveal">
+      <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener" class="channel-link ch-ig">
+        <span class="ch-ic">📷</span>
+        <span class="ch-text">
+          <b>인스타그램 @kpac_ceo</b>
+          <small>짧게 끊어보는 정책자금 핵심 정보</small>
+        </span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener" class="channel-link ch-yt">
+        <span class="ch-ic">▶</span>
+        <span class="ch-text">
+          <b>유튜브 @kpac_ceo</b>
+          <small>정책자금 공문·공고 브리핑, 심사 기준 해설</small>
+        </span>
+        <span class="btn-arrow">→</span>
+      </a>
     </div>
-  </div>
-</section>
-
-<!-- ===================== 실제 승인 사례 ===================== -->
-<section class="section" id="proof">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">실제 승인 사례</div>
-      <h2>말보다 결과로 확인하세요</h2>
-      <p>법인부터 소상공인까지, 실제로 승인받은 기업들의 자료입니다.</p>
-    </div>
-
-    <div class="proof-main reveal">
-      <img src="img-testimonial-main.jpg" alt="승인 후 고객님들이 보내주신 감사 인사">
-    </div>
-    <div class="proof-sub-row reveal">
-      <img src="img-testimonial-sub1.jpg" alt="실사 후기 카카오톡">
-      <img src="img-testimonial-sub2.jpg" alt="제조업 코드 세팅 완료 후기 카카오톡">
-    </div>
-
-    <div class="proof-approval-row reveal">
-      <div class="proof-approval">
-        <img src="img-approval-screen.jpg" alt="정책자금 승인 원본 화면">
-        <div class="proof-approval-cap">실제 정책자금 승인 화면 (사업자 정보 마스킹 처리)</div>
-      </div>
-      <div class="proof-approval proof-approval-wide">
-        <img src="img-approval-grid.jpg" alt="기관별 승인 통보 및 대출 조건 안내 내역">
-        <div class="proof-approval-cap">기관별 승인 통보·대출 조건 안내 내역 (신보·소진공·지역신보 등)</div>
-      </div>
-    </div>
-
-    <div class="cert-grid reveal">
-      <div class="cert-card"><img src="img-cert-venture.jpg" alt="벤처기업확인서"><div class="cert-cap">벤처기업확인서</div></div>
-      <div class="cert-card"><img src="img-cert-rnd.jpg" alt="연구개발전담부서 인정서"><div class="cert-cap">연구개발전담부서<br>인정서</div></div>
-      <div class="cert-card"><img src="img-cert-mainbiz.jpg" alt="경영혁신형 중소기업(MAIN-BIZ) 확인서"><div class="cert-cap">MAIN-BIZ<br>확인서</div></div>
-    </div>
-    <p class="proof-note">모든 이미지는 고객 동의 하에 게재되었으며, 상호명·대표자명·연락처 등 식별 정보는 마스킹 처리했습니다.</p>
   </div>
 </section>
 
@@ -312,13 +466,23 @@
         </ul>
       </div>
       <div class="fund-card">
-        <span class="fund-stage">확장 · R&amp;D</span>
-        <h3>기술·수출자금</h3>
+        <span class="fund-stage">기술개발</span>
+        <h3>R&amp;D 연구개발자금</h3>
         <ul>
-          <li>IITP·TIPS R&amp;D 과제</li>
-          <li>지역특화 지원사업</li>
+          <li>중소기업 기술혁신개발사업</li>
+          <li>창업성장기술개발(디딤돌·TIPS)</li>
+          <li>IITP·산업부 R&amp;D 과제</li>
+          <li>기업부설연구소 설립 연계</li>
+        </ul>
+      </div>
+      <div class="fund-card">
+        <span class="fund-stage">확장 · 수출</span>
+        <h3>수출·판로자금</h3>
+        <ul>
           <li>KOTRA·무역보험공사 연계</li>
           <li>수출 마케팅 자금</li>
+          <li>지역특화 지원사업</li>
+          <li>스마트공장 구축 지원</li>
         </ul>
       </div>
       <div class="fund-card">
@@ -330,67 +494,6 @@
           <li>안정화 자금</li>
           <li>채무 재조정 연계</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 기업 생애주기 성장 로드맵 ===================== -->
-<section class="section section-dark" id="roadmap">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">GROWTH ROADMAP</div>
-      <h2>정책자금은 시작점입니다.<br>기업 생애주기에 맞춘 성장 로드맵을 설계합니다.</h2>
-      <p>한 번의 자금 조달로 끝나지 않도록, 단계마다 필요한 전문 영역을 미리 연결해 둡니다.</p>
-    </div>
-
-    <div class="roadmap reveal">
-      <svg class="roadmap-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="roadmapGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#3D6BFF"/>
-            <stop offset="50%" stop-color="#8B5CF6"/>
-            <stop offset="100%" stop-color="#06B6D4"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,100 C120,100 130,70 250,68 C370,66 380,45 500,42 C620,39 630,20 750,16 C860,13 880,24 1000,10" stroke="url(#roadmapGrad)"/>
-      </svg>
-      <div class="roadmap-track">
-        <div class="roadmap-step">
-          <span class="roadmap-dot"></span>
-          <span class="roadmap-stage">STAGE 01</span>
-          <h3>예비창업</h3>
-          <p class="roadmap-sub">사업자등록 전</p>
-          <ul><li>창업자금 진단</li><li>창업 컨설팅</li></ul>
-        </div>
-        <div class="roadmap-step">
-          <span class="roadmap-dot"></span>
-          <span class="roadmap-stage">STAGE 02</span>
-          <h3>창업 초기</h3>
-          <p class="roadmap-sub">업력 7년 미만</p>
-          <ul><li>정책자금(중진공·기보)</li><li>특허·인증 취득</li></ul>
-        </div>
-        <div class="roadmap-step">
-          <span class="roadmap-dot"></span>
-          <span class="roadmap-stage">STAGE 03</span>
-          <h3>성장기</h3>
-          <p class="roadmap-sub">매출 확대 국면</p>
-          <ul><li>경정청구 세금행급</li><li>운전·시설자금 증액</li></ul>
-        </div>
-        <div class="roadmap-step">
-          <span class="roadmap-dot"></span>
-          <span class="roadmap-stage">STAGE 04</span>
-          <h3>도약 · 확장기</h3>
-          <p class="roadmap-sub">투자·확장 검토</p>
-          <ul><li>GP·VC 투자유치</li><li>개인투자조합</li></ul>
-        </div>
-        <div class="roadmap-step">
-          <span class="roadmap-dot"></span>
-          <span class="roadmap-stage">STAGE 05</span>
-          <h3>엑시트 · 재도약</h3>
-          <p class="roadmap-sub">매각 또는 위기관리</p>
-          <ul><li>M&amp;A 매각자문</li><li>채무조정·채권추심</li></ul>
-        </div>
       </div>
     </div>
   </div>
@@ -603,9 +706,8 @@
 <section class="section section-paper" style="padding-top:56px;padding-bottom:56px;">
   <div class="wrap reveal">
     <div class="terms-note" style="margin-top:0;">
-      <b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 신청을 자문·대행하며,
-      <b>대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 승인 여부는 각 운용기관의 심사로 결정되며 당사가 보장하지 않습니다.
-      상담·사전 진단은 무료이고, 계약 시 착수 자문료와 승인 금액의 5% 성공보수가 발생합니다.
+      <b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 승인 여부는 각 운용기관의 심사로 결정되며 당사가 보장하지 않습니다.
+      상담과 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다.
       <a href="services.html#terms" style="color:var(--accent-blue,#3D6BFF);font-weight:700;">서비스 이용 안내 자세히 보기 →</a>
     </div>
   </div>
@@ -633,24 +735,27 @@
           <a href="contact.html">1:1 진단 신청서</a>
         </div>
         <div class="footer-col">
+          <h4>채널</h4>
+          <a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a>
+          <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener">인스타그램 @kpac_ceo</a>
+        </div>
+        <div class="footer-col">
           <h4>회사 정보</h4>
           <li>한국정책자문센터 (KPAC)</li>
           <li>대표 : 이남인</li>
           <li>사업자등록번호 : 111-13-97163</li>
           <li>업태 : 전문, 과학 및 기술서비스업</li>
           <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
-          <li>주소 : 경기도 남양주시 두물로11번길 40-26,<br>6층 606호(별내동, 대경빌딩)</li>
+          <li>주소 : 경기도 남양주시 두물로11번길 40-26</li>
           <li>이메일 : info@kpac.store</li>
           <li>대표전화 : 1866-1912</li>
         </div>
       </div>
     </div>
     <div class="footer-legal">
-      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 <b>신청을 자문·대행하는 컨설팅 서비스</b>를 제공하며,
-      <b>대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
+      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
       신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
-      <p><b>수수료 안내</b> · 계약 시 착수 자문료가 발생하며, 자금이 실제로 승인·실행된 경우에 한해 승인 금액의 5%를 성공 보수로 청구합니다.
-      상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
+      <p><b>상담 안내</b> · 상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
     <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, <b>승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</b></p>
     </div>
     <div class="footer-bottom">

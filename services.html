@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>서비스 안내 | 한국정책자문센터 KPAC</title>
-<meta name="description" content="정책자금, 경정청구, GP/VC 투자유치, M&A 매각자문, 개인투자조합, 특허·인증, 채권추심, 채무조정까지 — 한국정책자문센터의 8대 핵심 서비스.">
+<meta name="description" content="정책자금, R&D 연구개발자금, 경정청구, GP/VC 투자유치, M&A 매각자문, 개인투자조합, 특허·인증, 채권추심, 채무조정까지 — 한국정책자문센터의 8대 핵심 서비스.">
 <link rel="icon" href="img-kpac-logo-v.png">
 <link rel="stylesheet" href="main.css">
 <style>
@@ -89,6 +89,15 @@
   .stat-row > div:nth-child(3) .s{color:var(--accent-teal);}
 
   .feat-card{position:relative;overflow:hidden;}
+
+  #rnd{background:linear-gradient(180deg,#FCFDFF 0%,#F6F8FD 100%);}
+  #rnd .svc-no{font-size:15px;font-weight:800;color:#fff;letter-spacing:.06em;
+    background:linear-gradient(90deg,var(--accent-purple),var(--accent-blue));
+    padding:6px 14px;border-radius:20px;}
+  #rnd .stat-row > div:nth-child(1) .s{color:var(--accent-purple);}
+  #rnd .stat-row > div:nth-child(2) .s{color:var(--accent-blue);}
+  #rnd .stat-row > div:nth-child(3) .s{color:var(--accent-teal);}
+
   @media (max-width:640px){.stat-row > div{border-right:none;border-bottom:1px solid var(--line);}}
 </style>
 </head>
@@ -97,7 +106,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="index.html" class="nav-logo">
-      <img src="img-kpac-logo-v.png" alt="KPAC 로고">
+      <img src="img-kpac-logo-v.png" alt="KPAC" width="34" height="34">
       <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
     </a>
     <nav class="nav-links">
@@ -125,6 +134,7 @@
 <nav class="subnav">
   <div class="wrap">
     <a href="#fund">정책자금</a>
+    <a href="#rnd">R&amp;D 자금</a>
     <a href="#tax">경정청구</a>
     <a href="#invest">투자유치</a>
     <a href="#ma">M&amp;A</a>
@@ -157,13 +167,44 @@
       <div class="feat-card"><h4>혁신창업사업화자금</h4><p>업력 7년 미만 기업 대상 창업자금</p></div>
       <div class="feat-card"><h4>중진공·기보</h4><p>중소기업진흥공단, 기술보증기금 등 정책금융기관 연계</p></div>
       <div class="feat-card"><h4>신용보증재단(신보)</h4><p>지역 신용보증재단 보증서 발급 연계</p></div>
-      <div class="feat-card"><h4>R&amp;D 과제</h4><p>IITP, TIPS, 산업부 R&amp;D 과제 발굴 및 신청 지원</p></div>
       <div class="feat-card"><h4>지역특화자금</h4><p>지자체별 맞춤 지원사업 매칭</p></div>
       <div class="feat-card"><h4>수출·마케팅</h4><p>KOTRA, 무역보험공사 연계 지원</p></div>
       <div class="feat-card"><h4>긴급경영안정자금</h4><p>일시적 경영난 기업 대상 안정화 자금</p></div>
       <div class="feat-card"><h4>재도약 지원자금</h4><p>사업 재편·회복기 기업 대상 지원</p></div>
       <div class="feat-card"><h4>중소기업 창업상담</h4><p>업종·매출 규모별 맞춤 창업 컨설팅</p></div>
     </div>
+  </div>
+</section>
+
+
+<!-- R&D 연구개발자금 -->
+<section class="svc-block" id="rnd">
+  <div class="wrap">
+    <div class="svc-top reveal">
+      <div><span class="svc-no">R&amp;D</span></div>
+      <div class="svc-title">
+        <h2>R&amp;D 연구개발자금</h2>
+        <p>갚지 않아도 되는 출연금 중심 — 기술개발 과제 선정부터 연구소 설립, 사후 정산까지 지원합니다</p>
+      </div>
+    </div>
+    <div class="stat-row reveal">
+      <div><div class="s">최대 80%</div><div class="l">정부 출연 비율 (과제·기업규모별 상이)</div></div>
+      <div><div class="s">출연금</div><div class="l">융자가 아닌 미상환 지원금 방식</div></div>
+      <div><div class="s">가점 연계</div><div class="l">연구소·벤처·이노비즈 인증 동시 설계</div></div>
+    </div>
+    <div class="feat-grid reveal">
+      <div class="feat-card"><h4>중소기업 기술혁신개발</h4><p>시장확대·수출지향형 등 중기부 대표 R&amp;D 사업</p></div>
+      <div class="feat-card"><h4>창업성장기술개발</h4><p>디딤돌·전략형·TIPS 등 창업기업 전용 과제</p></div>
+      <div class="feat-card"><h4>산업부·IITP 과제</h4><p>소부장, ICT, AI 등 부처별 전략 R&amp;D 과제</p></div>
+      <div class="feat-card"><h4>지자체 R&amp;D</h4><p>테크노파크·지역혁신 과제 매칭</p></div>
+      <div class="feat-card"><h4>기업부설연구소 설립</h4><p>KOITA 신고 대행, 연구소 요건 충족 컨설팅</p></div>
+      <div class="feat-card"><h4>연구개발 세액공제</h4><p>인건비·재료비 기준 세액공제 적용 검토</p></div>
+      <div class="feat-card"><h4>사업계획서 작성</h4><p>기술성·사업성 평가 기준에 맞춘 제안서 구성</p></div>
+      <div class="feat-card"><h4>선정 후 사후관리</h4><p>중간·최종 평가, 연구비 정산까지 동행</p></div>
+    </div>
+    <p style="margin-top:20px;font-size:12px;color:var(--ink-400);line-height:1.7;">
+      ※ 출연 비율·지원 한도는 과제 유형, 기업 규모, 공고 연도에 따라 달라지며 최종 선정 결과를 보장하지 않습니다.
+    </p>
   </div>
 </section>
 
@@ -181,7 +222,7 @@
     </div>
     <div class="stat-row reveal">
       <div><div class="s">5년</div><div class="l">소급 적용</div></div>
-      <div><div class="s">100%</div><div class="l">성공보수제</div></div>
+      <div><div class="s">무료</div><div class="l">사전 세무 검토</div></div>
     </div>
     <div class="feat-grid reveal">
       <div class="feat-card"><h4>1단계 · 무료 세무 검토</h4><p>과거 세무 신고 내여 무료 진단</p></div>
@@ -310,12 +351,12 @@
   </div>
 </section>
 
-<!-- ===== 서비스 이용 안내 · 수수료 (법적 고지) ===== -->
+<!-- ===== 서비스 이용 안내 (법적 고지) ===== -->
 <section class="section section-paper" id="terms">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">TERMS &amp; FEES</div>
-      <h2>서비스 이용 안내와<br>수수료 구조를 먼저 공개합니다</h2>
+      <h2>서비스 이용 안내를<br>먼저 공개합니다</h2>
       <p>컨설팅을 맡기기 전에 무엇을 대신해 드리고, 무엇은 해 드릴 수 없으며, 비용이 언제 얼마나 발생하는지 정확히 아셔야 합니다.</p>
     </div>
 
@@ -326,15 +367,15 @@
         <p>기업의 재무 상태와 사업 현황을 진단하고, 신청 가능한 정부·공공 정책자금과 지원사업을 찾아 <b>신청 전략 수립·사업계획서 작성·서류 준비·심사 대응</b>을 자문·대행합니다. 정책자금 외에 경정청구, 투자유치, M&amp;A, 채무조정, 법률 자문도 함께 제공합니다.</p>
       </div>
       <div class="terms-card">
-        <div class="tno">02 · WHAT WE ARE NOT</div>
-        <h3>저희가 하지 않는 일</h3>
-        <p>한국정책자문센터는 <b>금융회사가 아니며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 자금을 직접 빌려드리거나 대출을 알선하지 않으며, 예금·투자상품을 판매하지 않습니다. 승인 여부와 한도는 각 운용기관의 심사로 결정되며 당사가 보장할 수 없습니다.</p>
+        <div class="tno">02 · HOW IT WORKS</div>
+        <h3>승인 절차 안내</h3>
+        <p>정책자금의 <b>승인 여부와 한도는 각 운용기관의 자체 심사 기준</b>에 따라 결정됩니다. 저희는 기업의 재무 상태와 요건을 분석해 통과 가능성이 높은 경로를 설계하고 서류를 준비하지만, 최종 결과를 보장해 드릴 수는 없습니다.</p>
       </div>
       <div class="terms-card">
-        <div class="tno">03 · FEE</div>
-        <h3>수수료 구조</h3>
-        <div class="big">착수 자문료 + 성공보수 5%</div>
-        <p>계약 시 착수 자문료가 발생하며, <b>자금이 실제 승인·실행된 경우에 한해 승인 금액의 5%</b>를 성공 보수로 청구합니다. 착수 자문료는 기업 규모와 진행 범위에 따라 달라지며, 계약서에 금액을 명시한 뒤 진행합니다.</p>
+        <div class="tno">03 · PROCESS</div>
+        <h3>비용과 계약</h3>
+        <div class="big">상담·사전 진단 무료</div>
+        <p>상담과 사전 진단에는 비용이 발생하지 않습니다. <b>계약 전 어떠한 비용도 청구하지 않으며</b>, 진행 여부는 진단 결과를 확인하신 뒤 결정하시면 됩니다. 계약 조건은 기업 규모와 진행 범위에 따라 달라지므로 상담 시 개별적으로 안내드립니다.</p>
       </div>
     </div>
 
@@ -348,7 +389,7 @@
     </div>
     <div class="terms-note reveal">
       <b>사업자 정보</b> · 상호 한국정책자문센터 · 대표 이남인 · 사업자등록번호 111-13-97163 · 업태 전문, 과학 및 기술서비스업 · 종목 경영 컨설팅업, 광고 대행업 ·
-      주소 경기도 남양주시 두물로11번길 40-26, 6층 606호(별내동, 대경빌딩) · 대표전화 1866-1912 · 이메일 info@kpac.store
+      주소 경기도 남양주시 두물로11번길 40-26 · 대표전화 1866-1912 · 이메일 info@kpac.store
     </div>
   </div>
 </section>
@@ -387,24 +428,27 @@
           <a href="contact.html">1:1 진단 신청서</a>
         </div>
         <div class="footer-col">
+          <h4>채널</h4>
+          <a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a>
+          <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener">인스타그램 @kpac_ceo</a>
+        </div>
+        <div class="footer-col">
           <h4>회사 정보</h4>
           <li>한국정책자문센터 (KPAC)</li>
           <li>대표 : 이남인</li>
           <li>사업자등록번호 : 111-13-97163</li>
           <li>업태 : 전문, 과학 및 기술서비스업</li>
           <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
-          <li>주소 : 경기도 남양주시 두물로11번길 40-26,<br>6층 606호(별내동, 대경빌딩)</li>
+          <li>주소 : 경기도 남양주시 두물로11번길 40-26</li>
           <li>이메일 : info@kpac.store</li>
           <li>대표전화 : 1866-1912</li>
         </div>
       </div>
     </div>
     <div class="footer-legal">
-      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 <b>신청을 자문·대행하는 컨설팅 서비스</b>를 제공하며,
-      <b>대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
+      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
       신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
-      <p><b>수수료 안내</b> · 계약 시 착수 자문료가 발생하며, 자금이 실제로 승인·실행된 경우에 한해 승인 금액의 5%를 성공 보수로 청구합니다.
-      상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
+      <p><b>상담 안내</b> · 상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
     <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, <b>승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</b></p>
     </div>
     <div class="footer-bottom">
