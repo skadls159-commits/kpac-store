@@ -321,6 +321,8 @@ h2{font-size:25px}
 .peek i{font-style:normal;font-size:22px;color:var(--gold2);animation:bob 1.6s infinite}
 @media(max-width:560px){.hero{min-height:92vh;display:flex;align-items:center}.hero .sub{font-size:15.5px}.peek{margin-top:40px}}
 #apply{scroll-margin-top:70px}
+#filter{padding-bottom:40px}
+footer{padding-top:36px!important;padding-bottom:110px!important}
 /* 마퀴 */
 .marq{overflow:hidden;max-width:100%;border-top:1px solid var(--gold3);border-bottom:1px solid var(--gold3);padding:16px 0;white-space:nowrap}
 .marq span{display:inline-block;padding-right:60px;font-size:13px;letter-spacing:.32em;font-weight:900;color:var(--gold);animation:run 22s linear infinite}
@@ -624,7 +626,6 @@ footer{padding-bottom:150px}
 <select id="f-region"><option value="">지역 선택</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select>
 <label for="f-sales">연매출</label>
 <select id="f-sales"><option value="">연매출 선택</option><option>3억 미만</option><option>3~5억</option><option>5~10억</option><option>10~30억</option><option>30억 이상</option></select>
-<div class="agree"><input id="f-clean" type="checkbox"><label for="f-clean" style="font-weight:700;margin:0;letter-spacing:0;font-size:12.5px;color:#fff">[필수] 세금·4대보험 체납, 최근 연체가 없습니다.</label></div>
 <div class="agree"><input id="f-agree" type="checkbox"><label for="f-agree" style="font-weight:400;margin:0;letter-spacing:0;font-size:12px">[필수] 개인정보 수집·이용에 동의합니다. 상담 목적으로만 사용되며 <a href="https://kpac.store/privacy.html" target="_blank" rel="noopener" style="color:var(--gold2)">개인정보처리방침</a>에 따라 보관·파기됩니다.</label></div>
 <p class="err" id="err">빈 칸과 필수 체크를 확인해주세요</p>
 <a class="cta full" href="#" id="submit">무료 진단 신청하기 →</a>
@@ -657,7 +658,7 @@ footer{padding-bottom:150px}
     var v=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
     var n=v('f-name'),p=v('f-phone').replace(/\D/g,''),biz=v('f-biz'),reg=v('f-region'),sales=v('f-sales');
     var err=document.getElementById('err');
-    if(!n||p.length<10||!biz||!reg||!sales||!document.getElementById('f-agree').checked||!document.getElementById('f-clean').checked){err.style.display='block';return}
+    if(!n||p.length<10||!biz||!reg||!sales||!document.getElementById('f-agree').checked){err.style.display='block';return}
     err.style.display='none';
     var q=new URLSearchParams(location.search);
     var ch=q.get('src')||q.get('utm_source')||(q.get('fbclid')?'meta_3eok':(q.get('gclid')?'google_ads':'3eok_direct'));
