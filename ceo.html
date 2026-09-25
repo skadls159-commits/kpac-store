@@ -6,6 +6,7 @@ window.adChannel=(function(){try{var q=new URLSearchParams(location.search);var 
 if(!s){ if(q.get('oppref'))s='chatgpt_ads'; else if(q.get('gclid'))s='google_ads'; else if(q.get('fbclid'))s='meta_ads';
  else{var r=document.referrer||''; if(/chatgpt\.com|openai\.com/.test(r))s='chatgpt'; else if(/google\./.test(r))s='google_organic'; else if(/naver\./.test(r))s='naver_organic'; else if(/facebook|instagram/.test(r))s='meta'; else if(/youtube/.test(r))s='youtube'; else if(/kakao|daum/.test(r))s='kakao'; else if(/daangn/.test(r))s='daangn';}}
 if(s){sessionStorage.setItem('kp_ch',s);return s;} return ss||'';}catch(e){return '';}})();
+window.adName=(function(){try{var q=new URLSearchParams(location.search);var a=q.get('ad')||q.get('utm_content')||'';if(a){sessionStorage.setItem('kp_ad',a);return a;}return sessionStorage.getItem('kp_ad')||'';}catch(e){return '';}})();
 </script>
 
 <meta charset="utf-8">
@@ -440,6 +441,7 @@ footer{padding-bottom:150px}
 </style>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1607996810679835');fbq('track','PageView');</script>
 <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Tz2MMQxD2MjS2A8NhoAY5G"});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048988442"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","AW-18048988442");</script>
 </head>
 <body>
 <div id="prog"></div>
@@ -671,7 +673,7 @@ footer{padding-bottom:150px}
     var q=new URLSearchParams(location.search);
     var ch=window.adChannel||'3eok_direct';
     var payload={name:n,phone:p,industry:biz,region:reg,revenue:sales,biz_no:'',tax_arrears:'',
-      source:'kpac_3eok_landing',channel:ch,submitted_at:new Date().toISOString(),
+      source:'kpac_3eok_landing',channel:ch,ad:(window.adName||''),submitted_at:new Date().toISOString(),
       lead_id:'3e_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)};
     btn.dataset.sent='1'; btn.textContent='접수 중...';
     var body=JSON.stringify(payload), ok=false;
@@ -682,6 +684,7 @@ footer{padding-bottom:150px}
     try{if(window.fbq)fbq('track','Lead',{content_name:'3eok'})}catch(x){}
     try{if(window.oaiq)oaiq('measure','lead_created',{type:'customer_action'})}catch(x){}
     try{window.KPAC_TRACK&&KPAC_TRACK.markSubmit()}catch(x){}
+    try{if(window.gtag)gtag('event','conversion',{send_to:'AW-18048988442/iDYiCNiihN4cEJrqtp5D',value:1.0,currency:'KRW'})}catch(x){}
     btn.textContent=ok?'신청이 접수되었습니다 ✓':'접수 실패 · 잠시 후 다시 시도해주세요';
     if(!ok) delete btn.dataset.sent;
   });
