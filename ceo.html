@@ -432,6 +432,7 @@ footer{padding-bottom:150px}
 }
 </style>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1607996810679835');fbq('track','PageView');</script>
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Tz2MMQxD2MjS2A8NhoAY5G"});</script>
 </head>
 <body>
 <div id="prog"></div>
@@ -672,6 +673,7 @@ footer{padding-bottom:150px}
       catch(x){await new Promise(function(r){setTimeout(r,800)})}
     }
     try{if(window.fbq)fbq('track','Lead',{content_name:'3eok'})}catch(x){}
+    try{if(window.oaiq)oaiq('measure','lead_created',{type:'customer_action'})}catch(x){}
     btn.textContent=ok?'신청이 접수되었습니다 ✓':'접수 실패 · 잠시 후 다시 시도해주세요';
     if(!ok) delete btn.dataset.sent;
   });
