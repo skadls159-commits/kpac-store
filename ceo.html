@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>
+window.adChannel=(function(){try{var q=new URLSearchParams(location.search);var s=q.get('src')||q.get('utm_source');var ss=sessionStorage.getItem('kp_ch');
+if(!s){ if(q.get('oppref'))s='chatgpt_ads'; else if(q.get('gclid'))s='google_ads'; else if(q.get('fbclid'))s='meta_ads';
+ else{var r=document.referrer||''; if(/chatgpt\.com|openai\.com/.test(r))s='chatgpt'; else if(/google\./.test(r))s='google_organic'; else if(/naver\./.test(r))s='naver_organic'; else if(/facebook|instagram/.test(r))s='meta'; else if(/youtube/.test(r))s='youtube'; else if(/kakao|daum/.test(r))s='kakao'; else if(/daangn/.test(r))s='daangn';}}
+if(s){sessionStorage.setItem('kp_ch',s);return s;} return ss||'';}catch(e){return '';}})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>3억 이상 대표 전용자금 | 한국정책자문센터</title>
@@ -438,7 +445,7 @@ footer{padding-bottom:150px}
 <div id="prog"></div>
 <div class="top"><b style="color:var(--gold2);letter-spacing:.08em">한국정책자문센터</b></div>
 
-<header class="hero">
+<header class="hero" data-sec="hero">
 <div class="wrap">
 <span class="badge">3억 이상 대표 전용자금</span>
 <h1 class="lines"><span>매출 3억 넘기신 대표님,</span><span>받을 수 있는 자금이 <em>달라졌습니다</em></span></h1>
@@ -448,7 +455,7 @@ footer{padding-bottom:150px}
 </div>
 </header>
 
-<section class="center">
+<section data-sec="selfcheck" class="center">
 <div class="wrap rv">
 <span class="eb" id="peek">Self Check</span>
 <span class="bigmoji">🧐</span>
@@ -466,7 +473,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center" style="background:var(--bk2)">
+<section data-sec="nextstep" class="center" style="background:var(--bk2)">
 <div class="wrap rv">
 <span class="eb">Next Step</span>
 <span class="bigmoji g">🎉</span>
@@ -478,7 +485,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center">
+<section data-sec="realgap" class="center">
 <div class="wrap rv">
 <span class="eb">The Real Gap</span>
 <span class="bigmoji">🎯</span>
@@ -495,7 +502,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center" style="background:var(--bk2)">
+<section data-sec="institutions" class="center" style="background:var(--bk2)">
 <div class="wrap rv">
 <span class="eb">Institutions</span>
 <span class="bigmoji">🧭</span>
@@ -510,7 +517,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center">
+<section data-sec="question" class="center">
 <div class="wrap rv">
 <span class="eb">Question</span>
 <span class="bigmoji">🤔</span>
@@ -556,7 +563,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center" style="background:var(--bk2)">
+<section data-sec="why" class="center" style="background:var(--bk2)">
 <div class="wrap rv">
 <span class="eb">Why KPAC</span>
 <span class="bigmoji g">🤝</span>
@@ -574,7 +581,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center">
+<section data-sec="after" class="center">
 <div class="wrap rv">
 <span class="eb">After Approval</span>
 <span class="bigmoji g">🚀</span>
@@ -583,7 +590,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center" style="background:radial-gradient(ellipse 60% 50% at 50% 30%,#2A0A0C 0%,var(--bk) 70%)">
+<section data-sec="recruit" class="center" style="background:radial-gradient(ellipse 60% 50% at 50% 30%,#2A0A0C 0%,var(--bk) 70%)">
 <div class="wrap rv">
 <span class="bigmoji">👑</span>
 <h2>같이 성장할<br>기업 대표님을 모십니다</h2>
@@ -592,7 +599,7 @@ footer{padding-bottom:150px}
 </div>
 </section>
 
-<section class="center" style="background:var(--bk2)">
+<section data-sec="privilege" class="center" style="background:var(--bk2)">
 <div class="wrap rv">
 <span class="eb">Privilege</span>
 <span class="bigmoji g">🎁</span>
@@ -608,7 +615,7 @@ footer{padding-bottom:150px}
 
 <div class="marq"><span>한국정책자문센터 &nbsp;·&nbsp; KPAC &nbsp;·&nbsp; 3억 이상 대표 전용자금 &nbsp;·&nbsp; 한국정책자문센터 &nbsp;·&nbsp; KPAC &nbsp;·&nbsp; 3억 이상 대표 전용자금 &nbsp;·&nbsp; </span><span>한국정책자문센터 &nbsp;·&nbsp; KPAC &nbsp;·&nbsp; 3억 이상 대표 전용자금 &nbsp;·&nbsp; 한국정책자문센터 &nbsp;·&nbsp; KPAC &nbsp;·&nbsp; 3억 이상 대표 전용자금 &nbsp;·&nbsp; </span></div>
 
-<section class="center" id="filter">
+<section data-sec="form" class="center" id="filter">
 <div class="wrap rv">
 <span class="bigmoji">✋</span>
 <h2>잠깐, <span class="red">체납이나 연체</span>는<br>없으시죠?</h2>
@@ -662,7 +669,7 @@ footer{padding-bottom:150px}
     if(!n||p.length<10||!biz||!reg||!sales||!document.getElementById('f-agree').checked){err.style.display='block';return}
     err.style.display='none';
     var q=new URLSearchParams(location.search);
-    var ch=q.get('src')||q.get('utm_source')||(q.get('fbclid')?'meta_3eok':(q.get('gclid')?'google_ads':'3eok_direct'));
+    var ch=window.adChannel||'3eok_direct';
     var payload={name:n,phone:p,industry:biz,region:reg,revenue:sales,biz_no:'',tax_arrears:'',
       source:'kpac_3eok_landing',channel:ch,submitted_at:new Date().toISOString(),
       lead_id:'3e_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)};
@@ -674,11 +681,43 @@ footer{padding-bottom:150px}
     }
     try{if(window.fbq)fbq('track','Lead',{content_name:'3eok'})}catch(x){}
     try{if(window.oaiq)oaiq('measure','lead_created',{type:'customer_action'})}catch(x){}
+    try{window.KPAC_TRACK&&KPAC_TRACK.markSubmit()}catch(x){}
     btn.textContent=ok?'신청이 접수되었습니다 ✓':'접수 실패 · 잠시 후 다시 시도해주세요';
     if(!ok) delete btn.dataset.sent;
   });
   ['f-name','f-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){document.getElementById('err').style.display='none'})});
 })();
 </script>
+<script>var WEBHOOK_URL="https://script.google.com/macros/s/AKfycbwIfwL3rdpX-wxP9lGZYVeedDixkfqqSHUi6SncaEB_WqE9899qtJsDNYi7uPmtyoOo/exec";</script>
+<script>(function(){
+var GA4_ID=(window.KP_GA4_ID||'');if(GA4_ID&&typeof gtag==='function')gtag('config',GA4_ID);
+var T0=Date.now();var sid='S'+T0.toString(36)+Math.random().toString(36).slice(2,7);var ev=[];var seen={};
+var state={maxScroll:0,lastSec:'hero',secOrder:[],video:{},cta:[],formStart:0,fields:[],submitted:0,lightbox:0,kakao:0,tel:0};var dirty=false,sentOnce=false;
+function sec(){return Math.round((Date.now()-T0)/100)/10;}
+function log(name,val,once){if(once&&seen[name+'|'+(val||'')])return;seen[name+'|'+(val||'')]=1;ev.push([sec(),name,val===undefined?'':val]);dirty=true;try{if(typeof gtag==='function')gtag('event','lp_'+name,{value_text:String(val||''),t_sec:sec()});}catch(e){}}
+function fb(name,data){try{if(typeof fbq==='function')fbq('trackCustom',name,data||{});}catch(e){}}
+var isMobile=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);log('page_view',(isMobile?'mobile':'desktop'),true);
+function scrollPct(){var h=document.documentElement;var total=Math.max(1,(h.scrollHeight||document.body.scrollHeight)-window.innerHeight);return Math.min(100,Math.round(((window.scrollY||h.scrollTop||0)/total)*100));}
+var marks=[25,50,75,90,100];
+function onScroll(){var p=scrollPct();if(p>state.maxScroll)state.maxScroll=p;for(var i=0;i<marks.length;i++){if(p>=marks[i]&&!seen['scroll|'+marks[i]]){log('scroll',marks[i],true);if(marks[i]===50)fb('LP_Scroll50');if(marks[i]===90)fb('LP_Scroll90');}}}
+window.addEventListener('scroll',onScroll,{passive:true});setTimeout(onScroll,1000);
+var secEls=document.querySelectorAll('[data-sec]');
+if('IntersectionObserver' in window){var sio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var n=e.target.getAttribute('data-sec');if(seen['section|'+n])return;log('section',n,true);state.secOrder.push(n+'@'+sec());state.lastSec=n;if(n==='form')fb('LP_ReachForm');});},{threshold:0.4});secEls.forEach(function(el){sio.observe(el);});
+var cur=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)state.lastSec=e.target.getAttribute('data-sec');});},{threshold:0.5});secEls.forEach(function(el){cur.observe(el);});}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a,button,[onclick]');if(!a)return;var href=(a.getAttribute('href')||'');
+if(href==='#apply'||href==='#peek'){var where=href==='#peek'?'peek':(a.closest('.fab')?'sticky':(a.closest('.hero')?'hero':'mid'));log('cta',where);state.cta.push(where+'@'+sec());fb('LP_CTAClick',{where:where});}
+else if(href.indexOf('tel:')===0){log('tel_click');state.tel++;fb('LP_TelClick');}
+else if(href.indexOf('kakao')!==-1){log('kakao_click');state.kakao++;}},true);
+var form=document.getElementById('apply');
+if(form){form.addEventListener('focusin',function(e){var id=e.target.id||e.target.name||'';if(!state.formStart){state.formStart=sec();log('form_start',id,true);fb('LP_FormStart');}});
+form.addEventListener('change',function(e){var id=e.target.id||e.target.name||'';if(id&&state.fields.indexOf(id)===-1){state.fields.push(id);log('form_field',id,true);}});}
+window.addEventListener('error',function(e){log('js_error',String(e.message||'').slice(0,80));});
+function exitPoint(){if(state.submitted)return '제출완료';if(state.formStart)return '폼작성중이탈('+(state.fields.slice(-1)[0]||'시작만')+')';if(seen['section|form'])return '폼도달후이탈';return (state.lastSec||'hero')+'이탈';}
+function payload(){return {type:'landing_event',session_id:sid,at:new Date().toISOString(),channel:(window.adChannel||'direct')+'@3억랜딩',device:isMobile?'mobile':'desktop',referrer:(document.referrer||'').slice(0,120),viewport:window.innerWidth+'x'+window.innerHeight,duration_sec:sec(),max_scroll:state.maxScroll,last_section:state.lastSec,sections:state.secOrder.join(','),video:'',cta:state.cta.join(','),form_start_sec:state.formStart||'',form_fields:state.fields.join(','),submitted:state.submitted,exit_point:exitPoint(),case_zoom:0,kakao:state.kakao,tel:state.tel,events:ev.map(function(x){return x.join(':');}).join('|').slice(0,1500),ua:navigator.userAgent.slice(0,120)};}
+function send(force){if(!dirty&&!force)return;if(sec()<1&&!force)return;dirty=false;sentOnce=true;var body=JSON.stringify(payload());try{if(navigator.sendBeacon)navigator.sendBeacon(WEBHOOK_URL,new Blob([body],{type:'text/plain;charset=utf-8'}));else fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body,keepalive:true});}catch(e){}}
+window.addEventListener('pagehide',function(){send(!sentOnce);});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send(!sentOnce);});window.addEventListener('beforeunload',function(){send(!sentOnce);});
+setInterval(function(){if(dirty)send(false);},60000);
+window.KPAC_TRACK={state:state,events:ev,send:send,markSubmit:function(){state.submitted=1;log('form_submit','',true);fb('LP_Submit');send(true);}};
+})();</script>
 </body>
 </html>
