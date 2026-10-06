@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /adsrc/
+
+Sitemap: https://kpac.store/sitemap.xml
