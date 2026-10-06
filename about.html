@@ -2,199 +2,135 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>회사소개 | 한국정책자문센터 KPAC</title>
-<meta name="description" content="한국정책자문센터(KPAC) 회사소개. 대표 이남인, 비영리 사단법인 한국경영컨설턴트협회 소속, 누적 조달액 420억+, 승인률 92%.">
-<link rel="icon" href="img-kpac-logo-v.png">
-<link rel="stylesheet" href="main.css">
-<style>
-  .page-hero{background:radial-gradient(900px 480px at 88% -15%, rgba(61,107,255,.32), transparent 55%),
-    radial-gradient(700px 420px at 5% 100%, rgba(139,92,246,.25), transparent 55%),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 58px),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 84px),
-    linear-gradient(155deg, #0B1130 0%, #131A4D 55%, #1B245F 100%);color:#fff;padding:150px 0 76px;}
-  .page-hero .eyebrow{color:var(--blue-300);}
-  .page-hero .eyebrow::before{background:var(--blue-300);}
-  .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.3;max-width:680px;color:#fff;}
-  .page-hero p{margin-top:18px;color:rgba(255,255,255,.65);font-size:16px;max-width:560px;line-height:1.8;}
-
-  .ceo-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;}
-  .ceo-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;}
-  .ceo-copy .eyebrow{margin-bottom:18px;}
-  .ceo-copy h2{font-size:clamp(24px,2.8vw,32px);font-weight:800;line-height:1.4;margin-bottom:20px;}
-  .ceo-copy p{font-size:15.5px;color:var(--ink-500);line-height:1.9;margin-bottom:14px;}
-  .ceo-sign{margin-top:26px;font-family:var(--font-en);font-style:italic;font-size:15px;color:var(--ink-700);}
-  @media (max-width:920px){.ceo-layout{grid-template-columns:1fr;gap:32px;}}
-
-  .timeline{border-left:2px solid var(--line);margin-left:6px;}
-  .tl-item{position:relative;padding:0 0 40px 34px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{content:"";position:absolute;left:-7px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--navy-950);border:2px solid var(--gold-500);}
-  .tl-item:nth-child(3n+1)::before{border-color:var(--accent-blue);box-shadow:0 0 10px rgba(61,107,255,.5);}
-  .tl-item:nth-child(3n+2)::before{border-color:var(--accent-purple);box-shadow:0 0 10px rgba(139,92,246,.5);}
-  .tl-item:nth-child(3n+3)::before{border-color:var(--accent-teal);box-shadow:0 0 10px rgba(6,182,212,.5);}
-  .tl-year{font-family:var(--font-en);font-weight:700;color:var(--gold-600);font-size:15px;}
-  .tl-item:nth-child(3n+1) .tl-year{color:var(--accent-blue);}
-  .tl-item:nth-child(3n+2) .tl-year{color:var(--accent-purple);}
-  .tl-item:nth-child(3n+3) .tl-year{color:var(--accent-teal);}
-  .timeline{border-left:2px solid transparent;
-    border-image:linear-gradient(180deg,var(--accent-blue),var(--accent-purple),var(--accent-teal)) 1;}
-  .tl-item{transition:transform .25s var(--ease);}
-  .tl-item:hover{transform:translateX(4px);}
-  .ceo-photo{position:relative;overflow:hidden;border-radius:4px;}
-  .ceo-photo::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(160deg,rgba(61,107,255,.12),transparent 55%);pointer-events:none;}
-  .ceo-copy h2{position:relative;}
-  .ceo-sign{padding-top:18px;border-top:1px solid var(--line);display:inline-block;}
-  .tl-item h3{font-size:16.5px;font-weight:800;margin:6px 0 6px;}
-  .tl-item p{font-size:14px;color:var(--ink-500);line-height:1.7;}
-
-  .photo-strip{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;}
-  .photo-strip img{width:100%;height:100%;object-fit:cover;}
-  .photo-strip .tall{aspect-ratio:4/5;}
-  .photo-strip .stack{display:flex;flex-direction:column;gap:16px;}
-  .photo-strip .short{aspect-ratio:4/3;}
-</style>
+<meta name="description" content="한국정책자문센터(KPAC)는 정책자금을 시작으로 세무, 지식재산권, 법률, 투자유치, M&A까지 중소기업 경영 전반을 지원하는 종합 경영자문 기관입니다.">
+<meta name="theme-color" content="#0B1A44">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kpac.store/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="한국정책자문센터 KPAC">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://kpac.store/about.html">
+<meta property="og:title" content="회사소개 | 한국정책자문센터 KPAC">
+<meta property="og:description" content="한국정책자문센터(KPAC)는 정책자금을 시작으로 세무, 지식재산권, 법률, 투자유치, M&A까지 중소기업 경영 전반을 지원하는 종합 경영자문 기관입니다.">
+<meta property="og:image" content="https://kpac.store/img-hero-building.jpg">
+<link rel="icon" href="img-kpac-mark-d.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="kpac.css">
 </head>
-<body>
-
-<header class="site-header">
+<body class="sub">
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+<header class="header dark" id="top">
   <div class="wrap nav">
-    <a href="index.html" class="nav-logo">
-      <img src="img-kpac-logo-v.png" alt="KPAC" width="34" height="34">
-      <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
+    <a href="index.html" class="logo" aria-label="한국정책자문센터 홈">
+      <img class="logo-d" src="img-kpac-mark-d.png" alt="" width="34" height="34"><img class="logo-l" src="img-kpac-mark-l.png" alt="" width="34" height="34">
+      <span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="index.html">홈</a>
-      <a href="services.html#fund">정책자금</a>
-      <a href="about.html" class="active">회사소개</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="index.html#practice">컨설팅 영역</a>
       <a href="services.html">서비스</a>
       <a href="cases.html">성공사례</a>
       <a href="resources.html">무료자료</a>
-      <a href="contact.html">상담문의</a>
-      <a href="contact.html" class="nav-cta">무료 상담 신청 <span class="btn-arrow">→</span></a>
+      <a href="about.html" aria-current="page">회사소개</a>
     </nav>
-    <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+    <div class="nav-right">
+      <a href="tel:18661912" class="nav-tel"><small>상담전화</small>1866-1912</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">상담 신청</a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="m-menu" id="mMenu">
+    <a href="index.html#practice">컨설팅 영역</a>
+    <a href="services.html">서비스</a>
+    <a href="cases.html">성공사례</a>
+    <a href="resources.html">무료자료</a>
+    <a href="about.html">회사소개</a>
+    <a href="index.html#faq">자주 묻는 질문</a>
+    <a href="contact.html" class="btn btn-primary">상담 신청</a>
   </div>
 </header>
-
-<section class="page-hero">
+<main>
+<section class="hero sub-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow">ABOUT KPAC</div>
+    <nav class="crumb" aria-label="현재 위치"><a href="index.html">홈</a><span>/</span><span>회사소개</span></nav>
+    <p class="label">회사소개</p>
     <h1>기업과 장기적 관계를 유지하며,<br>함께 성장하는 파트너</h1>
-    <p>한국정책자문센터는 중소기업과 스타트업의 경영 전반을 지원하는 종합 경영자문 기관입니다. 정책자금 지원을 시작으로 세무, 지식재산권, 법률, 채권·채무, 투자유치, M&amp;A까지 — 사업의 시작부터 성장, 엑시트까지 함께합니다.</p>
+    <p class="hero-sub">한국정책자문센터는 중소기업과 스타트업의 경영 전반을 지원하는 종합 경영자문 기관입니다. 정책자금 지원을 시작으로 세무, 지식재산권, 법률, 채권 · 채무, 투자유치, M&amp;A까지, 사업의 시작부터 성장, 엑시트까지 함께합니다.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap ceo-layout">
-    <div class="ceo-photo reveal">
-      <img src="img-photo-2.jpg" alt="한국정책자문센터 대표 이남인">
-    </div>
-    <div class="ceo-copy reveal">
-      <div class="eyebrow">REPRESENTATIVE</div>
-      <h2>"자금 조달은 시작일 뿐,<br>진짜 일은 그 다음부터입니다."</h2>
-      <p>한국정책자문센터 대표 이남인은 정책자금 컨설팅을 단발성 서비스가 아닌, 기업의 자금·투자·법률을 아우르는 종합 경영컨설팅 산업으로 만들어가고 있습니다.</p>
-      <p>수백 건의 기업 재무제표 분석과 심사 대응 경험을 바탕으로, 단순히 서류를 대행하는 것이 아니라 기업의 재무 구조 자체를 진단하고 성장 전략을 함께 설계합니다.</p>
-      <div class="ceo-sign">이남인 · 한국정책자문센터 대표</div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
+<section class="facts"><div class="wrap facts-grid">
+<div class="fact reveal"><div class="fact-num num"><span class="count" data-to="2000">2,000</span><small>건+</small></div><div class="fact-label">누적 상담</div></div>
+<div class="fact reveal"><div class="fact-num num"><span class="count" data-to="8">8</span><small>개 분야</small></div><div class="fact-label">정책자금부터 투자유치 · M&amp;A까지</div></div>
+<div class="fact reveal"><div class="fact-num num"><span class="count" data-to="5">5</span><small>개 기관</small></div><div class="fact-label">중진공 · 기보 · 신보 · 소진공 · 지역신보</div></div>
+<div class="fact reveal"><div class="fact-num num"><span class="count" data-to="17">17</span><small>개 시도</small></div><div class="fact-label">지자체 지원사업 함께 검토</div></div>
+</div></section>
+<section class="section"><div class="wrap quote-wrap">
+<figure class="quote-photo reveal"><img src="img-office-1.jpg" alt="한국정책자문센터 사인" loading="lazy"><figcaption>KPAC 한국정책자문센터</figcaption></figure>
+<div class="quote-body reveal"><p class="label">대표 인사말</p><p class="big-quote">“자금 조달은 시작일 뿐,<br>진짜 일은 그 다음부터입니다.”</p>
+<p>한국정책자문센터 대표 이남인은 정책자금 컨설팅을 단발성 서비스가 아닌, 기업의 자금 · 투자 · 법률을 아우르는 종합 경영컨설팅 산업으로 만들어가고 있습니다.</p>
+<p>수백 건의 기업 재무제표 분석과 심사 대응 경험을 바탕으로, 단순히 서류를 대행하는 것이 아니라 기업의 재무 구조 자체를 진단하고 성장 전략을 함께 설계합니다.</p>
+<div class="sign">한국정책자문센터 대표<b>이남인</b></div></div>
+</div></section>
+<section class="section gray"><div class="wrap two-col">
+<div class="head reveal"><p class="label">연혁</p><h2>한국정책자문센터가<br>걸어온 길</h2><p>정책자금 컨설팅에서 시작해 기업 성장 전 과정을 함께하는 경영자문 기관으로 넓혀 왔습니다.</p></div>
+<ol class="timeline">
+<li class="reveal"><small>2025</small><b>한국정책자문센터(KPAC) 출범</b><span>정책자금 컨설팅을 시작으로 기업 자금조달 자문 체계 구축</span></li>
+<li class="reveal"><small>2026. 07</small><b>비영리 사단법인 한국경영컨설턴트협회(KMCA) 창단</b><span>정책자금 분야 국내 유일 협회 설립, 전문가 네트워크 기반 컨설팅 체계 구축</span></li>
+<li class="reveal"><small>2026</small><b>서비스 영역 확장</b><span>정책자금을 넘어 경정청구 · 투자유치 · M&amp;A · 채무조정, 사업 고도화(DX · AX)까지 확대</span></li>
+<li class="reveal"><small>누적 실적</small><b>누적 상담 2,000건 이상</b><span>기보 · 신보 · 중진공 · 소진공 전 채널 대응 경험 축적</span></li>
+</ol>
+</div></section>
+<section class="section"><div class="wrap assoc2">
+<figure class="reveal"><img src="img-founding.jpg" alt="비영리 사단법인 한국경영컨설턴트협회 창단식" loading="lazy"><figcaption>2026년 7월 3일, 한국경영컨설턴트협회 창단식</figcaption></figure>
+<div class="reveal"><p class="label">소속 협회</p><h2 style="font-size:clamp(24px,3vw,34px);letter-spacing:-.04em">비영리 사단법인<br>한국경영컨설턴트협회 소속</h2><p style="margin-top:14px;color:var(--ink-3)">한국정책자문센터는 정책자금 분야 국내 유일의 비영리 사단법인인 한국경영컨설턴트협회(KMCA) 소속입니다. 컨설턴트 한 사람이 아니라 협회의 전문가 네트워크와 함께 일합니다.</p><p style="margin-top:10px;color:var(--ink-3)">상담은 협회의 심사 기준과 윤리 기준에 따라 진행됩니다.</p><a href="https://kmcaorg.or.kr" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:22px">협회 홈페이지</a></div>
+</div></section>
+<section class="section gray"><div class="wrap two-col">
+<div class="head reveal"><p class="label">회사 정보</p><h2>사업자 정보</h2></div>
+<table class="info-table reveal"><tr><th>상호</th><td>한국정책자문센터 (KPAC)</td></tr><tr><th>대표</th><td>이남인</td></tr><tr><th>사업자등록번호</th><td>111-13-97163</td></tr><tr><th>업태 · 종목</th><td>전문, 과학 및 기술서비스업 · 경영 컨설팅업, 광고 대행업</td></tr><tr><th>소속</th><td>비영리 사단법인 한국경영컨설턴트협회</td></tr><tr><th>주소</th><td>경기도 남양주시 두물로11번길 40-26</td></tr><tr><th>대표전화</th><td><a href="tel:18661912">1866-1912</a></td></tr><tr><th>이메일</th><td><a href="mailto:info@kpac.store">info@kpac.store</a></td></tr></table>
+</div></section>
+<section class="cta-band"><div class="wrap"><div><h2>한국정책자문센터와 함께 시작하세요</h2><p>상담과 사전 진단은 무료이며, 계약 전에는 비용을 받지 않습니다.</p></div><div class="acts"><a href="tel:18661912" class="tel num">1866-1912</a><a href="contact.html" class="btn btn-white">무료 진단 신청</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-outline-w">카카오톡 상담</a></div></div></section>
+</main>
+<section class="notice">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">HISTORY</div>
-      <h2>한국정책자문센터가 걸어온 길</h2>
-    </div>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <div class="tl-year">2025</div>
-        <h3>한국정책자문센터(KPAC) 출범</h3>
-        <p>정책자금 컨설팅을 시작으로 기업 자금조달 자문 체계 구축</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2026. 07</div>
-        <h3>비영리 사단법인 한국경영컨설턴트협회(KMCA) 창단</h3>
-        <p>정책자금 분야 국내 유일 협회 설립, 전문가 네트워크 기반 컨설팅 체계 구축</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2026</div>
-        <h3>서비스 영역 확장</h3>
-        <p>정책자금을 넘어 경정청구·투자유치·M&amp;A·채무조정까지 확대</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">누적 실적</div>
-        <h3>누적 조달액 420억원 돌파, 승인률 92%</h3>
-        <p>누적 상담 300건 이상, 기보·신보·중진공·소진공 전 채널 대응 경험 축적</p>
-      </div>
-    </div>
+    <p><b>한국정책자문센터(KPAC)는 경영컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 신청을 자문·대행하며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다. 승인 여부는 각 운용기관의 심사로 결정되며 당사가 보장하지 않습니다. 상담과 사전 진단은 무료이며, 계약 전에는 비용을 청구하지 않습니다. <a href="services.html#terms">서비스 이용 안내</a></p>
   </div>
 </section>
-
-<section class="section section-dark">
-  <div class="wrap tac reveal">
-    <div class="eyebrow" style="justify-content:center;">CONTACT</div>
-    <h2 style="font-size:clamp(24px,3vw,34px);font-weight:800;">한국정책자문센터와 함께 시작하세요</h2>
-    <div class="hero-cta tac" style="justify-content:center;margin-top:28px;">
-      <a href="contact.html" class="btn btn-gold">무료 상담 신청 <span class="btn-arrow">→</span></a>
-      <a href="tel:18661912" class="btn btn-outline-light">1866-1912</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
+<footer class="footer">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="img-kpac-logo-h.png" alt="KPAC 로고" style="filter:brightness(0) invert(1);">
-        <p>한국정책자문센터는 정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전 과정을 함께하는 종합 경영자문 기관입니다.</p>
+    <div class="f-top">
+      <div class="f-brand">
+        <a href="#top" class="logo"><img src="img-kpac-mark-l.png" alt="" width="34" height="34"><span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span></a>
+        <p>정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전반을 자문합니다.</p>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>바로가기</h4>
-          <a href="about.html">회사소개</a>
-          <a href="services.html">서비스</a>
-          <a href="cases.html">성공사례</a>
-          <a href="resources.html">무료자료</a>
-        </div>
-        <div class="footer-col">
-          <h4>상담 문의</h4>
-          <a href="tel:18661912">TEL. 1866-1912</a>
-          <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a>
-          <a href="contact.html">1:1 진단 신청서</a>
-        </div>
-        <div class="footer-col">
-          <h4>채널</h4>
-          <a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a>
-          <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener">인스타그램 @kpac_ceo</a>
-        </div>
-        <div class="footer-col">
-          <h4>회사 정보</h4>
-          <li>한국정책자문센터 (KPAC)</li>
-          <li>대표 : 이남인</li>
-          <li>사업자등록번호 : 111-13-97163</li>
-          <li>업태 : 전문, 과학 및 기술서비스업</li>
-          <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
-          <li>주소 : 경기도 남양주시 두물로11번길 40-26</li>
-          <li>이메일 : info@kpac.store</li>
-          <li>대표전화 : 1866-1912</li>
-        </div>
+      <div class="f-cols">
+        <div class="f-col"><h4>바로가기</h4><a href="about.html">회사소개</a><a href="services.html">서비스</a><a href="cases.html">성공사례</a><a href="resources.html">무료자료</a></div>
+        <div class="f-col"><h4>상담 문의</h4><a href="tel:18661912">TEL. 1866-1912</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="contact.html">상담 신청서</a></div>
+        <div class="f-col"><h4>채널</h4><a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a></div>
+        <div class="f-col info"><h4>회사 정보</h4><ul><li>한국정책자문센터 (KPAC)</li><li>대표 : 이남인</li><li>사업자등록번호 : 111-13-97163</li><li>업태 : 전문, 과학 및 기술서비스업</li><li>종목 : 경영 컨설팅업 / 광고 대행업</li><li>주소 : 경기도 남양주시</li><li>이메일 : info@kpac.store</li><li>대표전화 : 1866-1912</li></ul></div>
       </div>
     </div>
-    <div class="footer-legal">
-      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
-      신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
+    <div class="f-legal">
+      <p><b>한국정책자문센터(KPAC)는 경영컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 신청을 자문·대행하는 컨설팅 서비스를 제공하며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다. 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
       <p><b>상담 안내</b> · 상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
-    <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, <b>승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</b></p>
+      <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, 승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</p>
     </div>
-    <div class="footer-bottom">
+    <div class="f-bottom">
       <span>© 2026 KPAC(한국정책자문센터). All rights reserved.</span>
-      <span class="footer-links"><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html">개인정보처리방침</a></span>
+      <span><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html"><b>개인정보처리방침</b></a></span>
     </div>
   </div>
 </footer>
+<nav class="m-bar" id="mBar" aria-label="빠른 상담">
+  <a href="tel:18661912" class="mb-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+  <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="mb-kakao"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카카오톡</a>
+  <a href="contact.html" class="mb-cta">상담 신청</a>
+</nav>
 
-<script src="main.js"></script>
+<script src="kpac.js"></script>
+
 </body>
 </html>

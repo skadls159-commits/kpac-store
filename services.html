@@ -2,462 +2,131 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>서비스 안내 | 한국정책자문센터 KPAC</title>
-<meta name="description" content="정책자금, R&D 연구개발자금, 경정청구, GP/VC 투자유치, M&A 매각자문, 개인투자조합, 특허·인증, 채권추심, 채무조정까지 — 한국정책자문센터의 8대 핵심 서비스.">
-<link rel="icon" href="img-kpac-logo-v.png">
-<link rel="stylesheet" href="main.css">
-<style>
-  .page-hero{background:radial-gradient(900px 480px at 88% -15%, rgba(61,107,255,.32), transparent 55%),
-    radial-gradient(700px 420px at 5% 100%, rgba(139,92,246,.25), transparent 55%),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 58px),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 84px),
-    linear-gradient(155deg, #0B1130 0%, #131A4D 55%, #1B245F 100%);color:#fff;padding:150px 0 70px;}
-  .page-hero .eyebrow{color:var(--blue-300);}
-  .page-hero .eyebrow::before{background:var(--blue-300);}
-  .page-hero h1{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.3;max-width:680px;color:#fff;}
-  .page-hero p{margin-top:18px;color:rgba(255,255,255,.65);font-size:16px;max-width:560px;line-height:1.8;}
-
-  .subnav{position:sticky;top:76px;z-index:40;background:#fff;border-bottom:1px solid var(--line);}
-  .subnav .wrap{display:flex;gap:2px;overflow-x:auto;}
-  .subnav a{padding:16px 18px;font-size:13.5px;font-weight:600;color:var(--ink-500);white-space:nowrap;border-bottom:2px solid transparent;}
-  .subnav a:hover{color:var(--navy-900);}
-
-  .svc-block{padding:88px 0;border-bottom:1px solid var(--line);}
-  .svc-block:nth-child(even){background:var(--paper);}
-  .svc-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px;flex-wrap:wrap;}
-  .svc-no{font-family:var(--font-en);font-size:52px;font-weight:700;color:var(--paper-2);line-height:1;}
-  .svc-block:nth-child(even) .svc-no{color:#e2e4ee;}
-  .svc-title h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;}
-  .svc-title p{margin-top:8px;color:var(--ink-500);font-size:14.5px;}
-
-  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
-  .feat-card{background:#fff;border:1px solid var(--line);border-left:3px solid transparent;padding:24px 20px;transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
-  .feat-card:hover{transform:translateY(-5px);box-shadow:0 16px 30px rgba(11,17,48,.10);}
-  .feat-grid .feat-card:nth-child(4n+1){border-left-color:var(--accent-blue);}
-  .feat-grid .feat-card:nth-child(4n+2){border-left-color:var(--accent-purple);}
-  .feat-grid .feat-card:nth-child(4n+3){border-left-color:var(--accent-teal);}
-  .feat-grid .feat-card:nth-child(4n+4){border-left-color:#e0862a;}
-  .feat-grid .feat-card:nth-child(4n+1) h4{color:var(--accent-blue);}
-  .feat-grid .feat-card:nth-child(4n+2) h4{color:var(--accent-purple);}
-  .feat-grid .feat-card:nth-child(4n+3) h4{color:var(--accent-teal);}
-  .feat-grid .feat-card:nth-child(4n+4) h4{color:#e0862a;}
-  .svc-block:nth-child(even) .feat-card{background:#fff;}
-  .feat-card h4{font-size:14.5px;font-weight:800;margin-bottom:8px;}
-  .feat-card p{font-size:13px;color:var(--ink-500);line-height:1.6;}
-
-  .stat-row{display:flex;gap:40px;margin-bottom:30px;flex-wrap:wrap;}
-  .stat-row .s{font-family:var(--font-en);font-weight:700;font-size:30px;color:var(--navy-900);}
-  .stat-row .l{font-size:12.5px;color:var(--ink-500);margin-top:4px;}
-
-  @media (max-width:920px){.feat-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:560px){.feat-grid{grid-template-columns:1fr;}}
-
-  .svc-flagship{background:var(--paper-2);color:var(--navy-900);padding-top:70px;border-top:1px solid var(--line);}
-  .svc-flagship .svc-no{font-size:15px;font-weight:800;color:var(--navy-900);letter-spacing:.1em;background:#fff;border:1px solid var(--navy-900);padding:6px 14px;border-radius:20px;}
-  .svc-flagship .svc-title h2{color:var(--navy-900);}
-  .svc-flagship .svc-title p{color:var(--ink-500);max-width:640px;}
-  .svc-flagship .stat-row .s{color:var(--navy-900);}
-  .svc-flagship .stat-row .l{color:var(--ink-500);}
-  .svc-flagship .feat-card{background:#fff;border:1px solid var(--line);}
-  .svc-flagship .feat-card h4{color:var(--navy-900);}
-  .svc-flagship .feat-card p{color:var(--ink-500);}
-
-  .svc-divider{background:var(--paper);text-align:center;padding:14px 0;border-bottom:1px solid var(--line);}
-  .svc-divider span{font-family:var(--font-en);font-style:normal;font-weight:600;font-size:12.5px;letter-spacing:.06em;color:var(--ink-500);}
-
-  /* --- advanced layer --- */
-  .subnav{backdrop-filter:blur(10px);background:rgba(255,255,255,.9);}
-  .subnav a{position:relative;}
-  .subnav a::after{content:"";position:absolute;left:18px;right:18px;bottom:0;height:2px;
-    background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple));
-    transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);}
-  .subnav a:hover::after{transform:scaleX(1);}
-
-  .svc-block{position:relative;}
-  .svc-block::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
-    background:linear-gradient(90deg,transparent,var(--accent-blue),var(--accent-purple),transparent);opacity:.4;}
-  .svc-no{transition:transform .3s var(--ease);}
-  .svc-top:hover .svc-no{transform:translateY(-2px);}
-
-  .stat-row{gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;}
-  .stat-row > div{flex:1;min-width:150px;padding:22px 24px;border-right:1px solid var(--line);}
-  .stat-row > div:last-child{border-right:none;}
-  .svc-flagship .stat-row{background:#fff;border-color:var(--line);}
-  .stat-row > div:nth-child(1) .s{color:var(--accent-blue);}
-  .stat-row > div:nth-child(2) .s{color:var(--accent-purple);}
-  .stat-row > div:nth-child(3) .s{color:var(--accent-teal);}
-
-  .feat-card{position:relative;overflow:hidden;}
-
-  #rnd{background:linear-gradient(180deg,#FCFDFF 0%,#F6F8FD 100%);}
-  #rnd .svc-no{font-size:15px;font-weight:800;color:#fff;letter-spacing:.06em;
-    background:linear-gradient(90deg,var(--accent-purple),var(--accent-blue));
-    padding:6px 14px;border-radius:20px;}
-  #rnd .stat-row > div:nth-child(1) .s{color:var(--accent-purple);}
-  #rnd .stat-row > div:nth-child(2) .s{color:var(--accent-blue);}
-  #rnd .stat-row > div:nth-child(3) .s{color:var(--accent-teal);}
-
-  @media (max-width:640px){.stat-row > div{border-right:none;border-bottom:1px solid var(--line);}}
-</style>
+<meta name="description" content="정책자금, R&D 자금, 사업 고도화(DX·AX), 경정청구, 투자유치, M&A, 특허·인증, 채무조정까지. 한국정책자문센터의 11개 서비스와 이용 안내를 확인하세요.">
+<meta name="theme-color" content="#0B1A44">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kpac.store/services.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="한국정책자문센터 KPAC">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://kpac.store/services.html">
+<meta property="og:title" content="서비스 안내 | 한국정책자문센터 KPAC">
+<meta property="og:description" content="정책자금, R&D 자금, 사업 고도화(DX·AX), 경정청구, 투자유치, M&A, 특허·인증, 채무조정까지. 한국정책자문센터의 11개 서비스와 이용 안내를 확인하세요.">
+<meta property="og:image" content="https://kpac.store/img-hero-building.jpg">
+<link rel="icon" href="img-kpac-mark-d.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="kpac.css">
 </head>
-<body>
-
-<header class="site-header">
+<body class="sub">
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+<header class="header dark" id="top">
   <div class="wrap nav">
-    <a href="index.html" class="nav-logo">
-      <img src="img-kpac-logo-v.png" alt="KPAC" width="34" height="34">
-      <span class="nav-logo-text">한국정책자문센터<small>KOREA POLICY ADVISORY CENTER</small></span>
+    <a href="index.html" class="logo" aria-label="한국정책자문센터 홈">
+      <img class="logo-d" src="img-kpac-mark-d.png" alt="" width="34" height="34"><img class="logo-l" src="img-kpac-mark-l.png" alt="" width="34" height="34">
+      <span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="index.html">홈</a>
-      <a href="services.html#fund">정책자금</a>
-      <a href="about.html">회사소개</a>
-      <a href="services.html" class="active">서비스</a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="index.html#practice">컨설팅 영역</a>
+      <a href="services.html" aria-current="page">서비스</a>
       <a href="cases.html">성공사례</a>
       <a href="resources.html">무료자료</a>
-      <a href="contact.html">상담문의</a>
-      <a href="contact.html" class="nav-cta">무료 상담 신청 <span class="btn-arrow">→</span></a>
+      <a href="about.html">회사소개</a>
     </nav>
-    <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+    <div class="nav-right">
+      <a href="tel:18661912" class="nav-tel"><small>상담전화</small>1866-1912</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">상담 신청</a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="m-menu" id="mMenu">
+    <a href="index.html#practice">컨설팅 영역</a>
+    <a href="services.html">서비스</a>
+    <a href="cases.html">성공사례</a>
+    <a href="resources.html">무료자료</a>
+    <a href="about.html">회사소개</a>
+    <a href="index.html#faq">자주 묻는 질문</a>
+    <a href="contact.html" class="btn btn-primary">상담 신청</a>
   </div>
 </header>
-
-<section class="page-hero">
+<main>
+<section class="hero sub-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow">CORE SERVICES</div>
-    <h1>기업 성장의 모든 국면을<br>커버하는 8개의 전문 영역</h1>
-    <p>정책자금 발굴부터 세무 환급, 투자유치, M&amp;A, 채무조정까지 — 사업 단계별로 필요한 전문성을 한 곳에서 제공합니다.</p>
+    <nav class="crumb" aria-label="현재 위치"><a href="index.html">홈</a><span>/</span><span>서비스 안내</span></nav>
+    <p class="label">서비스 안내</p>
+    <h1>기업 성장의 모든 국면을<br>커버하는 전문 영역</h1>
+    <p class="hero-sub">정책자금 발굴부터 세무 환급, 투자유치, M&amp;A, 채무조정까지. 사업 단계별로 필요한 전문성을 한 곳에서 제공합니다.</p>
   </div>
 </section>
 
-<nav class="subnav">
+<nav class="jump" aria-label="서비스 바로가기"><div class="wrap">
+<a href="#fund">정책자금</a><a href="#rnd">R&amp;D 자금</a><a href="#dx">사업 고도화 · DX</a><a href="#ax">AI 전환 · AX</a><a href="#tax">경정청구</a><a href="#invest">투자유치</a><a href="#mna">M&amp;A</a><a href="#club">개인투자조합</a><a href="#cert">특허 · 인증</a><a href="#debt">채권추심</a><a href="#legal">채무조정 · 법률</a><a href="#terms">이용 안내</a>
+</div></nav>
+<section class="svc" id="fund"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">01</span><div><span class="tag">Main · Policy Finance</span><h2>정책자금 지원</h2><p>예비창업부터 재도약까지, 기관별 심사 기준과 한도를 대조해 해당되는 자금을 찾아드립니다.</p></div></div><div class="svc-body"><div class="kfacts reveal"><div><b>4조 4,313억</b><span>2026년 정책자금 예산 규모 (중소벤처기업부, 2025.12.22 발표)</span></div><div><b>5개 기관</b><span>중진공 · 기보 · 신보 · 소진공 · 지역신보</span></div><div><b>17개 시도</b><span>지자체별 별도 예산 지원사업 함께 검토</span></div></div><div class="items"><div class="item reveal"><b>예비창업패키지</b><span>사업자등록 전 예비창업자를 위한 초기 자금</span></div><div class="item reveal"><b>청년창업사관학교</b><span>만 39세 이하 청년창업자 특화 육성자금</span></div><div class="item reveal"><b>초기창업패키지</b><span>업력 3년 이내 초기기업 사업화 자금</span></div><div class="item reveal"><b>혁신창업사업화자금</b><span>업력 7년 미만 기업 대상 창업자금</span></div><div class="item reveal"><b>중진공 · 기보</b><span>중소벤처기업진흥공단, 기술보증기금 등 정책금융기관 연계</span></div><div class="item reveal"><b>신용보증재단</b><span>지역 신용보증재단 보증서 발급 연계</span></div><div class="item reveal"><b>지역특화자금</b><span>지자체별 맞춤 지원사업 매칭</span></div><div class="item reveal"><b>수출 · 마케팅</b><span>KOTRA, 무역보험공사 연계 지원</span></div><div class="item reveal"><b>긴급경영안정자금</b><span>일시적 경영난 기업 대상 안정화 자금</span></div><div class="item reveal"><b>재도약 지원자금</b><span>사업 재편 · 회복기 기업 대상 지원</span></div><div class="item reveal"><b>중소기업 창업상담</b><span>업종 · 매출 규모별 맞춤 창업 컨설팅</span></div></div></div></div></section>
+<section class="svc" id="rnd"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">02</span><div><span class="tag">R&amp;D</span><h2>R&amp;D 연구개발자금</h2><p>갚지 않아도 되는 출연금 중심. 기술개발 과제 선정부터 연구소 설립, 사후 정산까지 지원합니다.</p></div></div><div class="svc-body"><div class="kfacts reveal"><div><b>최대 80%</b><span>정부 출연 비율 (과제 · 기업규모별 상이)</span></div><div><b>출연금</b><span>융자가 아닌 미상환 지원금 방식</span></div><div><b>가점 연계</b><span>연구소 · 벤처 · 이노비즈 인증 동시 설계</span></div></div><div class="items"><div class="item reveal"><b>중소기업 기술혁신개발</b><span>시장확대 · 수출지향형 등 중기부 대표 R&amp;D 사업</span></div><div class="item reveal"><b>창업성장기술개발</b><span>디딤돌 · 전략형 · TIPS 등 창업기업 전용 과제</span></div><div class="item reveal"><b>산업부 · IITP 과제</b><span>소부장, ICT, AI 등 부처별 전략 R&amp;D 과제</span></div><div class="item reveal"><b>지자체 R&amp;D</b><span>테크노파크 · 지역혁신 과제 매칭</span></div><div class="item reveal"><b>기업부설연구소 설립</b><span>KOITA 신고 대행, 연구소 요건 충족 컨설팅</span></div><div class="item reveal"><b>연구개발 세액공제</b><span>인건비 · 재료비 기준 세액공제 적용 검토</span></div><div class="item reveal"><b>사업계획서 작성</b><span>기술성 · 사업성 평가 기준에 맞춘 제안서 구성</span></div><div class="item reveal"><b>선정 후 사후관리</b><span>중간 · 최종 평가, 연구비 정산까지 동행</span></div></div><p class="svc-note">※ 출연 비율 · 지원 한도는 과제 유형, 기업 규모, 공고 연도에 따라 달라지며 최종 선정 결과를 보장하지 않습니다.</p></div></div></section>
+<section class="svc" id="dx"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">03</span><div><span class="tag">Digital Transformation</span><h2>사업 고도화 · DX</h2><p>생산 · 영업 · 관리 업무를 디지털로 정비하고, 들어가는 비용은 바우처와 지원사업으로 연결합니다.</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>스마트공장 구축</b><span>제조 현장의 설비 · 공정 데이터를 연결하는 구축 사업 연계</span></div><div class="item reveal"><b>데이터 · 클라우드 바우처</b><span>데이터 구매 · 가공, 클라우드 전환 비용 지원사업 연계</span></div><div class="item reveal"><b>업무 프로세스 정비</b><span>영업 · 고객 · 회계 관리 흐름을 정리하고 도구를 정합니다</span></div></div></div></div></section>
+<section class="svc" id="ax"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">04</span><div><span class="tag">AI Transformation</span><h2>AI 전환 · AX</h2><p>어느 업무에 AI를 붙여야 매출과 비용이 달라지는지부터 정합니다. 도입 설계와 지원사업 연계를 함께 진행합니다.</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>업무별 AI 도입 설계</b><span>반복 업무를 찾아 AI로 줄일 수 있는 범위를 정리합니다</span></div><div class="item reveal"><b>AI 관련 지원사업 연계</b><span>도입 비용을 줄일 수 있는 공고를 찾아 신청을 돕습니다</span></div><div class="item reveal"><b>데이터 기반 의사결정</b><span>흩어진 영업 · 재무 데이터를 한 화면에서 보도록 정리합니다</span></div></div></div></div></section>
+<div class="sub-group">
+<div class="wrap sub-group-head"><div class="head reveal" style="margin-bottom:0"><p class="label">부가 서비스</p><h2>정책자금과 함께,<br>필요할 때 이어지는 부가 서비스</h2></div></div>
+<section class="svc" id="tax"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">05</span><div><span class="tag">Tax Refund</span><h2>경정청구 세금환급</h2><p>이미 낸 세금, 다시 받아올 수 있습니다.</p></div></div><div class="svc-body"><div class="chips reveal"><span>5년 소급 적용</span><span>사전 세무 검토 무료</span></div><ol class="steps4 reveal"><li><small>1단계</small><b>무료 세무 검토</b><span>과거 세무 신고 내역 무료 진단</span></li><li><small>2단계</small><b>과납세액 분석</b><span>최대 5년치 소급 환급 가능성 분석</span></li><li><small>3단계</small><b>경정청구 제출</b><span>전담팀이 청구 서류 작성 및 제출 대행</span></li><li><small>4단계</small><b>환급 완료</b><span>환급 완료까지 전 과정 직접 처리</span></li></ol></div></div></section>
+<section class="svc" id="invest"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">06</span><div><span class="tag">Investment</span><h2>GP · VC 투자유치</h2><p>벤처캐피탈 · 조합 투자 연결 자문</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>네트워크 연결</b><span>국내외 VC · PE 네트워크 연결</span></div><div class="item reveal"><b>IR 자료 작성</b><span>투자 IR 자료 작성 및 피칭 지원</span></div><div class="item reveal"><b>Term Sheet 협상</b><span>Term Sheet 검토 및 협상 지원</span></div><div class="item reveal"><b>라운드 전략</b><span>시리즈 A~C 라운드 전략 수립</span></div></div></div></div></section>
+<section class="svc" id="mna"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">07</span><div><span class="tag">M&amp;A</span><h2>M&amp;A 매각자문</h2><p>기업 매각 · 인수합병 전략 및 딜 클로징</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>가치 평가</b><span>기업 가치 평가 및 매각 전략 수립</span></div><div class="item reveal"><b>인수후보 매칭</b><span>인수후보 발굴 및 매칭</span></div><div class="item reveal"><b>계약 검토</b><span>LOI · SPA 계약 검토 및 협상</span></div><div class="item reveal"><b>딜 클로징</b><span>딜 클로징까지 전 과정 동행</span></div></div></div></div></section>
+<section class="svc" id="club"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">08</span><div><span class="tag">Angel Club</span><h2>개인투자조합</h2><p>조합 결성 · 운영, 세제혜택 연결</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>법적 구조 설계</b><span>조합 설립 법적 구조 설계</span></div><div class="item reveal"><b>출자자 모집</b><span>출자자(LP) 모집 지원</span></div><div class="item reveal"><b>세제혜택 안내</b><span>소득공제 세제혜택 안내</span></div><div class="item reveal"><b>포트폴리오 관리</b><span>포트폴리오 관리 및 정산</span></div></div></div></div></section>
+<section class="svc" id="cert"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">09</span><div><span class="tag">Certification &amp; IP</span><h2>특허 · 인증 취득</h2><p>특허 · ISO · 벤처인증으로 기업가치를 높입니다.</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>특허 출원</b><span>기술 특허 출원 및 등록 지원</span></div><div class="item reveal"><b>ISO 인증</b><span>ISO 품질 · 환경 경영시스템 인증</span></div><div class="item reveal"><b>벤처 · 이노비즈</b><span>벤처기업, 이노비즈, 메인비즈 인증</span></div><div class="item reveal"><b>기업 가치 제고</b><span>인증 기반 정책자금 · 투자 연계</span></div></div></div></div></section>
+<section class="svc" id="debt"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">10</span><div><span class="tag">Collection</span><h2>채권추심 지원</h2><p>미수금 · 부실채권, 법적 회수 절차를 전담합니다.</p></div></div><div class="svc-body"><div class="items"><div class="item reveal"><b>내용증명</b><span>내용증명 · 지급명령 발송</span></div><div class="item reveal"><b>소송 · 강제집행</b><span>민사소송 · 강제집행 대행</span></div><div class="item reveal"><b>부실채권 연계</b><span>부실채권 매입 · 추심 연계</span></div><div class="item reveal"><b>분쟁 해결</b><span>기업 간 채권 분쟁 해결</span></div></div></div></div></section>
+<section class="svc" id="legal"><div class="wrap"><div class="svc-head reveal"><span class="svc-no num">11</span><div><span class="tag">Debt Restructuring</span><h2>채무조정 · 법률</h2><p>재무 위기, 법적 보호 아래 정상화합니다.</p></div></div><div class="svc-body"><div class="chips reveal"><span>최대 90% 채무 탕감 가능</span><span>초기 법률상담 무료</span></div><div class="items"><div class="item reveal"><b>회생 안내</b><span>개인회생 · 법인회생 안내</span></div><div class="item reveal"><b>채무 재조정</b><span>워크아웃 · 협약 채무 재조정</span></div><div class="item reveal"><b>원금 감면 협의</b><span>금융기관 원금 감면 협의</span></div><div class="item reveal"><b>법적 보호</b><span>전문 법무팀의 법적 보호 지원</span></div></div></div></div></section>
+</div>
+<section class="section" id="terms" style="scroll-margin-top:130px"><div class="wrap">
+<div class="head reveal"><p class="label">서비스 이용 안내</p><h2>서비스 이용 안내를<br>먼저 공개합니다</h2><p>컨설팅을 맡기기 전에 무엇을 대신해 드리고, 무엇은 해 드릴 수 없으며, 비용이 언제 얼마나 발생하는지 정확히 아셔야 합니다.</p></div>
+<div class="terms reveal">
+<article><small>01 · WHAT WE DO</small><h3>저희가 하는 일</h3><p>기업의 재무 상태와 사업 현황을 진단하고, 신청 가능한 정부 · 공공 정책자금과 지원사업을 찾아 신청 전략 수립 · 사업계획서 작성 · 서류 준비 · 심사 대응을 자문 · 대행합니다. 정책자금 외에 경정청구, 투자유치, M&amp;A, 채무조정, 법률 자문도 함께 제공합니다.</p></article>
+<article><small>02 · HOW IT WORKS</small><h3>승인 절차 안내</h3><p>정책자금의 승인 여부와 한도는 각 운용기관의 자체 심사 기준에 따라 결정됩니다. 저희는 기업의 재무 상태와 요건을 분석해 통과 가능성이 높은 경로를 설계하고 서류를 준비하지만, 최종 결과를 보장해 드릴 수는 없습니다.</p></article>
+<article><small>03 · PROCESS</small><h3>비용과 계약</h3><p>상담과 사전 진단에는 비용이 발생하지 않습니다. 계약 전 어떠한 비용도 청구하지 않으며, 진행 여부는 진단 결과를 확인하신 뒤 결정하시면 됩니다. 계약 조건은 기업 규모와 진행 범위에 따라 달라지므로 상담 시 개별적으로 안내드립니다.</p></article>
+</div>
+<div class="terms-notes reveal"><p>상담과 사전 진단은 무료입니다. 가능 여부를 확인해 드리는 단계까지는 어떠한 비용도 청구하지 않으며, 진행 여부는 진단 결과를 보신 뒤 대표님이 결정하십니다.</p><p>계약 전 구두로만 비용을 안내하는 일은 없으며, 모든 비용은 서면 계약서에 기재됩니다.</p><p>당사가 대상으로 하는 정책자금 운용기관 · 중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 전국 17개 지역신용보증재단, 각 지방자치단체 및 중앙부처 지원사업. 해당 기관들은 당사와 자본 · 지분 관계가 없는 독립된 공공기관이며, 당사는 각 기관의 대리점 · 위탁기관이 아닙니다.</p><p>사업자 정보 · 상호 한국정책자문센터 · 대표 이남인 · 사업자등록번호 111-13-97163 · 업태 전문, 과학 및 기술서비스업 · 종목 경영 컨설팅업, 광고 대행업 · 주소 경기도 남양주시 두물로11번길 40-26 · 대표전화 1866-1912 · 이메일 info@kpac.store</p></div>
+</div></section>
+<section class="cta-band"><div class="wrap"><div><h2>어떤 서비스가 필요한지 모르셔도 괜찮습니다</h2><p>무료 초기 상담을 통해 현재 상황에 맞는 방안을 진단해 드립니다.</p></div><div class="acts"><a href="tel:18661912" class="tel num">1866-1912</a><a href="contact.html" class="btn btn-white">무료 진단 신청</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="btn btn-outline-w">카카오톡 상담</a></div></div></section>
+</main>
+<section class="notice">
   <div class="wrap">
-    <a href="#fund">정책자금</a>
-    <a href="#rnd">R&amp;D 자금</a>
-    <a href="#tax">경정청구</a>
-    <a href="#invest">투자유치</a>
-    <a href="#ma">M&amp;A</a>
-    <a href="#club">개인투자조합</a>
-    <a href="#patent">특허·인증</a>
-    <a href="#debt">채권추심</a>
-    <a href="#legal">채무조정</a>
-  </div>
-</nav>
-
-<!-- 01 정책자금 (MAIN) -->
-<section class="svc-block svc-flagship" id="fund">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">MAIN</span></div>
-      <div class="svc-title">
-        <h2>정책자금 지원</h2>
-        <p>예비창업부터 재도약까지, 기관별 심사 기준과 한도를 대조해 해당되는 자금을 찾아드립니다</p>
-      </div>
-    </div>
-    <div class="stat-row reveal">
-      <div><div class="s">4조 4,313억</div><div class="l">2026년 정책자금 예산 규모</div></div>
-      <div><div class="s">92%</div><div class="l">KPAC 평균 승인률</div></div>
-      <div><div class="s">5개 기관</div><div class="l">중진공·기보·신보·소진공·지역신보</div></div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>예비창업패키지</h4><p>사업자등록 전 예비창업자를 위한 초기 자금</p></div>
-      <div class="feat-card"><h4>청년창업사관학교</h4><p>만 39세 이하 청년창업자 특화 육성자금</p></div>
-      <div class="feat-card"><h4>초기창업패키지</h4><p>업력 3년 이내 초기기업 사업화 자금</p></div>
-      <div class="feat-card"><h4>혁신창업사업화자금</h4><p>업력 7년 미만 기업 대상 창업자금</p></div>
-      <div class="feat-card"><h4>중진공·기보</h4><p>중소기업진흥공단, 기술보증기금 등 정책금융기관 연계</p></div>
-      <div class="feat-card"><h4>신용보증재단(신보)</h4><p>지역 신용보증재단 보증서 발급 연계</p></div>
-      <div class="feat-card"><h4>지역특화자금</h4><p>지자체별 맞춤 지원사업 매칭</p></div>
-      <div class="feat-card"><h4>수출·마케팅</h4><p>KOTRA, 무역보험공사 연계 지원</p></div>
-      <div class="feat-card"><h4>긴급경영안정자금</h4><p>일시적 경영난 기업 대상 안정화 자금</p></div>
-      <div class="feat-card"><h4>재도약 지원자금</h4><p>사업 재편·회복기 기업 대상 지원</p></div>
-      <div class="feat-card"><h4>중소기업 창업상담</h4><p>업종·매출 규모별 맞춤 창업 컨설팅</p></div>
-    </div>
+    <p><b>한국정책자문센터(KPAC)는 경영컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 신청을 자문·대행하며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다. 승인 여부는 각 운용기관의 심사로 결정되며 당사가 보장하지 않습니다. 상담과 사전 진단은 무료이며, 계약 전에는 비용을 청구하지 않습니다. <a href="services.html#terms">서비스 이용 안내</a></p>
   </div>
 </section>
-
-
-<!-- R&D 연구개발자금 -->
-<section class="svc-block" id="rnd">
+<footer class="footer">
   <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">R&amp;D</span></div>
-      <div class="svc-title">
-        <h2>R&amp;D 연구개발자금</h2>
-        <p>갚지 않아도 되는 출연금 중심 — 기술개발 과제 선정부터 연구소 설립, 사후 정산까지 지원합니다</p>
+    <div class="f-top">
+      <div class="f-brand">
+        <a href="#top" class="logo"><img src="img-kpac-mark-l.png" alt="" width="34" height="34"><span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span></a>
+        <p>정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전반을 자문합니다.</p>
+      </div>
+      <div class="f-cols">
+        <div class="f-col"><h4>바로가기</h4><a href="about.html">회사소개</a><a href="services.html">서비스</a><a href="cases.html">성공사례</a><a href="resources.html">무료자료</a></div>
+        <div class="f-col"><h4>상담 문의</h4><a href="tel:18661912">TEL. 1866-1912</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="contact.html">상담 신청서</a></div>
+        <div class="f-col"><h4>채널</h4><a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a></div>
+        <div class="f-col info"><h4>회사 정보</h4><ul><li>한국정책자문센터 (KPAC)</li><li>대표 : 이남인</li><li>사업자등록번호 : 111-13-97163</li><li>업태 : 전문, 과학 및 기술서비스업</li><li>종목 : 경영 컨설팅업 / 광고 대행업</li><li>주소 : 경기도 남양주시</li><li>이메일 : info@kpac.store</li><li>대표전화 : 1866-1912</li></ul></div>
       </div>
     </div>
-    <div class="stat-row reveal">
-      <div><div class="s">최대 80%</div><div class="l">정부 출연 비율 (과제·기업규모별 상이)</div></div>
-      <div><div class="s">출연금</div><div class="l">융자가 아닌 미상환 지원금 방식</div></div>
-      <div><div class="s">가점 연계</div><div class="l">연구소·벤처·이노비즈 인증 동시 설계</div></div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>중소기업 기술혁신개발</h4><p>시장확대·수출지향형 등 중기부 대표 R&amp;D 사업</p></div>
-      <div class="feat-card"><h4>창업성장기술개발</h4><p>디딤돌·전략형·TIPS 등 창업기업 전용 과제</p></div>
-      <div class="feat-card"><h4>산업부·IITP 과제</h4><p>소부장, ICT, AI 등 부처별 전략 R&amp;D 과제</p></div>
-      <div class="feat-card"><h4>지자체 R&amp;D</h4><p>테크노파크·지역혁신 과제 매칭</p></div>
-      <div class="feat-card"><h4>기업부설연구소 설립</h4><p>KOITA 신고 대행, 연구소 요건 충족 컨설팅</p></div>
-      <div class="feat-card"><h4>연구개발 세액공제</h4><p>인건비·재료비 기준 세액공제 적용 검토</p></div>
-      <div class="feat-card"><h4>사업계획서 작성</h4><p>기술성·사업성 평가 기준에 맞춘 제안서 구성</p></div>
-      <div class="feat-card"><h4>선정 후 사후관리</h4><p>중간·최종 평가, 연구비 정산까지 동행</p></div>
-    </div>
-    <p style="margin-top:20px;font-size:12px;color:var(--ink-400);line-height:1.7;">
-      ※ 출연 비율·지원 한도는 과제 유형, 기업 규모, 공고 연도에 따라 달라지며 최종 선정 결과를 보장하지 않습니다.
-    </p>
-  </div>
-</section>
-
-<div class="svc-divider"><span>정책자금과 함께, 필요할 때 이어지는 부가 서비스</span></div>
-
-<!-- 02 경정청구 -->
-<section class="svc-block" id="tax">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">02</span></div>
-      <div class="svc-title">
-        <h2>경정청구 세금환급</h2>
-        <p>이미 낸 세금, 다시 받아올 수 있습니다</p>
-      </div>
-    </div>
-    <div class="stat-row reveal">
-      <div><div class="s">5년</div><div class="l">소급 적용</div></div>
-      <div><div class="s">무료</div><div class="l">사전 세무 검토</div></div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>1단계 · 무료 세무 검토</h4><p>과거 세무 신고 내여 무료 진단</p></div>
-      <div class="feat-card"><h4>2단계 · 과납세액 분석</h4><p>최대 5년치 소급 환급 가능성 분석</p></div>
-      <div class="feat-card"><h4>3단계 · 경정청구 제출</h4><p>전담팀이 청구 서류 작성 및 제출 대행</p></div>
-      <div class="feat-card"><h4>4단계 · 환급 완료</h4><p>환급 완료까지 전 과정 직접 처리</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 03 투자유치 -->
-<section class="svc-block" id="invest">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">03</span></div>
-      <div class="svc-title">
-        <h2>GP·VC 투자유치</h2>
-        <p>벤처캐피탈·조합 투자 연결 자문</p>
-      </div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>네트워크 연결</h4><p>국내외 VC·PE 네트워크 연결</p></div>
-      <div class="feat-card"><h4>IR 자료 작성</h4><p>투자 IR 자료 작성 및 피칭 지원</p></div>
-      <div class="feat-card"><h4>Term Sheet 협상</h4><p>Term Sheet 검토 및 협상 지원</p></div>
-      <div class="feat-card"><h4>라운드 전략</h4><p>시리즈 A~C 라운드 전략 수립</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 M&A -->
-<section class="svc-block" id="ma">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">04</span></div>
-      <div class="svc-title">
-        <h2>M&amp;A 매각자문</h2>
-        <p>기업 매각·인수합병 전략 및 딜 클로징</p>
-      </div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>가치 평가</h4><p>기업 가치 평가 및 매각 전략 수립</p></div>
-      <div class="feat-card"><h4>인수후보 매칭</h4><p>인수후보 발굴 및 매칭</p></div>
-      <div class="feat-card"><h4>계약 검토</h4><p>LOI·SPA 계약 검토 및 협상</p></div>
-      <div class="feat-card"><h4>딜 클로징</h4><p>딜 클로징까지 전 과정 동행</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 개인투자조합 -->
-<section class="svc-block" id="club">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">05</span></div>
-      <div class="svc-title">
-        <h2>개인투자조합</h2>
-        <p>조합 결성·운영, 세제혜택 연결</p>
-      </div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>법적 구조 설계</h4><p>조합 설립 법적 구조 설계</p></div>
-      <div class="feat-card"><h4>출자자 모집</h4><p>출자자(LP) 모집 지원</p></div>
-      <div class="feat-card"><h4>세제혜택 안내</h4><p>소득공제 세제혜택 안내</p></div>
-      <div class="feat-card"><h4>포트폴리오 관리</h4><p>포트폴리오 관리 및 정산</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 특허·인증 -->
-<section class="svc-block" id="patent">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">06</span></div>
-      <div class="svc-title">
-        <h2>특허·인증 취득</h2>
-        <p>특허·ISO·벤처인증으로 기업가치를 높입니다</p>
-      </div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>특허 출원</h4><p>기술 특허 출원 및 등록 지원</p></div>
-      <div class="feat-card"><h4>ISO 인증</h4><p>ISO 품질·환경 경영시스템 인증</p></div>
-      <div class="feat-card"><h4>벤처·이노비즈</h4><p>벤처기업, 이노비즈, 메인비즈 인증</p></div>
-      <div class="feat-card"><h4>기업 가치 제고</h4><p>인증 기반 정책자금·투자 연계</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 채권추심 -->
-<section class="svc-block" id="debt">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">07</span></div>
-      <div class="svc-title">
-        <h2>채권추심 지원</h2>
-        <p>미수금·부실채권, 법적 회수 절차를 전담합니다</p>
-      </div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>내용증명</h4><p>내용증명·지급명령 발송</p></div>
-      <div class="feat-card"><h4>소송·강제집행</h4><p>민사소송·강제집행 대행</p></div>
-      <div class="feat-card"><h4>부실채권 연계</h4><p>부실채권 매입·추심 연계</p></div>
-      <div class="feat-card"><h4>분쟁 해결</h4><p>기업 간 채권 분쟁 해결</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 08 채무조정·법률 -->
-<section class="svc-block" id="legal" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="svc-top reveal">
-      <div><span class="svc-no">08</span></div>
-      <div class="svc-title">
-        <h2>채무조정·법률</h2>
-        <p>재무 위기, 법적 보호 아래 정상화합니다</p>
-      </div>
-    </div>
-    <div class="stat-row reveal">
-      <div><div class="s">최대 90%</div><div class="l">채무 탕감 가능</div></div>
-      <div><div class="s">무료</div><div class="l">초기 법률상담 제공</div></div>
-    </div>
-    <div class="feat-grid reveal">
-      <div class="feat-card"><h4>회생 안내</h4><p>개인회생·법인회생 안내</p></div>
-      <div class="feat-card"><h4>채무 재조정</h4><p>워크아웃·협약 채무 재조정</p></div>
-      <div class="feat-card"><h4>원금 감면 협의</h4><p>금융기관 원금 감면 협의</p></div>
-      <div class="feat-card"><h4>법적 보호</h4><p>전문 법무팀의 법적 보호 지원</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 서비스 이용 안내 (법적 고지) ===== -->
-<section class="section section-paper" id="terms">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">TERMS &amp; FEES</div>
-      <h2>서비스 이용 안내를<br>먼저 공개합니다</h2>
-      <p>컨설팅을 맡기기 전에 무엇을 대신해 드리고, 무엇은 해 드릴 수 없으며, 비용이 언제 얼마나 발생하는지 정확히 아셔야 합니다.</p>
-    </div>
-
-    <div class="terms-grid reveal">
-      <div class="terms-card">
-        <div class="tno">01 · WHAT WE DO</div>
-        <h3>저희가 하는 일</h3>
-        <p>기업의 재무 상태와 사업 현황을 진단하고, 신청 가능한 정부·공공 정책자금과 지원사업을 찾아 <b>신청 전략 수립·사업계획서 작성·서류 준비·심사 대응</b>을 자문·대행합니다. 정책자금 외에 경정청구, 투자유치, M&amp;A, 채무조정, 법률 자문도 함께 제공합니다.</p>
-      </div>
-      <div class="terms-card">
-        <div class="tno">02 · HOW IT WORKS</div>
-        <h3>승인 절차 안내</h3>
-        <p>정책자금의 <b>승인 여부와 한도는 각 운용기관의 자체 심사 기준</b>에 따라 결정됩니다. 저희는 기업의 재무 상태와 요건을 분석해 통과 가능성이 높은 경로를 설계하고 서류를 준비하지만, 최종 결과를 보장해 드릴 수는 없습니다.</p>
-      </div>
-      <div class="terms-card">
-        <div class="tno">03 · PROCESS</div>
-        <h3>비용과 계약</h3>
-        <div class="big">상담·사전 진단 무료</div>
-        <p>상담과 사전 진단에는 비용이 발생하지 않습니다. <b>계약 전 어떠한 비용도 청구하지 않으며</b>, 진행 여부는 진단 결과를 확인하신 뒤 결정하시면 됩니다. 계약 조건은 기업 규모와 진행 범위에 따라 달라지므로 상담 시 개별적으로 안내드립니다.</p>
-      </div>
-    </div>
-
-    <div class="terms-note reveal">
-      <b>상담과 사전 진단은 무료입니다.</b> 가능 여부를 확인해 드리는 단계까지는 어떠한 비용도 청구하지 않으며, 진행 여부는 진단 결과를 보신 뒤 대표님이 결정하십니다.
-      계약 전 구두로만 비용을 안내하는 일은 없으며, 모든 비용은 서면 계약서에 기재됩니다.
-    </div>
-    <div class="terms-note reveal">
-      <b>당사가 대상으로 하는 정책자금 운용기관</b> · 중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 전국 17개 지역신용보증재단, 각 지방자치단체 및 중앙부처 지원사업.
-      해당 기관들은 당사와 자본·지분 관계가 없는 독립된 공공기관이며, 당사는 각 기관의 대리점·위탁기관이 아닙니다.
-    </div>
-    <div class="terms-note reveal">
-      <b>사업자 정보</b> · 상호 한국정책자문센터 · 대표 이남인 · 사업자등록번호 111-13-97163 · 업태 전문, 과학 및 기술서비스업 · 종목 경영 컨설팅업, 광고 대행업 ·
-      주소 경기도 남양주시 두물로11번길 40-26 · 대표전화 1866-1912 · 이메일 info@kpac.store
-    </div>
-  </div>
-</section>
-
-<section class="section tac">
-  <div class="wrap reveal">
-    <div class="eyebrow" style="justify-content:center;">GET STARTED</div>
-    <h2 style="font-size:clamp(24px,3vw,34px);font-weight:800;">어떤 서비스가 필요한지 모르셔도 괜찮습니다</h2>
-    <p style="margin-top:14px;color:var(--ink-500);">무료 초기 상담을 통해 현재 상황에 맞는 최적의 방안을 진단해드립니다.</p>
-    <div class="hero-cta tac" style="justify-content:center;margin-top:30px;">
-      <a href="contact.html" class="btn btn-navy">1:1 진단·상담 신청 <span class="btn-arrow">→</span></a>
-      <a href="tel:18661912" class="btn btn-outline-dark">1866-1912</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="img-kpac-logo-h.png" alt="KPAC 로고" style="filter:brightness(0) invert(1);">
-        <p>한국정책자문센터는 정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전 과정을 함께하는 종합 경영자문 기관입니다.</p>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>바로가기</h4>
-          <a href="about.html">회사소개</a>
-          <a href="services.html">서비스</a>
-          <a href="cases.html">성공사례</a>
-          <a href="resources.html">무료자료</a>
-        </div>
-        <div class="footer-col">
-          <h4>상담 문의</h4>
-          <a href="tel:18661912">TEL. 1866-1912</a>
-          <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a>
-          <a href="contact.html">1:1 진단 신청서</a>
-        </div>
-        <div class="footer-col">
-          <h4>채널</h4>
-          <a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a>
-          <a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener">인스타그램 @kpac_ceo</a>
-        </div>
-        <div class="footer-col">
-          <h4>회사 정보</h4>
-          <li>한국정책자문센터 (KPAC)</li>
-          <li>대표 : 이남인</li>
-          <li>사업자등록번호 : 111-13-97163</li>
-          <li>업태 : 전문, 과학 및 기술서비스업</li>
-          <li>종목 : 경영 컨설팅업 / 광고 대행업</li>
-          <li>주소 : 경기도 남양주시 두물로11번길 40-26</li>
-          <li>이메일 : info@kpac.store</li>
-          <li>대표전화 : 1866-1912</li>
-        </div>
-      </div>
-    </div>
-    <div class="footer-legal">
-      <p><b>한국정책자문센터(KPAC)는 경영 컨설팅 기업입니다.</b> 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단,
-      신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
+    <div class="f-legal">
+      <p><b>한국정책자문센터(KPAC)는 경영컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업 신청을 자문·대행하는 컨설팅 서비스를 제공하며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다. 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
       <p><b>상담 안내</b> · 상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
-    <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, <b>승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</b></p>
+      <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, 승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</p>
     </div>
-    <div class="footer-bottom">
+    <div class="f-bottom">
       <span>© 2026 KPAC(한국정책자문센터). All rights reserved.</span>
-      <span class="footer-links"><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html">개인정보처리방침</a></span>
+      <span><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html"><b>개인정보처리방침</b></a></span>
     </div>
   </div>
 </footer>
+<nav class="m-bar" id="mBar" aria-label="빠른 상담">
+  <a href="tel:18661912" class="mb-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+  <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="mb-kakao"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카카오톡</a>
+  <a href="contact.html" class="mb-cta">상담 신청</a>
+</nav>
 
-<script src="main.js"></script>
+<script src="kpac.js"></script>
+
 </body>
 </html>
