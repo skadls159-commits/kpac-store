@@ -33,11 +33,11 @@
       var p=qs(); p.forEach(function(v,key){ if(!u.searchParams.get(key)) u.searchParams.set(key,v); }); a.href=u.toString(); }catch(e){} } }
   /* 구글 태그: 없으면 불러오고(링커·url_passthrough), 있으면 링커만 */
   window.dataLayer=window.dataLayer||[]; if(typeof window.gtag!=='function'){ window.gtag=function(){dataLayer.push(arguments);}; }
-  var hasTag=!!document.querySelector('script[src*="googletagmanager.com/gtag/js?id='+AW+'"]');
   gtag('set','linker',{domains:['kpac.store','skadls159-commits.github.io'],accept_incoming:true});
-  if(!hasTag){ var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+AW; document.head.appendChild(s); gtag('js',new Date()); gtag('config',AW,{url_passthrough:true}); }
-  var pageHasConv=document.documentElement.innerHTML.indexOf('iDYiCNiihN4cEJrqtp5D')>=0 && !/kpac-attr-own-conv/.test(document.documentElement.className);
-  window.KPAC_ATTR.conv=function(){ if(pageHasConv||window.__kpacConvDone) return; window.__kpacConvDone=true;
+  function tagUp(){ var hasTag=!!document.querySelector('script[src*="googletagmanager.com/gtag/js"]'); if(hasTag) return; var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+AW; document.head.appendChild(s); gtag('js',new Date()); gtag('config',AW,{url_passthrough:true}); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',tagUp); else tagUp();
+  /* 페이지가 이미 같은 전환을 보내면(랜딩·ceo·start) 여기선 안 보냄 → 두 번 안 잡힘 */
+  window.KPAC_ATTR.conv=function(){ var pageHasConv=document.documentElement.innerHTML.indexOf('iDYiCNiihN4cEJrqtp5D')>=0; if(pageHasConv||window.__kpacConvDone) return; window.__kpacConvDone=true;
     if(!isGoogle()) return; try{ gtag('event','conversion',{send_to:LBL,value:1.0,currency:'KRW'}); }catch(e){} };
   /* 모든 신청 전송(fetch)에 출처를 같이 실음: Apps Script 웹훅 · CRM /api/intake · /api/book */
   var of=window.fetch; if(of){ window.fetch=function(u,o){ try{ var url=String(u&&u.url||u||''); var hit=/script\.google\.com\/macros|\/api\/intake|\/api\/book(\?|$)/.test(url);
