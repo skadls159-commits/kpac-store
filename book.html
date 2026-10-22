@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script src="https://kpac.store/kpac-attr.js"></script><!-- r177b 출처 기억 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>상담 예약 | 한국정책자문센터 KPAC</title>
@@ -170,7 +171,7 @@
 (function(){
   var API='https://kpac-crm-server-production.up.railway.app';
   var W=['일','월','화','수','목','금','토'];
-  var q=new URLSearchParams(location.search), K=q.get('k')||'', SRC=q.get('src')||(K?'alimtalk':'web');
+  var q=new URLSearchParams(location.search), K=q.get('k')||(window.KPAC_ATTR?KPAC_ATTR.k():''), SRC=q.get('src')||(K?'alimtalk':'web');
   var S=null, sel=0, pick=null, known=false, busy=false;
   var $=function(id){return document.getElementById(id);};
   function rnd(s){var x=Math.sin(s)*10000;return x-Math.floor(x);}
