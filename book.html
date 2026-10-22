@@ -173,6 +173,10 @@
   var W=['일','월','화','수','목','금','토'];
   var q=new URLSearchParams(location.search), K=q.get('k')||(window.KPAC_ATTR?KPAC_ATTR.k():''), SRC=q.get('src')||(K?'alimtalk':'web');
   var S=null, sel=0, pick=null, known=false, busy=false;
+  /* r178b: 대표가 정한 「n자리 남음」 표시 (없으면 아무것도 안 바뀜) */
+  var LBS={};
+  function lb178(){try{fetch(API+'/api/r178a/labels',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.labels&&typeof j.labels==='object'&&Object.keys(j.labels).length){LBS=j.labels;draw();}}).catch(function(){});}catch(e){}}
+  function lbOf(h){var o=S&&LBS[S.days[sel]];var t=o&&o[h];return t?String(t).replace(/[<>&"]/g,''):'';}
   var $=function(id){return document.getElementById(id);};
   function rnd(s){var x=Math.sin(s)*10000;return x-Math.floor(x);}
   function dObj(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
@@ -192,7 +196,7 @@
     $('bkDays').innerHTML=S.days.map(function(s,i){var d=dObj(s);return '<button type="button" class="bk-day" aria-pressed="'+(i===sel)+'" data-i="'+i+'"><small>'+(i===0?'오늘':W[d.getDay()])+'</small><b>'+d.getDate()+'</b></button>'}).join('');
     var bl=blocked(sel);
     if(pick&&bl.indexOf(pick)>=0)pick=null;
-    function cell(h){var x=bl.indexOf(h)>=0;return '<button type="button" class="bk-slot" data-h="'+h+'"'+(x?' disabled':'')+' aria-pressed="'+(h===pick)+'">'+(h>12?h-12:h)+':00'+(x?'<span>마감</span>':'')+'</button>'}
+    function cell(h){var x=bl.indexOf(h)>=0,L=x?'':lbOf(h);return '<button type="button" class="bk-slot" data-h="'+h+'"'+(x?' disabled':'')+' aria-pressed="'+(h===pick)+'">'+(h>12?h-12:h)+':00'+(x?'<span>마감</span>':'')+(L?'<span class="bk-left" style="display:block;font-size:11px;font-weight:500;margin-top:-2px;color:'+(h===pick?'inherit':'#059669')+'">'+L+'</span>':'')+'</button>'}
     $('bkAm').innerHTML=S.hours.filter(function(h){return h<12}).map(cell).join('');
     $('bkPm').innerHTML=S.hours.filter(function(h){return h>12}).map(cell).join('');
     var go=$('bkGo'),p=$('bkPick');
@@ -204,7 +208,7 @@
       if(j.who&&j.who.name&&!known){known=true;$('bkTitle').innerHTML=j.who.name+' 대표님,<br>통화 편한 시간을 골라주세요';var w=$('bkWho');w.hidden=false;w.innerHTML=j.who.fund?'확인 요청 자금 <b>'+j.who.fund+'</b>':'<b>'+j.who.name+'</b> 대표님 예약';$('bkInfo').style.display='none';$('bkAgreeWrap').style.display='none';}
       if(j.stop)msg('지금은 상담 예약을 잠시 받지 않아요. 1866-1912로 연락 주시면 바로 도와드릴게요.');
       if(sel===0&&blocked(0).length>=S.hours.length)sel=1;
-      draw(); if(cb)cb();
+      draw(); if(cb)cb(); lb178();
     }).catch(function(){msg('예약 정보를 불러오지 못했어요. 잠시 후 다시 시도하시거나 1866-1912로 연락 주세요.');});
   }
   $('bk').addEventListener('click',function(e){var t=e.target.closest('.bk-day,.bk-slot');if(!t||t.disabled)return;if(t.dataset.i!=null){sel=+t.dataset.i;pick=null;}else{pick=+t.dataset.h;}msg('');draw();});
