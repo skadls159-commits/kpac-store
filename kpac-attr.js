@@ -1,7 +1,7 @@
 /* kpac-attr.js · v40 r177b — 리마인드 코드(k)·광고 출처(src/ad/utm/gclid…)를 모든 페이지에서 기억(30일 · 첫/마지막)하고, 모든 신청 폼에 같이 실어 보내요. 도메인 이동(github.io ↔ kpac.store)에도 링크에 붙여 넘겨요. */
 (function(){
   if (window.KPAC_ATTR) return;
-  var KEYS=['k','src','ad','adg','gcid','gag','gad','gkw','gnet','utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','fbclid','ttclid'];
+  var KEYS=['k','src','ad','adg','campaign_id','adset_id','ad_id','campaign_name','gcid','gag','gad','gkw','gnet','utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','fbclid','ttclid'];
   var LK='kpac_attr_v2', TTL=30*864e5, KTTL=14*864e5, AW='AW-18048988442', LBL='AW-18048988442/iDYiCNiihN4cEJrqtp5D';
   var q=new URLSearchParams(location.search), cur={}, has=false;
   KEYS.forEach(function(k){var v=q.get(k); if(v){cur[k]=String(v).slice(0,200); has=true;}});
