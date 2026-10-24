@@ -1,3 +1,4 @@
+/* kpac-attr.js · v40 r177b · r191a: 광고 없이 들어와도 어디서 왔는지(referrer) 기억 · ?test=1 이면 신청을 시험으로 표시 */
 /* kpac-attr.js · v40 r177b — 리마인드 코드(k)·광고 출처(src/ad/utm/gclid…)를 모든 페이지에서 기억(30일 · 첫/마지막)하고, 모든 신청 폼에 같이 실어 보내요. 도메인 이동(github.io ↔ kpac.store)에도 링크에 붙여 넘겨요. */
 (function(){
   if (window.KPAC_ATTR) return;
@@ -14,6 +15,9 @@
     S.last=cur; if(!S.first) S.first=cur;
     try{localStorage.setItem(LK,JSON.stringify(S));}catch(e){}
     try{var cv=encodeURIComponent(JSON.stringify({first:S.first,last:S.last})); if(cv.length<3800) document.cookie='kpac_attr='+cv+'; path=/; max-age='+(30*86400)+'; SameSite=Lax';}catch(e){} }
+  /* v40 r191a: 광고·코드 없이 들어온 방문도 바깥 referrer는 기억 (30일) */
+  try{ var rf=document.referrer||''; var rh=''; try{rh=new URL(rf).hostname;}catch(e){} if(!has && rh && !/kpac\.store$|github\.io$/.test(rh)){ S.vis={t:Date.now(),ref:rf.slice(0,200),url:location.href.split('#')[0].slice(0,480)}; try{localStorage.setItem(LK,JSON.stringify(S));}catch(e){} } }catch(e){}
+  var TEST=false; try{ if(/[?&]test=1(&|$)/.test(location.search)) sessionStorage.setItem('kpac_test','1'); TEST=sessionStorage.getItem('kpac_test')==='1'; }catch(e){}
   var L=S.last||{}, F=S.first||{};
   function k(){ return (L.k && Date.now()-(L.t||0)<KTTL) ? L.k : ''; }
   function isGoogle(){ return !!(L.gclid||L.gbraid||L.wbraid||/^google/i.test(L.src||'')||/google/i.test(L.utm_source||'')); }
@@ -21,6 +25,7 @@
     KEYS.forEach(function(x){ if(L[x]) o[x]=L[x]; });
     if(o.gbraid&&!o.gclid) o.gclid=o.gbraid; if(o.wbraid&&!o.gclid) o.gclid=o.wbraid;
     if(L.ref) o.referrer=L.ref; if(L.url) o.landing=L.url;
+    if(!o.referrer && S.vis && S.vis.ref && Date.now()-(S.vis.t||0)<TTL) o.referrer=S.vis.ref; if(!o.landing && S.vis && S.vis.url) o.landing=S.vis.url;
     if(F.t&&F.t!==L.t){ o.first_src=F.src||F.utm_source||(F.k?'alimtalk':''); o.first_ad=F.ad||F.utm_content||''; o.first_at=new Date(F.t).toISOString(); }
     o.page_now=location.href.split('#')[0].slice(0,300); return o; }
   function qs(){ var p=new URLSearchParams(); KEYS.forEach(function(x){ if(L[x] && !(x==='k' && !k())) p.set(x,L[x]); }); return p; }
@@ -44,6 +49,7 @@
       if(hit && o && o.method && /post/i.test(o.method) && typeof o.body==='string' && o.body.charAt(0)==='{'){ var b=JSON.parse(o.body), f=fields(), ch=false;
         for(var x in f){ if(b[x]==null||b[x]===''){ b[x]=f[x]; ch=true; } }
         if(/\/api\/book/.test(url) && !b.k && k()){ b.k=k(); ch=true; }
+        if(TEST && /\/api\/(book|intake)/.test(url) && !b.test){ b.test=true; ch=true; }
         if(/script\.google/.test(url) && (!b.channel||b.channel==='kpac_store') && (L.src||L.utm_source||(L.k?'alimtalk':''))){ b.channel=L.src||L.utm_source||'alimtalk'; ch=true; }
         if(ch){ o=Object.assign({},o,{body:JSON.stringify(b)}); }
         var isLead=/script\.google|\/api\/intake|\/api\/book(\?|$)/.test(url);
