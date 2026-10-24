@@ -22,6 +22,45 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="kpac.css">
+<style>
+.bk{max-width:640px;margin:0 auto}
+.bk .lform{padding:30px 28px 26px}
+.bk-sec{margin-top:24px}
+.bk-sec>label,.bk-lbl{display:block;font-size:13.5px;font-weight:600;color:var(--ink-2);margin-bottom:8px}
+.bk-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.bk-day{border:1px solid var(--line-2);border-radius:8px;background:#fff;padding:10px 0 11px;text-align:center;cursor:pointer;font:inherit;color:var(--ink);transition:border-color .2s,background .2s}
+.bk-day small{display:block;font-size:12px;color:var(--ink-3);font-weight:500}
+.bk-day b{display:block;font-size:19px;letter-spacing:-.02em;margin-top:1px}
+.bk-day:hover{border-color:var(--ink-4)}
+.bk-day[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.bk-day[aria-pressed="true"] b,.bk-day[aria-pressed="true"] small{color:var(--accent)}
+.bk-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.bk-slot{height:48px;border:1px solid var(--line-2);border-radius:8px;background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--ink-2);cursor:pointer;font-variant-numeric:tabular-nums;transition:border-color .2s,background .2s}
+.bk-slot:hover:not(:disabled){border-color:var(--ink-4)}
+.bk-slot:disabled{background:var(--bg-2);border-color:var(--line);color:var(--ink-4);cursor:not-allowed}
+.bk-slot:disabled span{display:block;font-size:11px;font-weight:500;margin-top:-2px}
+.bk-slot[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.bk-grp{font-size:12.5px;color:var(--ink-4);font-weight:600;margin:12px 0 8px}
+.bk-grp:first-of-type{margin-top:0}
+.bk-who{display:flex;gap:10px;align-items:center;background:var(--bg-2);border-radius:8px;padding:12px 14px;margin-top:18px;font-size:14px;color:var(--ink-2)}
+.bk-who b{color:var(--navy)}
+.bk-who[hidden]{display:none}
+.bk-pick{margin-top:22px;font-size:14px;color:var(--ink-3)}
+.bk-pick b{color:var(--ink)}
+.bk .btn-primary{width:100%;height:54px;margin-top:12px;font-size:16px}
+.bk .btn-primary:disabled{background:var(--line-2);cursor:not-allowed}
+.bk-done{display:none;text-align:left}
+.bk-done .ic{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.bk-done h2{font-size:24px;letter-spacing:-.035em}
+.bk-done>p{margin-top:6px;color:var(--ink-3);font-size:14.5px}
+.bk-rows{margin-top:20px;border-top:1px solid var(--line)}
+.bk-rows div{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.bk-rows span{color:var(--ink-3)}
+.bk.ok .bk-form{display:none}.bk.ok .bk-done{display:block}
+.bk .lf-grid{margin-top:18px}
+@media(max-width:560px){.bk .lform{padding:24px 18px 22px}.bk .lf-grid{grid-template-columns:1fr}.bk-day b{font-size:17px}}
+</style>
+<style>/* r189b 상담 신청 → 상담 예약 통일 */html{scroll-behavior:smooth}#bk{scroll-margin-top:90px}</style>
 </head>
 <body class="sub">
 <div class="progress" aria-hidden="true"><i id="prog"></i></div>
@@ -41,7 +80,7 @@
     </nav>
     <div class="nav-right">
       <a href="tel:18661912" class="nav-tel"><small>상담전화</small>1866-1912</a>
-      <a href="contact.html" aria-current="page" class="btn btn-primary nav-cta">상담 신청</a>
+      <a href="#bk" aria-current="page" class="btn btn-primary nav-cta">상담 신청</a>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -52,7 +91,7 @@
     <a href="resources.html">무료자료</a>
     <a href="faq.html">자주 묻는 질문</a>
     <a href="contact.html" aria-current="page">상담문의</a>
-    <a href="contact.html" class="btn btn-primary">상담 신청</a>
+    <a href="#bk" class="btn btn-primary">상담 신청</a>
   </div>
 </header>
 <main>
@@ -75,21 +114,31 @@
 </div>
 <p style="margin-top:20px;font-size:14px;color:var(--ink-3)">상담과 사전 진단은 무료이며, 계약 전에는 비용을 청구하지 않습니다. 상담 내용은 외부에 공유되지 않습니다.</p>
 </div>
-<form class="lform reveal" id="leadForm" novalidate>
-<h2>1:1 진단 · 상담 신청</h2><p>간단한 정보만 남겨주시면, 담당 전문가가 확인 후 빠르게 연락드립니다.</p>
-<div class="lf-grid">
-<div><label for="f_name">대표자명 <em>*</em></label><input id="f_name" autocomplete="name"></div>
-<div><label for="f_phone">연락처 <em>*</em></label><input id="f_phone" type="tel" inputmode="numeric" placeholder="010-0000-0000" autocomplete="tel"></div>
-<div><label for="f_industry">업종</label><select id="f_industry"><option value="">선택해주세요</option><option>제조업</option><option>도소매업</option><option>서비스업</option><option>건설업</option><option>음식·숙박업</option><option>IT·소프트웨어</option><option>기타</option></select></div>
-<div><label for="f_bizno">사업자등록번호</label><input id="f_bizno" inputmode="numeric" placeholder="000-00-00000"></div>
-<div><label for="f_region">지역</label><select id="f_region"><option value="">선택해주세요</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div>
-<div><label>국세 · 지방세 체납 여부</label><div class="radios"><label><input type="radio" name="f_arrears" value="없음">없음</label><label><input type="radio" name="f_arrears" value="있음">있음</label></div></div>
+<div class="bk reveal" id="bk" style="margin:0">
+ <div class="lform reveal">
+  <div class="bk-form">
+   <h2 id="bkTitle">상담 시간 예약</h2><p>날짜와 시간을 고르시면 예약이 바로 확정됩니다.</p>
+   <div class="bk-who" id="bkWho" hidden></div>
+   <div class="lf-grid" id="bkInfo">
+    <div><label for="b_name">대표자명 <em>*</em></label><input id="b_name" autocomplete="name"></div>
+    <div><label for="b_phone">연락처 <em>*</em></label><input id="b_phone" type="tel" inputmode="numeric" placeholder="010-0000-0000" autocomplete="tel"></div>
+    <div><label for="b_region">지역 <em>*</em></label><select id="b_region" style="width:100%;height:48px;border:1px solid #d6dbe6;border-radius:10px;padding:0 12px;font-size:16px;background:#fff"><option value="">시·도 선택</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div>
+   </div>
+   <div class="bk-sec"><span class="bk-lbl">날짜</span><div class="bk-days" id="bkDays"></div></div>
+   <div class="bk-sec"><span class="bk-lbl">시간</span><div class="bk-grp">오전</div><div class="bk-slots" id="bkAm"></div><div class="bk-grp">오후</div><div class="bk-slots" id="bkPm"></div></div>
+   <label class="agree" id="bkAgreeWrap"><input type="checkbox" id="b_agree"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 / 목적: 상담 예약 및 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
+   <p class="bk-pick" id="bkPick">날짜와 시간을 선택해 주세요</p>
+   <button type="button" class="btn btn-primary" id="bkGo" disabled>예약하기</button>
+   <div class="lf-msg" id="bkMsg" role="status"></div>
+  </div>
+  <div class="bk-done">
+   <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+   <h2>예약이 확정되었습니다</h2><p>카카오톡으로 예약 확정 안내를 보내드렸습니다.</p>
+   <div class="bk-rows"><div><span>상담 일시</span><b id="bkWhen"></b></div><div><span>진행 방식</span><b>전화 상담</b></div><div><span>연락 번호</span><b>배정된 컨설턴트가 직접 연락</b></div></div>
+   <p style="margin-top:16px;font-size:14px;color:var(--ink-3)">상담 전날 카카오톡으로 한 번 더 안내드립니다.</p>
+  </div>
+ </div>
 </div>
-<div class="hp" aria-hidden="true"><label>남기지 마세요<input type="checkbox" id="a_yes" tabindex="-1"></label></div>
-<label class="agree"><input type="checkbox" id="f_agree"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 · 업종 · 지역 / 목적: 상담 및 정책자금 진단 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
-<button type="submit" class="btn btn-primary" id="submitBtn">진단 신청하기</button>
-<div class="lf-msg" id="formMsg" role="status"></div>
-</form>
 </div></section>
 </main>
 <section class="notice">
@@ -106,7 +155,7 @@
       </div>
       <div class="f-cols">
         <div class="f-col"><h4>바로가기</h4><a href="about.html">회사소개</a><a href="services.html">서비스 안내</a><a href="cases.html">성공사례</a><a href="resources.html">무료자료</a><a href="faq.html">자주 묻는 질문</a></div>
-        <div class="f-col"><h4>상담 문의</h4><a href="tel:18661912">TEL. 1866-1912</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="contact.html" aria-current="page">상담 신청서</a></div>
+        <div class="f-col"><h4>상담 문의</h4><a href="tel:18661912">TEL. 1866-1912</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="#bk" aria-current="page">상담 신청서</a></div>
         <div class="f-col"><h4>채널</h4><a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a></div>
         <div class="f-col info"><h4>회사 정보</h4><ul><li>한국정책자문센터 (KPAC)</li><li>대표 : 이남인</li><li>사업자등록번호 : 111-13-97163</li><li>업태 : 전문, 과학 및 기술서비스업</li><li>종목 : 경영 컨설팅업 / 광고 대행업</li><li>주소 : 경기도 남양주시</li><li>이메일 : info@kpac.store</li><li>대표전화 : 1866-1912</li></ul></div>
       </div>
@@ -125,82 +174,74 @@
 <nav class="m-bar" id="mBar" aria-label="빠른 상담">
   <a href="tel:18661912" class="mb-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
   <a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener" class="mb-kakao"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카카오톡</a>
-  <a href="contact.html" class="mb-cta">상담 신청</a>
+  <a href="#bk" class="mb-cta">상담 신청</a>
 </nav>
 
 <script src="kpac.js"></script>
 <script>
 (function(){
-  // 기존 자동화DB(Google Apps Script) 웹훅 — 제출 시 자금톡 CRM + 텔레그램 알림 연동
-  var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwIfwL3rdpX-wxP9lGZYVeedDixkfqqSHUi6SncaEB_WqE9899qtJsDNYi7uPmtyoOo/exec';
-
-  var form = document.getElementById('leadForm');
-  if (!form) return;
-  var msg = document.getElementById('formMsg');
-  var btn = document.getElementById('submitBtn');
-
-  // 연락처 자동 하이픈
-  document.getElementById('f_phone').addEventListener('input', function(e){
-    var v = e.target.value.replace(/\D/g,'').slice(0,11);
-    if (v.length > 7) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
-    else if (v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
-    e.target.value = v;
-  });
-
-  // 사업자등록번호 자동 하이픈
-  document.getElementById('f_bizno').addEventListener('input', function(e){
-    var v = e.target.value.replace(/\D/g,'').slice(0,10);
-    if (v.length > 5) v = v.slice(0,3)+'-'+v.slice(3,5)+'-'+v.slice(5);
-    else if (v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
-    e.target.value = v;
-  });
-
-  function show(kind, text){
-    msg.className = 'lf-msg show ' + kind;
-    msg.textContent = text;
+  var API='https://kpac-crm-server-production.up.railway.app';
+  var W=['일','월','화','수','목','금','토'];
+  var q=new URLSearchParams(location.search), K=q.get('k')||(window.KPAC_ATTR?KPAC_ATTR.k():''), SRC=q.get('src')||(K?'alimtalk':'web');
+  var S=null, sel=0, pick=null, known=false, busy=false;
+  /* r178b: 대표가 정한 「n자리 남음」 표시 (없으면 아무것도 안 바뀜) */
+  var LBS={};
+  function lb178(){try{fetch(API+'/api/r178a/labels',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.labels&&typeof j.labels==='object'&&Object.keys(j.labels).length){LBS=j.labels;draw();}}).catch(function(){});}catch(e){}}
+  function lbOf(h){var o=S&&LBS[S.days[sel]];var t=o&&o[h];return t?String(t).replace(/[<>&"]/g,''):'';}
+  var $=function(id){return document.getElementById(id);};
+  function rnd(s){var x=Math.sin(s)*10000;return x-Math.floor(x);}
+  function dObj(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function fmt(h){return (h<12?'오전 ':'오후 ')+(h>12?h-12:h)+'시';}
+  function label(i,h){var d=dObj(S.days[i]);return (d.getMonth()+1)+'월 '+d.getDate()+'일('+W[d.getDay()]+') '+fmt(h);}
+  function blocked(i){ /* r138c: 마감 시간은 CRM 설정 › 📅 상담 예약 시간에서 정해요 (서버가 계산) · 없으면 예전 계산 */
+    if(S.closed&&S.closed[S.days[i]]){ var c=S.closed[S.days[i]].slice(); S.hours.forEach(function(h){ if(i===0&&h<=S.nowHour&&c.indexOf(h)<0)c.push(h); }); return c; }
+    var day=S.days[i], d=dObj(day), base=d.getMonth()*100+d.getDate();
+    var rest=S.hours.filter(function(h){return S.fake.indexOf(h)<0&&h!==15}).sort(function(a,b){return rnd(base*7+a)-rnd(base*7+b)});
+    var b=S.fake.filter(function(h){return h!==15}).concat(rest.slice(0,i===0?3:(rnd(base)<.5?1:2)));
+    S.hours.forEach(function(h){ if(i===0&&h<=S.nowHour&&b.indexOf(h)<0)b.push(h); });
+    return b;
   }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (document.getElementById('a_yes').checked) return; // honeypot
-
-    var name = document.getElementById('f_name').value.trim();
-    var phone = document.getElementById('f_phone').value.trim();
-
-    if (!name) { show('err','대표자명을 입력해 주세요.'); return; }
-    if (phone.replace(/\D/g,'').length < 10) { show('err','연락처를 정확히 입력해 주세요.'); return; }
-    if (!document.getElementById('f_agree').checked) { show('err','개인정보 수집·이용 동의가 필요합니다.'); return; }
-
-    var params = new URLSearchParams(window.location.search);
-    var payload = {
-      name: name,
-      phone: phone,
-      industry: document.getElementById('f_industry').value,
-      biz_no: document.getElementById('f_bizno').value,
-      region: document.getElementById('f_region').value,
-      tax_arrears: (document.querySelector('input[name=f_arrears]:checked') || {}).value || '',
-      source: 'kpac_site_contact',
-      channel: params.get('src') || params.get('utm_source') || 'kpac_store',
-      submitted_at: new Date().toISOString(),
-      lead_id: 'H' + Date.now().toString(36) + Math.random().toString(36).slice(2,8)
-    };
-
-    btn.disabled = true;
-    show('ok', '전송 중입니다...');
-
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: {'Content-Type':'text/plain;charset=utf-8'}, // Apps Script CORS preflight 회피
-      body: JSON.stringify(payload)
-    }).then(function(){
-      form.reset();
-      show('ok','신청이 접수되었습니다. 담당자가 순차적으로 연락드리겠습니다.');
-    }).catch(function(){
-      show('err','전송에 실패했습니다. 번거로우시겠지만 1866-1912 또는 카카오톡으로 문의해 주세요.');
-    }).finally(function(){
-      btn.disabled = false;
-    });
+  function msg(t){var m=$('bkMsg');m.className='lf-msg'+(t?' show err':'');m.textContent=t||'';}
+  function draw(){
+    if(!S)return;
+    $('bkDays').innerHTML=S.days.map(function(s,i){var d=dObj(s);return '<button type="button" class="bk-day" aria-pressed="'+(i===sel)+'" data-i="'+i+'"><small>'+(i===0?'오늘':W[d.getDay()])+'</small><b>'+d.getDate()+'</b></button>'}).join('');
+    var bl=blocked(sel);
+    if(pick&&bl.indexOf(pick)>=0)pick=null;
+    function cell(h){var x=bl.indexOf(h)>=0,L=x?'':lbOf(h);return '<button type="button" class="bk-slot" data-h="'+h+'"'+(x?' disabled':'')+' aria-pressed="'+(h===pick)+'">'+(h>12?h-12:h)+':00'+(x?'<span>마감</span>':'')+(L?'<span class="bk-left" style="display:block;font-size:11px;font-weight:500;margin-top:-2px;color:'+(h===pick?'inherit':'#059669')+'">'+L+'</span>':'')+'</button>'}
+    $('bkAm').innerHTML=S.hours.filter(function(h){return h<12}).map(cell).join('');
+    $('bkPm').innerHTML=S.hours.filter(function(h){return h>12}).map(cell).join('');
+    var go=$('bkGo'),p=$('bkPick');
+    if(pick){p.innerHTML='선택한 시간 <b>'+label(sel,pick)+'</b>';go.disabled=false;}else{p.textContent='날짜와 시간을 선택해 주세요';go.disabled=true;}
+  }
+  function load(cb){
+    fetch(API+'/api/book/slots'+(K?'?k='+encodeURIComponent(K):''),{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+      S=j;
+      if(j.who&&j.who.name&&!known){known=true;if($('bkTitle'))$('bkTitle').innerHTML=j.who.name+' 대표님,<br>통화 편한 시간을 골라주세요';var w=$('bkWho');w.hidden=false;w.innerHTML=j.who.fund?'확인 요청 자금 <b>'+j.who.fund+'</b>':'<b>'+j.who.name+'</b> 대표님 예약';$('bkInfo').style.display='none';$('bkAgreeWrap').style.display='none';}
+      if(j.stop)msg('지금은 상담 예약을 잠시 받지 않아요. 1866-1912로 연락 주시면 바로 도와드릴게요.');
+      if(sel===0&&blocked(0).length>=S.hours.length)sel=1;
+      draw(); if(cb)cb(); lb178();
+    }).catch(function(){msg('예약 정보를 불러오지 못했어요. 잠시 후 다시 시도하시거나 1866-1912로 연락 주세요.');});
+  }
+  $('bk').addEventListener('click',function(e){var t=e.target.closest('.bk-day,.bk-slot');if(!t||t.disabled)return;if(t.dataset.i!=null){sel=+t.dataset.i;pick=null;}else{pick=+t.dataset.h;}msg('');draw();});
+  var bp=$('b_phone');bp.addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,11);if(v.length>7)v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);else if(v.length>3)v=v.slice(0,3)+'-'+v.slice(3);e.target.value=v;});
+  $('bkGo').addEventListener('click',function(){
+    if(busy||!pick)return;
+    var body={k:K,src:SRC,day:S.days[sel],hour:pick};
+    if(!known){
+      body.name=$('b_name').value.trim(); body.phone=$('b_phone').value.trim(); body.region=($('b_region')||{}).value||''; body.agree=$('b_agree').checked;
+      if(!body.name){msg('대표자명을 입력해 주세요.');return;}
+      if(body.phone.replace(/\D/g,'').length<10){msg('연락처를 정확히 입력해 주세요.');return;}
+      if($('b_region')&&!body.region){msg('지역을 선택해 주세요.');return;}
+      if(!body.agree){msg('개인정보 수집 · 이용에 동의해 주세요.');return;}
+    }
+    busy=true; var go=$('bkGo'); go.disabled=true; go.textContent='예약 중…';
+    fetch(API+'/api/book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){return {s:r.status,j:j}})}).then(function(x){
+      busy=false; go.textContent='예약하기';
+      if(x.s===200&&x.j.ok){$('bkWhen').textContent=x.j.when;$('bk').classList.add('ok');window.scrollTo({top:$('bk').getBoundingClientRect().top+window.scrollY-120,behavior:'smooth'});return;}
+      msg(x.j.error||'예약에 실패했어요. 1866-1912로 연락 주세요.'); pick=null; load();
+    }).catch(function(){busy=false;go.textContent='예약하기';msg('연결이 원활하지 않아요. 잠시 후 다시 시도해 주세요.');draw();});
   });
+  load();
 })();
 </script>
 </body>
