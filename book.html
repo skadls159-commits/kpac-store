@@ -184,18 +184,18 @@
   function dObj(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
   function fmt(h){return (h<12?'오전 ':'오후 ')+(h>12?h-12:h)+'시';}
   function label(i,h){var d=dObj(S.days[i]);return (d.getMonth()+1)+'월 '+d.getDate()+'일('+W[d.getDay()]+') '+fmt(h);}
-  function blocked(i){ /* r138c: 마감 시간은 CRM 설정 › 📅 상담 예약 시간에서 정해요 (서버가 계산) · 없으면 예전 계산 */
-    if(S.closed&&S.closed[S.days[i]]){ var c=S.closed[S.days[i]].slice(); S.hours.forEach(function(h){ if(i===0&&h<=S.nowHour&&c.indexOf(h)<0)c.push(h); }); return c; }
+  function tdK(){return new Date(Date.now()+9*3600e3).toISOString().slice(0,10)} /* r193a: 진짜 오늘(KST)만 「오늘」·지난 시간 막기 */ function blocked(i){ /* r138c: 마감 시간은 CRM 설정 › 📅 상담 예약 시간에서 정해요 (서버가 계산) · 없으면 예전 계산 */
+    if(S.closed&&S.closed[S.days[i]]){ var c=S.closed[S.days[i]].slice(); S.hours.forEach(function(h){ if(S.days[i]===tdK()&&h<=S.nowHour&&c.indexOf(h)<0)c.push(h); }); return c; }
     var day=S.days[i], d=dObj(day), base=d.getMonth()*100+d.getDate();
     var rest=S.hours.filter(function(h){return S.fake.indexOf(h)<0&&h!==15}).sort(function(a,b){return rnd(base*7+a)-rnd(base*7+b)});
-    var b=S.fake.filter(function(h){return h!==15}).concat(rest.slice(0,i===0?3:(rnd(base)<.5?1:2)));
-    S.hours.forEach(function(h){ if(i===0&&h<=S.nowHour&&b.indexOf(h)<0)b.push(h); });
+    var b=S.fake.filter(function(h){return h!==15}).concat(rest.slice(0,S.days[i]===tdK()?3:(rnd(base)<.5?1:2)));
+    S.hours.forEach(function(h){ if(S.days[i]===tdK()&&h<=S.nowHour&&b.indexOf(h)<0)b.push(h); });
     return b;
   }
   function msg(t){var m=$('bkMsg');m.className='lf-msg'+(t?' show err':'');m.textContent=t||'';}
   function draw(){
     if(!S)return;
-    $('bkDays').innerHTML=S.days.map(function(s,i){var d=dObj(s);return '<button type="button" class="bk-day" aria-pressed="'+(i===sel)+'" data-i="'+i+'"><small>'+(i===0?'오늘':W[d.getDay()])+'</small><b>'+d.getDate()+'</b></button>'}).join('');
+    $('bkDays').innerHTML=S.days.map(function(s,i){var d=dObj(s);return '<button type="button" class="bk-day" aria-pressed="'+(i===sel)+'" data-i="'+i+'"><small>'+(s===tdK()?'오늘':W[d.getDay()])+'</small><b>'+d.getDate()+'</b></button>'}).join('');
     var bl=blocked(sel);
     if(pick&&bl.indexOf(pick)>=0)pick=null;
     function cell(h){var x=bl.indexOf(h)>=0,L=x?'':lbOf(h);return '<button type="button" class="bk-slot" data-h="'+h+'"'+(x?' disabled':'')+' aria-pressed="'+(h===pick)+'">'+(h>12?h-12:h)+':00'+(x?'<span>마감</span>':'')+(L?'<span class="bk-left" style="display:block;font-size:11px;font-weight:500;margin-top:-2px;color:'+(h===pick?'inherit':'#059669')+'">'+L+'</span>':'')+'</button>'}
