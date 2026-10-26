@@ -53,7 +53,7 @@
         if(/script\.google/.test(url) && (!b.channel||b.channel==='kpac_store') && (L.src||L.utm_source||(L.k?'alimtalk':''))){ b.channel=L.src||L.utm_source||'alimtalk'; ch=true; }
         if(ch){ o=Object.assign({},o,{body:JSON.stringify(b)}); }
         var isLead=/script\.google|\/api\/intake|\/api\/book(\?|$)/.test(url);
-        return of.call(this,u,o).then(function(r){ try{ if(isLead && r && (r.ok||r.type==='opaque') && !/\/api\/intake/.test(url)) window.KPAC_ATTR.conv(); }catch(e){} return r; }); } }catch(e){}
+        return of.call(this,u,o).then(function(r){ try{ if(isLead && r && (r.ok||r.type==='opaque') && !/\/api\/intake/.test(url)){ /* r209b: 30일 안 같은 번호 재신청이면 구글 전환 안 보냄 (DB 단가 허수 방지) */ if(r.type!=='opaque' && /\/api\/book/.test(url) && r.clone){ r.clone().json().then(function(j){ if(!(j&&j.dup)) window.KPAC_ATTR.conv(); }).catch(function(){ window.KPAC_ATTR.conv(); }); } else window.KPAC_ATTR.conv(); } }catch(e){} return r; }); } }catch(e){}
     return of.apply(this,arguments); }; }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',deco); else deco();
   setTimeout(deco,1500);
