@@ -87,3 +87,28 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
   setTimeout(put,1200);
 })();
+
+/* r229a: 협회 등록 표기 설명 (오해 방지 · 표시광고법/부당개입 안내 대응) — 정부기관 아님 · 승인 보장 안 함 */
+(function(){
+  var NOTE='한국정책자문센터(KPAC)는 중소벤처기업부의 설립 허가를 받은 사단법인 한국경영컨설턴트협회(허가번호 제2026-3호)에 등록된 회원사입니다. 당사는 정부기관이나 공공기관이 아니며, 정부로부터 정책자금 업무를 위탁받거나 보증을 받은 기관이 아닌 민간 경영컨설팅 회사입니다. 정책자금의 심사·승인·지급은 각 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)이 자체 기준으로 결정하며, 당사는 승인을 보장하지 않습니다.';
+  function css(){ if(document.getElementById('kpacNoteCss')) return; var s=document.createElement('style'); s.id='kpacNoteCss';
+    s.textContent='.kpac-more{margin-left:10px;color:#cbd5e1;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px;cursor:pointer;white-space:nowrap}'+
+    '.kpac-badge .kpac-more{color:inherit;opacity:.85;margin-left:4px}.kpac-badge.lt .kpac-more{color:#0b3a8c}'+
+    '.kpac-note{margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,.3);font-size:12px;line-height:1.7;opacity:.88;font-weight:400;transition:background .3s}'+
+    '.kpac-note.hl{background:rgba(232,199,122,.18);border-radius:6px}'+
+    '.kpac-about-note{max-width:1160px;margin:32px auto 8px;padding:20px 22px;border:1px solid #d6dfef;border-radius:14px;background:#f6f8fc;color:#1f2a44;font-size:14px;line-height:1.75}'+
+    '.kpac-about-note h3{margin:0 0 8px;font-size:16px;color:#0b1f4d}.kpac-about-note .c{font-weight:700;color:#0b3a8c}'+
+    '@media (max-width:640px){.kpac-more{display:inline-block;margin:2px 0 0 6px}.kpac-about-note{margin:24px 16px 8px;font-size:13.5px}}';
+    document.head.appendChild(s); }
+  function goNote(e){ if(e) e.preventDefault(); var t=document.getElementById('kpacCredNote'); if(!t) return; try{ t.scrollIntoView({behavior:'smooth',block:'center'}); }catch(x){ t.scrollIntoView(); } t.classList.add('hl'); setTimeout(function(){ t.classList.remove('hl'); },1800); }
+  function put(){ try{ css();
+    if(!document.getElementById('kpacCredNote')){ var n=document.createElement('div'); n.id='kpacCredNote'; n.className='kpac-note'; n.textContent=NOTE;
+      var host=document.getElementById('kpacCred'); if(host) host.appendChild(n); else { var f=document.querySelector('footer'); if(f) f.appendChild(n); } }
+    ['kpacTop','kpacBadge'].forEach(function(id){ var el=document.getElementById(id); if(el && !el.querySelector('.kpac-more')){ var a=document.createElement('a'); a.className='kpac-more'; a.href='#kpacCredNote'; a.textContent='ⓘ 자세히'; a.addEventListener('click',goNote); el.appendChild(a); } });
+    if(/about/.test(location.pathname) && !document.getElementById('kpacAboutNote')){ var f2=document.querySelector('footer'); if(f2){ var sec=document.createElement('section'); sec.id='kpacAboutNote'; sec.className='kpac-about-note';
+      sec.innerHTML='<h3>협회 등록 안내</h3><div class="c">중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호) · 사단법인 한국경영컨설턴트협회 회원사</div><p style="margin:8px 0 0"></p>';
+      sec.querySelector('p').textContent=NOTE; f2.parentNode.insertBefore(sec,f2); } }
+  }catch(e){} }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
+  setTimeout(put,1500); setTimeout(put,3000);
+})();
