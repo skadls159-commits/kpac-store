@@ -72,7 +72,7 @@
   function rm(id){ var el=document.getElementById(id); if(el&&el.parentNode) el.parentNode.removeChild(el); }
   function put(){ try{ css();
     rm('kpacTop'); rm('kpacBadge'); rm('kpacCred');
-    if(!document.getElementById('kpacCredLi')){ var ul=document.querySelector('footer .f-col.info ul'); if(ul){ var li=document.createElement('li'); li.id='kpacCredLi'; li.textContent=LI;
+    if(!document.getElementById('kpacCredLi')){ var ul=document.querySelector('footer .f-col.info ul'); if(ul){ var li=document.createElement('li'); li.id='kpacCredLi'; li.style.whiteSpace='normal'; li.appendChild(document.createTextNode('협회 : 사단법인 한국경영컨설턴트협회 회원사')); li.appendChild(document.createElement('br')); var sm=document.createElement('span'); sm.style.opacity='.8'; sm.textContent='(중소벤처기업부 허가 협회 · 제2026-3호)'; li.appendChild(sm);
       var lis=ul.querySelectorAll('li'), at=null; for(var i=0;i<lis.length;i++){ if(/^주소/.test((lis[i].textContent||'').trim())){ at=lis[i].nextSibling; break; } }
       ul.insertBefore(li, at); } }
     if(!document.getElementById('kpacCredNote')){ var lg=document.querySelector('footer .f-legal'); var p=document.createElement('p'); p.id='kpacCredNote';
