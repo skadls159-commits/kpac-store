@@ -58,3 +58,13 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',deco); else deco();
   setTimeout(deco,1500);
 })();
+
+/* r228a: 협회 등록 표기 (명함 문구 그대로) · 모든 페이지 하단 */
+(function(){ var L1='중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호)', L2='사단법인 한국경영컨설턴트협회 회원사';
+  function put(){ try{ if(document.getElementById('kpacCred')) return; var fb=document.querySelector('footer .f-bottom')||document.querySelector('footer'); if(!fb) return;
+    var d=document.createElement('div'); d.id='kpacCred'; d.className='kpac-cred';
+    d.setAttribute('style','margin:16px 0 6px;padding:11px 14px;border:1px solid rgba(148,163,184,.35);border-radius:10px;font-size:12.5px;line-height:1.65;letter-spacing:-.1px');
+    d.innerHTML='<b style="font-weight:700">'+L1+'</b><br><span style="opacity:.85">'+L2+'</span>';
+    if(fb.classList && fb.classList.contains('f-bottom')) fb.parentNode.insertBefore(d,fb); else fb.appendChild(d); }catch(e){} }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
+})();
