@@ -59,56 +59,29 @@
   setTimeout(deco,1500);
 })();
 
-/* r228a: 협회 등록 표기 (명함 문구 그대로) · 모든 페이지 하단 */
-(function(){ var L1='중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호)', L2='사단법인 한국경영컨설턴트협회 회원사';
-  function put(){ try{ if(document.getElementById('kpacCred')) return; var fb=document.querySelector('footer .f-bottom')||document.querySelector('footer'); if(!fb) return;
-    var d=document.createElement('div'); d.id='kpacCred'; d.className='kpac-cred';
-    d.setAttribute('style','margin:16px 0 6px;padding:11px 14px;border:1px solid rgba(148,163,184,.35);border-radius:10px;font-size:12.5px;line-height:1.65;letter-spacing:-.1px');
-    d.innerHTML='<b style="font-weight:700">'+L1+'</b><br><span style="opacity:.85">'+L2+'</span>';
-    if(fb.classList && fb.classList.contains('f-bottom')) fb.parentNode.insertBefore(d,fb); else fb.appendChild(d); }catch(e){} }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
-})();
-
-/* r228b: 협회 등록 표기 · 상단 띠 + 첫 화면 배지 (잘 보이게) */
-(function(){ var L1='중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호)', L2='사단법인 한국경영컨설턴트협회 회원사';
-  function css(){ if(document.getElementById('kpacCredCss')) return; var s=document.createElement('style'); s.id='kpacCredCss';
-    s.textContent='.kpac-top{background:#0b1f4d;color:#fff;font-size:13px;line-height:1.45;letter-spacing:-.1px;text-align:center;padding:8px 14px;border-bottom:1px solid rgba(212,175,95,.45)}'+
-    '.kpac-top b{color:#e8c77a;font-weight:700}.kpac-top .sep{opacity:.5;margin:0 8px}'+
-    '.kpac-badge{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(232,199,122,.6);color:#fff;font-size:13px;line-height:1.4}'+
-    '.kpac-badge b{color:#e8c77a;font-weight:700}.kpac-badge.lt{background:#f3f6fc;border-color:#c9d6ee;color:#0b1f4d}.kpac-badge.lt b{color:#0b3a8c}'+
-    '@media (max-width:640px){.kpac-top{font-size:11.5px;padding:7px 10px}.kpac-top .sep{display:none}.kpac-top .l2{display:block;opacity:.85;font-size:11px}.kpac-badge{font-size:12px;border-radius:12px}}';
-    document.head.appendChild(s); }
-  function put(){ try{ css();
-    if(!document.getElementById('kpacTop') && document.body){ var t=document.createElement('div'); t.id='kpacTop'; t.className='kpac-top';
-      t.innerHTML='<b>'+L1+'</b><span class="sep">|</span><span class="l2">'+L2+'</span>'; document.body.insertBefore(t, document.body.firstChild); }
-    if(!document.getElementById('kpacBadge')){ var hc=document.querySelector('.hero-copy'); if(hc){ var b=document.createElement('div'); b.id='kpacBadge'; b.className='kpac-badge';
-      b.innerHTML='<span>🏛</span><b>'+L1+'</b><span>· '+L2+'</span>'; hc.insertBefore(b, hc.firstChild); } }
-  }catch(e){} }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
-  setTimeout(put,1200);
-})();
-
-/* r229a: 협회 등록 표기 설명 (오해 방지 · 표시광고법/부당개입 안내 대응) — 정부기관 아님 · 승인 보장 안 함 */
+/* r231a: 협회 등록 표기 · 상단 띠/첫 화면 배지 제거 → 하단 「회사 정보」 한 줄 + 고지문 한 줄 (홈페이지는 로고 없이) */
 (function(){
-  var NOTE='한국정책자문센터(KPAC)는 중소벤처기업부의 설립 허가를 받은 사단법인 한국경영컨설턴트협회(허가번호 제2026-3호)에 등록된 회원사입니다. 당사는 정부기관이나 공공기관이 아니며, 정부로부터 정책자금 업무를 위탁받거나 보증을 받은 기관이 아닌 민간 경영컨설팅 회사입니다. 정책자금의 심사·승인·지급은 각 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)이 자체 기준으로 결정하며, 당사는 승인을 보장하지 않습니다.';
+  var LI='협회 : 사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)';
+  var NOTE='한국정책자문센터(KPAC)는 중소벤처기업부의 설립 허가를 받은 사단법인 한국경영컨설턴트협회(허가번호 제2026-3호)에 등록된 회원사입니다. 당사는 정부기관·공공기관이 아닌 민간 경영컨설팅 회사이며, 정책자금의 심사·승인은 각 운용기관이 결정합니다.';
+  var ABOUT='한국정책자문센터(KPAC)는 중소벤처기업부의 설립 허가를 받은 사단법인 한국경영컨설턴트협회(허가번호 제2026-3호)에 등록된 회원사입니다. 당사는 정부기관이나 공공기관이 아니며, 정부로부터 정책자금 업무를 위탁받거나 보증을 받은 기관이 아닌 민간 경영컨설팅 회사입니다. 정책자금의 심사·승인·지급은 각 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)이 자체 기준으로 결정하며, 당사는 승인을 보장하지 않습니다.';
   function css(){ if(document.getElementById('kpacNoteCss')) return; var s=document.createElement('style'); s.id='kpacNoteCss';
-    s.textContent='.kpac-more{margin-left:10px;color:#cbd5e1;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px;cursor:pointer;white-space:nowrap}'+
-    '.kpac-badge .kpac-more{color:inherit;opacity:.85;margin-left:4px}.kpac-badge.lt .kpac-more{color:#0b3a8c}'+
-    '.kpac-note{margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,.3);font-size:12px;line-height:1.7;opacity:.88;font-weight:400;transition:background .3s}'+
-    '.kpac-note.hl{background:rgba(232,199,122,.18);border-radius:6px}'+
-    '.kpac-about-note{max-width:1160px;margin:32px auto 8px;padding:20px 22px;border:1px solid #d6dfef;border-radius:14px;background:#f6f8fc;color:#1f2a44;font-size:14px;line-height:1.75}'+
+    s.textContent='.kpac-about-note{max-width:1160px;margin:32px auto 8px;padding:20px 22px;border:1px solid #d6dfef;border-radius:14px;background:#f6f8fc;color:#1f2a44;font-size:14px;line-height:1.75}'+
     '.kpac-about-note h3{margin:0 0 8px;font-size:16px;color:#0b1f4d}.kpac-about-note .c{font-weight:700;color:#0b3a8c}'+
-    '@media (max-width:640px){.kpac-more{display:inline-block;margin:2px 0 0 6px}.kpac-about-note{margin:24px 16px 8px;font-size:13.5px}}';
+    '@media (max-width:640px){.kpac-about-note{margin:24px 16px 8px;font-size:13.5px}}';
     document.head.appendChild(s); }
-  function goNote(e){ if(e) e.preventDefault(); var t=document.getElementById('kpacCredNote'); if(!t) return; try{ t.scrollIntoView({behavior:'smooth',block:'center'}); }catch(x){ t.scrollIntoView(); } t.classList.add('hl'); setTimeout(function(){ t.classList.remove('hl'); },1800); }
+  function rm(id){ var el=document.getElementById(id); if(el&&el.parentNode) el.parentNode.removeChild(el); }
   function put(){ try{ css();
-    if(!document.getElementById('kpacCredNote')){ var n=document.createElement('div'); n.id='kpacCredNote'; n.className='kpac-note'; n.textContent=NOTE;
-      var host=document.getElementById('kpacCred'); if(host) host.appendChild(n); else { var f=document.querySelector('footer'); if(f) f.appendChild(n); } }
-    ['kpacTop','kpacBadge'].forEach(function(id){ var el=document.getElementById(id); if(el && !el.querySelector('.kpac-more')){ var a=document.createElement('a'); a.className='kpac-more'; a.href='#kpacCredNote'; a.textContent='ⓘ 자세히'; a.addEventListener('click',goNote); el.appendChild(a); } });
+    rm('kpacTop'); rm('kpacBadge'); rm('kpacCred');
+    if(!document.getElementById('kpacCredLi')){ var ul=document.querySelector('footer .f-col.info ul'); if(ul){ var li=document.createElement('li'); li.id='kpacCredLi'; li.textContent=LI;
+      var lis=ul.querySelectorAll('li'), at=null; for(var i=0;i<lis.length;i++){ if(/^주소/.test((lis[i].textContent||'').trim())){ at=lis[i].nextSibling; break; } }
+      ul.insertBefore(li, at); } }
+    if(!document.getElementById('kpacCredNote')){ var lg=document.querySelector('footer .f-legal'); var p=document.createElement('p'); p.id='kpacCredNote';
+      var b=document.createElement('b'); b.textContent='협회 등록 안내'; p.appendChild(b); p.appendChild(document.createTextNode(' · '+NOTE));
+      if(lg) lg.appendChild(p); else { var fb=document.querySelector('footer .f-bottom'); if(fb) fb.parentNode.insertBefore(p,fb); else { var f=document.querySelector('footer'); if(f) f.appendChild(p); } } }
     if(/about/.test(location.pathname) && !document.getElementById('kpacAboutNote')){ var f2=document.querySelector('footer'); if(f2){ var sec=document.createElement('section'); sec.id='kpacAboutNote'; sec.className='kpac-about-note';
       sec.innerHTML='<h3>협회 등록 안내</h3><div class="c">중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호) · 사단법인 한국경영컨설턴트협회 회원사</div><p style="margin:8px 0 0"></p>';
-      sec.querySelector('p').textContent=NOTE; f2.parentNode.insertBefore(sec,f2); } }
+      sec.querySelector('p').textContent=ABOUT; f2.parentNode.insertBefore(sec,f2); } }
   }catch(e){} }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
-  setTimeout(put,1500); setTimeout(put,3000);
+  setTimeout(put,1200); setTimeout(put,3000);
 })();
