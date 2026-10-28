@@ -68,3 +68,22 @@
     if(fb.classList && fb.classList.contains('f-bottom')) fb.parentNode.insertBefore(d,fb); else fb.appendChild(d); }catch(e){} }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
 })();
+
+/* r228b: 협회 등록 표기 · 상단 띠 + 첫 화면 배지 (잘 보이게) */
+(function(){ var L1='중소벤처기업부 허가 협회 등록 (등록번호 : 제2026-3호)', L2='사단법인 한국경영컨설턴트협회 회원사';
+  function css(){ if(document.getElementById('kpacCredCss')) return; var s=document.createElement('style'); s.id='kpacCredCss';
+    s.textContent='.kpac-top{background:#0b1f4d;color:#fff;font-size:13px;line-height:1.45;letter-spacing:-.1px;text-align:center;padding:8px 14px;border-bottom:1px solid rgba(212,175,95,.45)}'+
+    '.kpac-top b{color:#e8c77a;font-weight:700}.kpac-top .sep{opacity:.5;margin:0 8px}'+
+    '.kpac-badge{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(232,199,122,.6);color:#fff;font-size:13px;line-height:1.4}'+
+    '.kpac-badge b{color:#e8c77a;font-weight:700}.kpac-badge.lt{background:#f3f6fc;border-color:#c9d6ee;color:#0b1f4d}.kpac-badge.lt b{color:#0b3a8c}'+
+    '@media (max-width:640px){.kpac-top{font-size:11.5px;padding:7px 10px}.kpac-top .sep{display:none}.kpac-top .l2{display:block;opacity:.85;font-size:11px}.kpac-badge{font-size:12px;border-radius:12px}}';
+    document.head.appendChild(s); }
+  function put(){ try{ css();
+    if(!document.getElementById('kpacTop') && document.body){ var t=document.createElement('div'); t.id='kpacTop'; t.className='kpac-top';
+      t.innerHTML='<b>'+L1+'</b><span class="sep">|</span><span class="l2">'+L2+'</span>'; document.body.insertBefore(t, document.body.firstChild); }
+    if(!document.getElementById('kpacBadge')){ var hc=document.querySelector('.hero-copy'); if(hc){ var b=document.createElement('div'); b.id='kpacBadge'; b.className='kpac-badge';
+      b.innerHTML='<span>🏛</span><b>'+L1+'</b><span>· '+L2+'</span>'; hc.insertBefore(b, hc.firstChild); } }
+  }catch(e){} }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',put); else put();
+  setTimeout(put,1200);
+})();
