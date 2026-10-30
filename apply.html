@@ -22,116 +22,173 @@ gtag('config','AW-18048988442',{url_passthrough:true});
 try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kpac_src:_q.get('src')||'',kpac_ad:_q.get('ad')||_q.get('utm_content')||'',page_title:'검색광고 · 신청서 apply'});}catch(e){gtag('config','G-WCTPRG3HYE');}
 </script>
 <style>
-/* r247b 검색광고 전용 신청 랜딩 */
-.ap{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;color:#111;word-break:keep-all}
+/* r248b 검색광고 신청 랜딩 · bizkor 구조 + KPAC 스타일 */
+:root{--bg:#060d22;--bg2:#0b1735;--ac:#4f8bff;--ac2:#8fb4ff;--nv:#0b1f4d}
+body{margin:0;background:var(--bg)}
+.ap{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;color:#fff;word-break:keep-all;background:var(--bg);padding-bottom:120px}
 .ap *{box-sizing:border-box}
-.ap-top{position:sticky;top:0;z-index:20;background:#000;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #1d1d1d}
-.ap-top b{font-size:16px;letter-spacing:-.3px}.ap-top a{background:#fff;color:#000;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none}
-.ap-tick{background:#0b0b0b;color:#cfd3da;font-size:13px;height:36px;overflow:hidden;position:relative;border-bottom:1px solid #1d1d1d}
+.ap-top{position:sticky;top:0;z-index:20;background:rgba(6,13,34,.96);display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.ap-top b{font-size:16px;letter-spacing:-.3px}.ap-top b i{font-style:normal;color:var(--ac2);font-size:11px;margin-left:5px;font-weight:700}
+.ap-top a{background:#fff;color:var(--nv);border-radius:10px;padding:7px 12px;font-size:13px;font-weight:800;text-decoration:none}
+.ap-tick{background:var(--bg2);color:#c7d2e8;font-size:13px;height:34px;overflow:hidden}
 .ap-tick ul{list-style:none;margin:0;padding:0;transition:transform .5s}
-.ap-tick li{height:36px;line-height:36px;padding:0 18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ap-tick em{font-style:normal;background:#22c55e;color:#000;font-weight:800;font-size:10px;border-radius:4px;padding:2px 5px;margin:0 6px}
-.ap-hero{background:#000;color:#fff;text-align:center;padding:72px 22px 80px;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
-.ap-hero .kw{font-size:15px;color:#2dd4bf;font-weight:700;letter-spacing:.5px;margin-bottom:14px}
-.ap-hero h1{font-size:30px;line-height:1.38;font-weight:800;letter-spacing:-.8px;margin:0 0 22px}
-.ap-hero h1 span{color:#2dd4bf}
-.ap-hero p{color:#9ca3af;font-size:16px;line-height:1.6;margin:0 0 34px}
-.ap-btn{display:block;width:100%;max-width:420px;margin:0 auto;background:#2dd4bf;color:#000;border:0;border-radius:14px;padding:18px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;font-family:inherit}
-.ap-btn:disabled{opacity:.45;cursor:default}
-.ap-sec{padding:64px 22px;max-width:640px;margin:0 auto}
-.ap-dark{background:#0b0b0b;color:#fff}.ap-dark .ap-sec p{color:#a3a3a3}
-.ap-sec h2{font-size:26px;line-height:1.4;font-weight:800;letter-spacing:-.6px;margin:0 0 18px}
-.ap-sec h2 span{color:#2dd4bf}
-.ap-sec p{font-size:16px;line-height:1.7;color:#4b5563;margin:0 0 12px}
-.ap-case{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;margin-top:14px;text-align:left}
-.ap-case small{color:#0d9488;font-weight:700;font-size:12px}
-.ap-case b{display:block;font-size:18px;margin:6px 0 8px;line-height:1.4}
-.ap-case p{font-size:14.5px;margin:0 0 10px}
-.ap-case i{font-style:normal;display:inline-block;background:#ecfdf5;color:#047857;font-weight:700;font-size:13px;border-radius:8px;padding:5px 10px}
-.ap-note{font-size:12px!important;color:#9ca3af!important;margin-top:14px!important}
-.ap-chk{list-style:none;padding:0;margin:22px 0 30px}
-.ap-chk li{background:#151515;border:1px solid #262626;border-radius:14px;padding:16px 16px 16px 50px;margin-bottom:10px;position:relative;font-size:15px;line-height:1.55;color:#d4d4d4}
-.ap-chk li:before{content:'✓';position:absolute;left:16px;top:15px;width:22px;height:22px;border-radius:50%;background:#2dd4bf;color:#000;font-weight:900;font-size:13px;text-align:center;line-height:22px}
+.ap-tick li{height:34px;line-height:34px;padding:0 18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-tick em{font-style:normal;background:var(--ac);color:#fff;font-weight:800;font-size:10px;border-radius:4px;padding:2px 5px;margin:0 6px}
+.ap-hero{text-align:center;padding:110px 22px 120px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
+.ap-hero .kw{font-size:30px;color:var(--ac2);font-weight:800;margin-bottom:16px;transition:opacity .25s;min-height:40px}
+.ap-hero h1{font-size:25px;line-height:1.45;font-weight:800;letter-spacing:-.6px;margin:0 0 18px}
+.ap-hero p{color:#9aa6bf;font-size:15px;line-height:1.65;margin:0}
+.ap-sec{padding:70px 22px;max-width:640px;margin:0 auto;text-align:center}
+.ap-sec h2{font-size:26px;line-height:1.42;font-weight:800;letter-spacing:-.6px;margin:0 0 20px}
+.ap-sec h2 span{color:var(--ac2)}
+.ap-sec .sub{font-size:15px;line-height:1.7;color:#9aa6bf;margin:0}
+.ap-bul{list-style:none;padding:0;margin:0 auto;text-align:left;max-width:340px}
+.ap-bul li{position:relative;padding-left:24px;font-size:14.5px;line-height:1.6;color:#c7d2e8;margin-bottom:12px}
+.ap-bul li:before{content:'✔';position:absolute;left:0;color:var(--ac2);font-size:13px}
+.ap-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 22px 6px;margin:0 -22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ap-row::-webkit-scrollbar{display:none}
+.ap-fund{flex:0 0 78%;scroll-snap-align:center;background:var(--bg2);border:1px solid #1c2c55;border-radius:18px;padding:18px;text-align:left}
+.ap-fund small{color:#8e9bb8;font-size:12.5px}.ap-fund b{display:block;font-size:18px;margin:10px 0 8px;line-height:1.4}
+.ap-fund i{font-style:normal;font-size:12px;font-weight:800;color:#0b1f4d;background:var(--ac2);border-radius:999px;padding:3px 9px}
+.ap-case{flex:0 0 82%;scroll-snap-align:center;background:#fff;color:#111;border-radius:18px;padding:20px;text-align:left}
+.ap-case small{display:inline-block;color:#fff;background:var(--nv);font-weight:700;font-size:11.5px;border-radius:6px;padding:3px 8px}
+.ap-case b{display:block;font-size:17px;margin:12px 0 8px;line-height:1.45}
+.ap-case p{font-size:14px;line-height:1.65;color:#4b5563;margin:0}
+.ap-new{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:5px 16px;margin-bottom:16px}
+.ap-steps5{margin:30px 0 0;border:2px solid #1c2c55;border-radius:22px;padding:14px;text-align:left}
+.ap-steps5 div{display:flex;gap:14px;align-items:center;background:var(--bg2);border-radius:14px;padding:16px;margin:8px 0}
+.ap-steps5 em{font-style:normal;font-size:24px;font-weight:900;color:var(--ac2);flex:none;width:40px}
+.ap-steps5 b{display:block;font-size:15px}.ap-steps5 span{font-size:13px;color:#9aa6bf}
+.ap-chk{list-style:none;padding:0;margin:26px 0 0;text-align:left}
+.ap-chk li{background:var(--bg2);border-radius:14px;padding:15px 16px 15px 48px;margin-bottom:10px;position:relative;font-size:14.5px;line-height:1.55;color:#c7d2e8}
+.ap-chk li:before{content:'✓';position:absolute;left:15px;top:15px;width:22px;height:22px;border-radius:50%;background:var(--ac);color:#fff;font-weight:900;font-size:12px;text-align:center;line-height:22px}
 .ap-chk b{color:#fff;display:block}
-#apForm{scroll-margin-top:100px}
-.ap-form{background:#fff;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.08);border:1px solid #eef0f3;padding:24px 18px}
-.ap-steps{display:flex;gap:8px;margin-bottom:20px}.ap-steps span{flex:1;text-align:center;font-size:12px;font-weight:800;color:#9ca3af;border-bottom:3px solid #e5e7eb;padding-bottom:8px}
-.ap-steps span.on{color:#0d9488;border-color:#2dd4bf}
-.ap-q{font-size:17px;font-weight:800;margin:22px 0 10px}.ap-q small{font-size:12px;color:#9ca3af;font-weight:600;margin-left:6px}
-.ap-in{width:100%;border:1.5px solid #e5e7eb;border-radius:12px;padding:15px 14px;font-size:16px;font-family:inherit;background:#fff}
-.ap-in:focus{outline:0;border-color:#2dd4bf}
+.ap-fix{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(6,13,34,.95) 35%);text-align:center}
+.ap-fix .bub{display:inline-block;background:#fff;color:var(--nv);font-size:13px;font-weight:800;border-radius:999px;padding:7px 14px;margin-bottom:8px;position:relative}
+.ap-fix .bub:after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-top-color:#fff;border-bottom:0}
+.ap-btn{display:block;width:100%;max-width:440px;margin:0 auto;background:var(--ac);color:#fff;border:0;border-radius:16px;padding:18px;font-size:17px;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;font-family:inherit;box-shadow:0 8px 24px rgba(79,139,255,.35)}
+.ap-btn:disabled{opacity:.45;cursor:default}
+.ap-foot{max-width:640px;margin:0 auto;padding:30px 22px 10px;color:#6f7d9c;font-size:11.5px;line-height:1.7;border-top:1px solid #16234a}
+.ap-foot b{color:#aab5cc}.ap-foot a{color:#aab5cc}
+/* 신청서 (전체 화면) */
+#apSheet{position:fixed;inset:0;z-index:50;background:#f4f6fb;overflow-y:auto;color:#111}
+#apSheet[hidden]{display:none}
+.ap-sh-top{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #e6e9f0;z-index:2}
+.ap-sh-top b{font-size:15px;color:var(--nv)}.ap-sh-top button{background:none;border:0;font-size:22px;color:#6b7280;cursor:pointer;line-height:1}
+.ap-form{max-width:520px;margin:16px auto 40px;background:#fff;border-radius:20px;padding:24px 18px;box-shadow:0 6px 24px rgba(11,31,77,.06)}
+.ap-form h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px;color:#111}.ap-form .d{font-size:14px;color:#6b7280;margin:0 0 18px}
+.ap-steps{display:flex;gap:8px;margin-bottom:8px}.ap-steps span{flex:1;text-align:center;font-size:12px;font-weight:800;color:#9ca3af;border-bottom:3px solid #e5e7eb;padding-bottom:8px}
+.ap-steps span.on{color:var(--nv);border-color:var(--ac)}
+.ap-q{font-size:16.5px;font-weight:800;margin:22px 0 10px;color:#111}.ap-q small{font-size:12px;color:#9ca3af;font-weight:600;margin-left:6px}
+.ap-in{width:100%;border:1.5px solid #e2e6ee;border-radius:12px;padding:15px 14px;font-size:16px;font-family:inherit;background:#fff;color:#111}
+.ap-in:focus{outline:0;border-color:var(--ac)}
 .ap-opt{display:grid;gap:8px}.ap-opt.g2{grid-template-columns:1fr 1fr}
-.ap-opt button{border:1.5px solid #e5e7eb;background:#fff;border-radius:12px;padding:14px 10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;color:#111;line-height:1.35}
+.ap-opt button{border:1.5px solid #e2e6ee;background:#fff;border-radius:12px;padding:14px 10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;color:#111;line-height:1.35}
 .ap-opt button small{display:block;font-size:12px;color:#6b7280;font-weight:600;margin-top:3px}
-.ap-opt button[aria-pressed=true]{border-color:#14b8a6;background:#f0fdfa;color:#0f766e}
+.ap-opt button[aria-pressed=true]{border-color:var(--ac);background:#eef4ff;color:var(--nv)}
 .ap-msg{color:#dc2626;font-size:14px;margin:12px 0 0;min-height:1em}
 .ap-agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#6b7280;line-height:1.55;margin:18px 0 6px}
 .ap-agree input{margin-top:3px;width:18px;height:18px;flex:none}
 .ap-done{text-align:center;padding:30px 6px}.ap-done b{display:block;font-size:22px;margin:10px 0}
 .ap-back{background:none;border:0;color:#6b7280;font-size:14px;margin-top:12px;cursor:pointer;font-family:inherit;width:100%}
-@media(min-width:720px){.ap-hero h1{font-size:44px}.ap-sec h2{font-size:32px}}
+@media(min-width:720px){.ap-hero .kw{font-size:40px}.ap-hero h1{font-size:36px}.ap-sec h2{font-size:32px}.ap-fund,.ap-case{flex-basis:44%}}
 </style>
 </head>
 <body>
 <div class="ap">
-<header class="ap-top"><b>한국정책자문센터</b><a href="#apForm" data-go>무료 확인</a></header>
+<header class="ap-top"><b>한국정책자문센터<i>KPAC</i></b><a href="tel:18661912">☎ 문의</a></header>
 <div class="ap-tick" id="apTick" hidden><ul id="apTickL"></ul></div>
 
 <section class="ap-hero">
-  <div class="kw">정책자금 · 보증 · 지원사업</div>
-  <h1>지금 우리 회사가<br>신청할 수 있는 정책자금,<br><span>확인해 보셨나요?</span></h1>
-  <p>이미 사업 자금이 넉넉하시다면,<br>이 페이지를 나가셔도 좋습니다.</p>
-  <a href="#apForm" class="ap-btn" data-go>3가지만 알려주고 무료로 확인하기</a>
+  <div class="kw" id="apKw">정책자금</div>
+  <h1>힘든 시기에도<br>매년 꾸준히 챙기고 계신가요?</h1>
+  <p>자금 여유가 충분하시다면,<br>지금 이 페이지를 닫으셔도 괜찮습니다.</p>
 </section>
-
-<div class="ap-dark"><section class="ap-sec" style="text-align:center">
-  <h2>좋은 조건의 자금일수록<br><span>조용히 공지되고<br>빠르게 소진돼요</span></h2>
-  <p>예산이 정해진 자금은 접수가 시작되면 금방 마감되는 경우가 많습니다.</p>
-  <p>예전에 거절되셨더라도 매출·신용점수·업력이 바뀌었거나 새 자금이 나왔다면 결과가 달라질 수 있어, 주기적으로 다시 확인하는 것이 중요합니다.</p>
-</section></div>
-
-<section class="ap-sec" style="text-align:center">
-  <h2>비슷한 상황에서<br>자금을 마련한 대표님들</h2>
-  <p>고객 정보 보호를 위해 사명 · 인명은 비공개로 했습니다.</p>
-  <div class="ap-case"><small>제조업 · 자본잠식</small><b>자본잠식 상태에서 기술평가보증으로 재기</b><p>일반 대출이 어려웠던 제조업체. 재무제표를 다시 분석해 부채 구조를 정리하고 기술평가보증 경로로 조달 전략을 새로 설계했습니다.</p><i>기술평가보증 승인</i></div>
-  <div class="ap-case"><small>개인사업자 · 매출 급락 후 회복</small><b>매출 급락 이후 회복기 보증 증액</b><p>일시적인 매출 하락을 특수 상황으로 소명하고, 최근 회복 추세를 근거로 보증 한도 증액을 신청했습니다.</p><i>보증 한도 증액 승인</i></div>
-  <div class="ap-case"><small>기술기업 · 가수금</small><b>가수금을 자본으로, 재무 신뢰도 재설계</b><p>대표자 가수금 비중이 높아 재무 지표가 약했던 기업. 가수금의 자본 전환으로 재무구조를 개선해 심사에 대응했습니다.</p><i>정책자금 승인</i></div>
-  <p class="ap-note">결과는 기업의 재무상태 · 업력 · 신용도 · 업종 및 각 운용기관의 심사 기준에 따라 달라지며, 동일한 결과를 보장하지 않습니다.</p>
-</section>
-
-<div class="ap-dark"><section class="ap-sec">
-  <h2 style="text-align:center">1가지 이상 해당하신다면,<br><span>한 번 확인해 보세요</span></h2>
-  <ul class="ap-chk">
-    <li><b>「그런 게 있는지도 몰라서」</b>나와는 상관없다고 생각하셨던 분</li>
-    <li><b>「이미 한 번 거절돼서」</b>포기하셨던 분</li>
-    <li><b>「매출이 점점 줄어서」</b>제2금융·사금융 대출을 알아보고 계신 분</li>
-    <li><b>「사업이 힘들어도」</b>절대 포기하지 않으실 분</li>
-  </ul>
-  <a href="#apForm" class="ap-btn" data-go>무료로 확인하기</a>
-</section></div>
 
 <section class="ap-sec">
+  <h2>조건 좋은 정책자금은<br><span>소리 없이 공고되고</span><br><span>금세 마감</span>돼요</h2>
+  <ul class="ap-bul">
+    <li>예전에 거절되셨어도, 한 달에 한 번은 다시 확인해 보는 게 좋습니다.</li>
+    <li>새 자금이 나왔거나 매출·신용점수가 바뀌었다면 이번엔 결과가 달라질 수 있어요.</li>
+  </ul>
+  <div class="ap-row">
+    <div class="ap-fund"><small>각 시·도 신용보증재단 (지자체 협약)</small><b>지자체 소상공인 특례보증</b><i>11월 접수 중</i></div>
+    <div class="ap-fund"><small>소상공인시장진흥공단</small><b>일시적경영애로자금 (직접대출)</b><i>예산 소진 시 마감</i></div>
+    <div class="ap-fund"><small>경기신용보증재단</small><b>금융기관 특별출연 협약보증</b><i>접수 중</i></div>
+  </div>
+</section>
+
+<section class="ap-sec">
+  <h2>비슷한 상황에서<br><span>정책자금으로 다시 일어선</span><br>대표님들</h2>
+  <div class="ap-row">
+    <div class="ap-case"><small>제조업 · 자본잠식</small><b>자본잠식 상태에서 기술평가보증으로 재기</b><p>일반 대출이 막혔던 제조업체. 재무제표를 다시 분석해 부채 구조를 정리하고 기술평가보증으로 조달 경로를 새로 잡았습니다.</p></div>
+    <div class="ap-case"><small>개인사업자 · 매출 급락 후 회복</small><b>매출이 꺾인 뒤 회복기에 보증 증액</b><p>일시적인 매출 하락을 특수 상황으로 소명하고, 최근 회복 추세를 근거로 보증 한도 증액을 신청했습니다.</p></div>
+    <div class="ap-case"><small>기술기업 · 가수금</small><b>가수금을 자본으로, 재무 신뢰도 회복</b><p>대표자 가수금 비중이 높아 재무 지표가 약했던 기업. 가수금을 자본으로 전환해 재무구조를 개선하고 심사에 대응했습니다.</p></div>
+  </div>
+</section>
+
+<section class="ap-sec">
+  <div class="ap-new">NEW</div>
+  <h2>2026 정책자금<br><span>무료 사전 진단</span></h2>
+  <p class="sub">매출 1억 미만 소상공인부터<br>매출 100억 이상 중소기업까지</p>
+  <p class="sub" style="margin-top:14px">선착순으로 마감되는 자금은<br><b style="color:#fff">매달 다시 확인</b>하셔야 합니다.</p>
+  <div class="ap-steps5">
+    <div><em>01</em><p style="margin:0"><b>3가지만 답하면 사전 진단</b><span>업종 · 업력 · 작년 매출</span></p></div>
+    <div><em>02</em><p style="margin:0"><b>정책자금 · 보증 · 지원사업 한 번에 비교</b><span>지금 신청 가능한 것만 골라 드려요</span></p></div>
+    <div><em>03</em><p style="margin:0"><b>기존 대출 구조까지 함께 점검</b><span>대환이 필요한지도 같이 봐요</span></p></div>
+    <div><em>04</em><p style="margin:0"><b>상담 · 진단 무료</b><span>계약 전에는 비용을 청구하지 않아요</span></p></div>
+    <div><em>05</em><p style="margin:0"><b>사단법인 한국경영컨설턴트협회 회원사</b><span>협회 윤리 기준에 따라 상담해요</span></p></div>
+  </div>
+</section>
+
+<section class="ap-sec">
+  <h2>예산이 마감되기 전에<br>운영자금 미리 준비하고<br><span>사업에만 집중하세요</span></h2>
+  <p class="sub">몰라서 신청을 못 하는 경우가 생각보다 많습니다.<br>받을 수 있는지부터 먼저 확인해 보세요.</p>
+</section>
+
+<section class="ap-sec">
+  <h2>1가지라도 해당하신다면,<br><span>지금 확인해 보세요</span></h2>
+  <ul class="ap-chk">
+    <li><b>「그런 자금이 있는 줄도 몰라서」</b>나와는 상관없다고 생각하셨던 분</li>
+    <li><b>「이미 한 번 거절돼서」</b>포기하셨던 분</li>
+    <li><b>「매출이 계속 줄어서」</b>제2금융·사금융 대출을 알아보고 계신 분</li>
+    <li><b>「사업이 힘들어도」</b>끝까지 버텨 보실 분</li>
+  </ul>
+</section>
+
+<div class="ap-foot">
+  <b>한국정책자문센터(KPAC)</b> · 대표 이남인 · 사업자등록번호 111-13-97163 · 경기도 남양주시 · 대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
+  사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)<br>
+  당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 실제 경험으로 동일한 결과를 보장하지 않습니다.<br>
+  <a href="privacy.html">개인정보처리방침</a> · <a href="services.html#terms">서비스 이용 안내</a> · © 2026 KPAC
+</div>
+
+<div class="ap-fix"><div class="bub">🗓 2026년 4분기 자금 접수 진행 중</div><a href="#apForm" class="ap-btn" data-go>3가지만 답하고 무료로 확인하기</a></div>
+</div>
+
+<div id="apSheet" hidden>
+  <div class="ap-sh-top"><b>한국정책자문센터</b><button type="button" id="apX" aria-label="닫기">✕</button></div>
   <div class="ap-form" id="apForm">
-    <h2 style="font-size:22px;margin-bottom:6px">지금 확보 가능한 정책자금 알아보기</h2>
-    <p style="font-size:14px">운영 중인 사업장 정보를 알려주세요 · 상담과 진단은 무료입니다</p>
+    <h2>우리 회사가 받을 수 있는 자금 확인하기</h2>
+    <p class="d">지금 운영 중인 사업장 정보를 알려 주세요 · 진단은 무료예요</p>
     <div class="ap-steps"><span class="on" id="st1">STEP 01</span><span id="st2">STEP 02</span></div>
     <div id="s1">
-      <div class="ap-q">어떤 사업 중이신가요?<small>직접 입력</small></div>
+      <div class="ap-q">어떤 사업을 하고 계신가요?<small>직접 입력</small></div>
       <input class="ap-in" id="f_ind" maxlength="40" placeholder="예) 음식점, 제조업, 쇼핑몰, 미용실">
-      <div class="ap-q">회사의 업력은?<small>하나 선택</small></div>
+      <div class="ap-q">사업한 지 얼마나 되셨나요?<small>하나 선택</small></div>
       <div class="ap-opt" data-k="age">
-        <button type="button" data-v="3년 미만">창업한 지 3년 미만<small>초기 기업 혜택 대상</small></button>
+        <button type="button" data-v="3년 미만">창업 3년 미만<small>초기 기업 혜택 대상</small></button>
         <button type="button" data-v="3~7년">창업 3년 이상 ~ 7년 이하<small>성장기 집중지원 대상</small></button>
-        <button type="button" data-v="7년 초과">창업한 지 7년 초과<small>중소기업 지원 대상</small></button>
+        <button type="button" data-v="7년 초과">창업 7년 초과<small>중소기업 지원 대상</small></button>
       </div>
-      <div class="ap-q">작년(25년) 매출은?<small>올해 개업이면 지금까지 매출</small></div>
+      <div class="ap-q">작년(25년) 매출은요?<small>올해 개업이면 지금까지 매출</small></div>
       <div class="ap-opt g2" data-k="rev">
-        <button type="button" data-v="1억 미만">1억 미만</button><button type="button" data-v="1~2억">1-2억</button>
-        <button type="button" data-v="2~3억">2-3억</button><button type="button" data-v="3~5억">3-5억</button>
+        <button type="button" data-v="1억 미만">1억 미만</button><button type="button" data-v="1~2억">1~2억</button>
+        <button type="button" data-v="2~3억">2~3억</button><button type="button" data-v="3~5억">3~5억</button>
         <button type="button" data-v="5억 이상" style="grid-column:1/-1">5억 이상</button>
       </div>
       <p class="ap-msg" id="m1"></p>
-      <button type="button" class="ap-btn" id="next" style="margin-top:14px">다음</button>
+      <button type="button" class="ap-btn" id="next" style="margin-top:14px;box-shadow:none">다음 단계로</button>
     </div>
     <div id="s2" hidden>
       <div class="ap-q">회사명</div><input class="ap-in" id="f_co" maxlength="60" placeholder="상호 (없으면 비워 두셔도 돼요)">
@@ -141,38 +198,12 @@ try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kp
       <select class="ap-in" id="f_rg"><option value="">시·도 선택</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select>
       <label class="ap-agree"><input type="checkbox" id="f_ag"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 / 목적: 상담 예약 및 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
       <p class="ap-msg" id="m2"></p>
-      <button type="button" class="ap-btn" id="send">무료 확인 신청하기</button>
+      <button type="button" class="ap-btn" id="send" style="box-shadow:none">무료 확인 신청하기</button>
       <button type="button" class="ap-back" id="back">← 이전으로</button>
     </div>
     <div id="s3" class="ap-done" hidden><div style="font-size:42px">✅</div><b>신청이 접수됐어요</b><p>담당 컨설턴트가 확인 후 연락드릴게요.<br>급하시면 <a href="tel:18661912">1866-1912</a>로 전화 주세요.</p></div>
   </div>
-</section>
 </div>
-<footer class="footer">
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <a href="#top" class="logo"><img src="img-kpac-mark-l.png" alt="" width="34" height="34"><span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span></a>
-        <p>정책자금, 투자, M&amp;A, 법률, 채권·채무까지 기업 경영 전반을 자문합니다.</p>
-      </div>
-      <div class="f-cols">
-        <div class="f-col"><h4>바로가기</h4><a href="about.html">회사소개</a><a href="services.html">서비스 안내</a><a href="cases.html">성공사례</a><a href="resources.html">무료자료</a><a href="column.html">칼럼</a><a href="faq.html">자주 묻는 질문</a></div>
-        <div class="f-col"><h4>상담 문의</h4><a href="tel:18661912">TEL. 1866-1912</a><a href="http://pf.kakao.com/_dxjMDn/chat" target="_blank" rel="noopener">카카오톡 상담</a><a href="#bk">상담 신청서</a></div>
-        <div class="f-col"><h4>채널</h4><a href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">유튜브 @kpac_ceo</a><a href="https://www.instagram.com/kpac_ceo/" target="_blank" rel="noopener">인스타그램 @kpac_ceo</a><a href="https://blog.naver.com/in_partners-" target="_blank" rel="noopener">네이버 블로그</a><a href="https://pf.kakao.com/_dxjMDn" target="_blank" rel="noopener">카카오톡 채널</a><a href="https://litt.ly/inpartnerss" target="_blank" rel="noopener">리틀리</a></div>
-        <div class="f-col info"><h4>회사 정보</h4><ul><li>한국정책자문센터 (KPAC)</li><li>대표 : 이남인</li><li>사업자등록번호 : 111-13-97163</li><li>업태 : 전문, 과학 및 기술서비스업</li><li>종목 : 경영 컨설팅업 / 광고 대행업</li><li>주소 : 경기도 남양주시</li><li>이메일 : consult@kpac.store</li><li>대표전화 : 1866-1912</li></ul></div>
-      </div>
-    </div>
-    <div class="f-legal">
-      <p><b>한국정책자문센터(KPAC)는 경영컨설팅 기업입니다.</b> 정부·공공기관의 정책자금 및 지원사업에 대한 종합 경영컨설팅을 제공하며, 대출·보증·투자 등 금융상품을 직접 취급하거나 중개·판매하지 않습니다. 자금의 심사와 지급 여부는 각 정책자금 운용기관(중소벤처기업진흥공단, 소상공인시장진흥공단, 신용보증기금, 기술보증기금, 지역신용보증재단 등)의 자체 심사 기준에 따라 결정되며, 당사는 승인을 보장하지 않습니다.</p>
-      <p><b>상담 안내</b> · 상담 및 사전 진단은 무료이며, 계약 전 어떠한 비용도 청구하지 않습니다. 자세한 내용은 <a href="services.html#terms">서비스 이용 안내</a>에서 확인하실 수 있습니다.</p>
-      <p><b>사례·후기 안내</b> · 본 사이트에 게시된 승인 사례와 고객 후기는 개별 기업의 실제 경험이며, 승인 여부·한도·금리는 기업의 재무상태, 업력, 신용도, 업종 및 각 운용기관의 심사 기준에 따라 달라지므로 동일하거나 유사한 결과를 보장하지 않습니다.</p>
-    </div>
-    <div class="f-bottom">
-      <span>© 2026 KPAC(한국정책자문센터). All rights reserved.</span>
-      <span><a href="services.html#terms">서비스 이용 안내</a> · <a href="privacy.html"><b>개인정보처리방침</b></a></span>
-    </div>
-  </div>
-</footer>
 <script>
 (function(){
   var API='https://kpac-crm-server-production.up.railway.app';
@@ -200,12 +231,12 @@ try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kp
     $('apTickL').innerHTML=L.map(function(x){return '<li>'+e(x.ind)+' '+e(x.co)+'<em>NEW</em>'+e(x.ago)+' '+e(x.nm)+' 대표님 신청</li>'}).join('');$('apTick').hidden=false;
     var i=0;setInterval(function(){i=(i+1)%L.length;$('apTickL').style.transform='translateY(-'+(i*36)+'px)';},2800);
   }).catch(function(){});
-  [].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(e){e.preventDefault();$('apForm').scrollIntoView({behavior:'smooth'});setTimeout(function(){$('f_ind').focus({preventScroll:true})},500);});});
+  function openF(){$('apSheet').hidden=false;document.body.style.overflow='hidden';$('apSheet').scrollTop=0;}function closeF(){$('apSheet').hidden=true;document.body.style.overflow='';}[].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(e){e.preventDefault();openF();});});$('apX').onclick=closeF;if(location.hash==='#apForm')openF();var KW=['정책자금','운영자금','보증 자금','지원사업'],ki=0;setInterval(function(){ki=(ki+1)%KW.length;var k=$('apKw');k.style.opacity=0;setTimeout(function(){k.textContent=KW[ki];k.style.opacity=1;},250);},2200);
   var V={age:'',rev:''};
   [].forEach.call(document.querySelectorAll('.ap-opt'),function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;fStart();V[g.dataset.k]=b.dataset.v;[].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});$('m1').textContent='';});});
   $('f_ind').addEventListener('input',fStart);
   $('next').onclick=function(){var ind=$('f_ind').value.trim();if(!ind){$('m1').textContent='어떤 사업 중이신지 입력해 주세요.';return;}if(!V.age){$('m1').textContent='업력을 골라 주세요.';return;}if(!V.rev){$('m1').textContent='작년 매출을 골라 주세요.';return;}
-    $('s1').hidden=true;$('s2').hidden=false;$('st2').className='on';if(!st2){st2=1;beacon('step2');}$('apForm').scrollIntoView({behavior:'smooth'});};
+    $('s1').hidden=true;$('s2').hidden=false;$('st2').className='on';if(!st2){st2=1;beacon('step2');}$('apSheet').scrollTop=0;};
   $('back').onclick=function(){$('s2').hidden=true;$('s1').hidden=false;$('st2').className='';};
   $('f_ph').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,11);if(v.length>7)v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);else if(v.length>3)v=v.slice(0,3)+'-'+v.slice(3);e.target.value=v;});
   var busy=false;
@@ -218,7 +249,7 @@ try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kp
     fetch(API+'/api/intake',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(p)}).then(function(r){return r.json().then(function(j){return {s:r.status,j:j}})}).then(function(x){
       if(x.s===200&&x.j.ok){sub=1;beacon('submit');
         if(!x.j.dup&&!TEST){try{gtag('event','conversion',{send_to:'AW-18048988442/iDYiCNiihN4cEJrqtp5D',value:1.0,currency:'KRW'});gtag('event','generate_lead',{send_to:'G-WCTPRG3HYE',currency:'KRW',value:1,lead_channel:String(F.src||''),lead_ad:String(F.ad||'')});}catch(e){}}
-        $('s2').hidden=true;$('s3').hidden=false;document.querySelector('.ap-steps').style.display='none';$('apForm').scrollIntoView({behavior:'smooth'});return;}
+        $('s2').hidden=true;$('s3').hidden=false;document.querySelector('.ap-steps').style.display='none';$('apSheet').scrollTop=0;return;}
       busy=false;bt.disabled=false;bt.textContent='무료 확인 신청하기';m.textContent=(x.j&&x.j.error)||'신청이 안 됐어요. 1866-1912로 연락 주세요.';
     }).catch(function(){busy=false;bt.disabled=false;bt.textContent='무료 확인 신청하기';m.textContent='연결이 원활하지 않아요. 잠시 후 다시 시도해 주세요.';});
   };
