@@ -12,8 +12,6 @@
 <link rel="shortcut icon" href="https://kpac.store/favicon.ico">
 <link rel="icon" type="image/png" sizes="192x192" href="https://kpac.store/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="kpac.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048988442"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -22,240 +20,216 @@ gtag('config','AW-18048988442',{url_passthrough:true});
 try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kpac_src:_q.get('src')||'',kpac_ad:_q.get('ad')||_q.get('utm_content')||'',page_title:'검색광고 · 신청서 apply'});}catch(e){gtag('config','G-WCTPRG3HYE');}
 </script>
 <style>
-/* r248b 검색광고 신청 랜딩 · bizkor 구조 + KPAC 스타일 */
-:root{--bg:#060d22;--bg2:#0b1735;--ac:#4f8bff;--ac2:#8fb4ff;--nv:#0b1f4d}
-body{margin:0;background:var(--bg)}
-.ap{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;color:#fff;word-break:keep-all;background:var(--bg);padding-bottom:120px}
-.ap *{box-sizing:border-box}
-.ap-top{position:sticky;top:0;z-index:20;background:rgba(6,13,34,.96);display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
-.ap-top b{font-size:16px;letter-spacing:-.3px}.ap-top b i{font-style:normal;color:var(--ac2);font-size:11px;margin-left:5px;font-weight:700}
-.ap-top a{background:#fff;color:var(--nv);border-radius:10px;padding:7px 12px;font-size:13px;font-weight:800;text-decoration:none}
-.ap-tick{background:var(--bg2);color:#c7d2e8;font-size:13px;height:34px;overflow:hidden}
+/* r251a bizkor 벤치 · 같은 글꼴(Pretendard woff, noonfonts_2107@1.1 = bizkor common.css와 동일)·크기·색 */
+@font-face{font-family:'Pre';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Pre';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Pre';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Pre';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Pre';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');font-weight:800;font-style:normal;font-display:swap}
+:root{--ac:#2fd1cd;--gy:#bbbbbb;--yl:#ffe41c;--cd:#1e1e1e}
+body{margin:0;background:#000}
+.ap{font-family:'Pre',sans-serif;color:#fff;word-break:keep-all;background:#000;letter-spacing:normal;padding-bottom:0}
+.ap *{box-sizing:border-box;letter-spacing:normal}
+.ap-top{position:sticky;top:0;z-index:20;background:#000;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 27px}
+.ap-top b{font-size:18px;font-weight:700;line-height:18px}
+.ap-top a{background:#fff;color:#000;border-radius:13px;padding:4px 12px;font-size:14px;font-weight:700;line-height:17px;text-decoration:none}
+.ap-tick{background:#111;color:#bbb;font-size:13px;height:34px;overflow:hidden}
 .ap-tick ul{list-style:none;margin:0;padding:0;transition:transform .5s}
-.ap-tick li{height:34px;line-height:34px;padding:0 18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ap-tick em{font-style:normal;background:var(--ac);color:#fff;font-weight:800;font-size:10px;border-radius:4px;padding:2px 5px;margin:0 6px}
-.ap-hero{text-align:center;padding:110px 22px 120px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
-.ap-hero .kw{font-size:30px;color:var(--ac2);font-weight:800;margin-bottom:16px;transition:opacity .25s;min-height:40px}
-.ap-hero h1{font-size:25px;line-height:1.45;font-weight:800;letter-spacing:-.6px;margin:0 0 18px}
-.ap-hero p{color:#9aa6bf;font-size:15px;line-height:1.65;margin:0}
-.ap-sec{padding:70px 22px;max-width:640px;margin:0 auto;text-align:center}
-.ap-sec h2{font-size:26px;line-height:1.42;font-weight:800;letter-spacing:-.6px;margin:0 0 20px}
-.ap-sec h2 span{color:var(--ac2)}
-.ap-sec .sub{font-size:15px;line-height:1.7;color:#9aa6bf;margin:0}
-.ap-bul{list-style:none;padding:0;margin:0 auto;text-align:left;max-width:340px}
-.ap-bul li{position:relative;padding-left:24px;font-size:14.5px;line-height:1.6;color:#c7d2e8;margin-bottom:12px}
-.ap-bul li:before{content:'✔';position:absolute;left:0;color:var(--ac2);font-size:13px}
-.ap-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 22px 6px;margin:0 -22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ap-tick li{height:34px;line-height:34px;padding:0 27px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-tick em{font-style:normal;background:var(--ac);color:#000;font-weight:800;font-size:10px;border-radius:4px;padding:2px 5px;margin:0 6px}
+.ap-hero{text-align:center;min-height:764px;padding:0 27px 100px;display:flex;flex-direction:column;justify-content:center}
+.ap-hero .kw{font-size:35px;font-weight:800;line-height:35px;color:var(--ac);min-height:35px;margin-bottom:25px;transition:opacity .25s}
+.ap-hero h1{font-size:26px;font-weight:700;line-height:31.2px;margin:0 0 51px}
+.ap-hero p{font-size:18px;font-weight:500;line-height:27px;color:var(--gy);margin:0}
+.ap-sec{padding:100px 27px 0;max-width:640px;margin:0 auto;text-align:center}
+.ap-sec h2{font-size:28px;font-weight:700;line-height:33.6px;margin:0 0 30px}
+.ap-sec h2 span{color:var(--ac);font-weight:800}
+.ap-sec .sub{font-size:15px;font-weight:500;line-height:22.5px;color:var(--gy);margin:0}
+.ap-sec .sub u{color:#fff;font-weight:700;text-underline-offset:3px}
+.ap-bul{list-style:none;padding:0;margin:0 auto;text-align:left;max-width:335px}
+.ap-bul li{position:relative;padding-left:26px;font-size:15px;font-weight:500;line-height:18px;color:var(--gy);margin-bottom:22px}
+.ap-bul li:before{content:'';position:absolute;left:0;top:1px;width:16px;height:16px;border-radius:50%;background:var(--ac)}
+.ap-bul li:after{content:'';position:absolute;left:6px;top:4px;width:4px;height:7px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ap-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 27px 6px;margin:0 -27px;scrollbar-width:none}
 .ap-row::-webkit-scrollbar{display:none}
-.ap-fund{flex:0 0 78%;scroll-snap-align:center;background:var(--bg2);border:1px solid #1c2c55;border-radius:18px;padding:18px;text-align:left}
-.ap-fund small{color:#8e9bb8;font-size:12.5px}.ap-fund b{display:block;font-size:18px;margin:10px 0 8px;line-height:1.4}
-.ap-fund i{font-style:normal;font-size:12px;font-weight:800;color:#0b1f4d;background:var(--ac2);border-radius:999px;padding:3px 9px}
-.ap-case{flex:0 0 82%;scroll-snap-align:center;background:#fff;color:#111;border-radius:18px;padding:20px;text-align:left}
-.ap-case small{display:inline-block;color:#fff;background:var(--nv);font-weight:700;font-size:11.5px;border-radius:6px;padding:3px 8px}
-.ap-case b{display:block;font-size:17px;margin:12px 0 8px;line-height:1.45}
-.ap-case p{font-size:14px;line-height:1.65;color:#4b5563;margin:0}
-/* r249a 후기 슬라이더 · 사진 카드 (업종 사진: Pexels 무료 이미지 7178310·6287459·4487363 / 승인 화면·후기: KPAC 실제 자료) */
-.ap-rvw{position:relative;margin:26px -22px 0}
-.ap-rv{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 22px 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-behavior:smooth}
+.ap-fund{flex:0 0 240px;height:105px;scroll-snap-align:center;background:var(--cd);border-radius:20px;padding:17px 18px;text-align:left;position:relative}
+.ap-fund small{display:block;color:var(--gy);font-size:13px;font-weight:500;padding-right:56px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-fund i{position:absolute;right:16px;top:14px;font-style:normal;font-size:12px;font-weight:700;color:#000;background:var(--ac);border-radius:999px;padding:3px 10px}
+.ap-fund b{display:block;font-size:20px;font-weight:800;margin-top:24px;line-height:1.2;padding-right:44px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-fund em{position:absolute;right:16px;bottom:18px;font-style:normal;font-size:13px;font-weight:700;color:var(--yl)}
+.ap-rvw{position:relative;margin:40px -27px 0}
+.ap-rv{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 30px 4px;scrollbar-width:none;scroll-behavior:smooth}
 .ap-rv::-webkit-scrollbar{display:none}
-.ap-rc{flex:0 0 84%;scroll-snap-align:center;background:var(--bg2);border:1px solid #1c2c55;border-radius:20px;overflow:hidden;text-align:left}
-.ap-rc .ph{position:relative;aspect-ratio:3/2;background:#0b1735}
+.ap-rc{flex:0 0 330px;scroll-snap-align:center;background:#000;text-align:left}
+.ap-rc .ph{position:relative;height:259px;overflow:hidden;background:#111}
 .ap-rc .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.ap-rc .ph b{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(6,13,34,.92));font-size:19px;line-height:1.35;letter-spacing:-.4px;color:#fff}
-.ap-rc .tx{padding:14px 16px 18px}
-.ap-rc small{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:11.5px;border-radius:999px;padding:3px 10px}
-.ap-rc i{display:block;font-style:normal;font-weight:800;font-size:15.5px;margin:10px 0 6px;line-height:1.45}
-.ap-rc p{font-size:13.5px;line-height:1.6;color:#9aa6bf;margin:0}
-.ap-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}.ap-dots span{width:7px;height:7px;border-radius:9px;background:#2a3a66;transition:all .3s}.ap-dots span.on{width:20px;background:var(--ac2)}
-.ap-cap{font-size:11.5px;color:#6f7d9c;margin:10px 0 0}
-.ap-new{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:5px 16px;margin-bottom:16px}
-.ap-steps5{margin:30px 0 0;border:2px solid #1c2c55;border-radius:22px;padding:14px;text-align:left}
-.ap-steps5 div{display:flex;gap:14px;align-items:center;background:var(--bg2);border-radius:14px;padding:16px;margin:8px 0}
-.ap-steps5 em{font-style:normal;font-size:24px;font-weight:900;color:var(--ac2);flex:none;width:40px}
-.ap-steps5 b{display:block;font-size:15px}.ap-steps5 span{font-size:13px;color:#9aa6bf}
-.ap-chk{list-style:none;padding:0;margin:26px 0 0;text-align:left}
-.ap-chk li{background:var(--bg2);border-radius:14px;padding:15px 16px 15px 48px;margin-bottom:10px;position:relative;font-size:14.5px;line-height:1.55;color:#c7d2e8}
-.ap-chk li:before{content:'✓';position:absolute;left:15px;top:15px;width:22px;height:22px;border-radius:50%;background:var(--ac);color:#fff;font-weight:900;font-size:12px;text-align:center;line-height:22px}
-.ap-chk b{color:#fff;display:block}
-.ap-fix{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(6,13,34,.95) 35%);text-align:center}
-.ap-fix .bub{display:inline-block;background:#fff;color:var(--nv);font-size:13px;font-weight:800;border-radius:999px;padding:7px 14px;margin-bottom:8px;position:relative}
-.ap-fix .bub:after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-top-color:#fff;border-bottom:0}
-.ap-btn{display:block;width:100%;max-width:440px;margin:0 auto;background:var(--ac);color:#fff;border:0;border-radius:16px;padding:18px;font-size:17px;font-weight:800;cursor:pointer;text-decoration:none;text-align:center;font-family:inherit;box-shadow:0 8px 24px rgba(79,139,255,.35)}
+.ap-rc .ph:after{content:'';position:absolute;left:-35%;right:-15%;bottom:-40%;height:80%;border-radius:50%;background:rgba(40,108,230,.86);z-index:1}
+.ap-rc .ph b{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 16px 18px;font-size:23px;font-weight:700;line-height:1.5;color:#fff}
+.ap-rc .tx{padding:18px 4px 0}
+.ap-rc small{display:inline-block;background:var(--ac);color:#000;font-weight:700;font-size:12px;border-radius:999px;padding:4px 11px}
+.ap-rc i{display:block;font-style:normal;font-weight:700;font-size:16px;line-height:1.5;color:#fff;margin:12px 0 0}
+.ap-rc p{position:relative;margin:24px 0 0;padding-top:16px;font-size:12px;line-height:1.6;color:#999}
+.ap-rc p:before{content:'';position:absolute;left:0;top:0;width:42px;height:2px;background:#999}
+.ap-dots{display:flex;justify-content:center;gap:6px;margin-top:18px}.ap-dots span{width:7px;height:7px;border-radius:9px;background:#333;transition:all .3s}.ap-dots span.on{width:20px;background:var(--ac)}
+.ap-cap{font-size:11px;color:#666;margin:12px 0 0}
+.ap-new{display:inline-block;background:var(--ac);color:#fff;font-weight:700;font-size:15px;border-radius:999px;width:66px;height:34px;line-height:34px;margin-bottom:12px}
+.ap-box5{margin:40px auto 0;max-width:350px;border:3px solid #222;border-radius:30px;padding:22px 14px 8px}
+.ap-box5 div{position:relative;display:flex;align-items:center;gap:14px;background:var(--cd);border:2px solid var(--ac);border-radius:10px;min-height:84px;padding:14px 14px 14px 16px;margin:30px 0 22px;text-align:left}
+.ap-box5 em{position:absolute;left:-6px;top:-30px;font-size:30px;font-weight:800;font-style:italic;color:#fff;transform:rotate(-8deg)}
+.ap-box5 .ic{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;color:#111;font-size:26px;line-height:52px;text-align:center}
+.ap-box5 b{display:block;font-size:15px;font-weight:600;color:#fff;line-height:1.4}
+.ap-box5 strong{display:block;font-size:16px;font-weight:800;color:var(--yl);line-height:1.4;margin-top:2px}
+.ap-chk{list-style:none;padding:0;margin:50px auto 0;max-width:335px;text-align:left}
+.ap-chk li{display:flex;align-items:center;gap:22px;min-height:89px;margin:0}
+.ap-chk .ic{flex:none;width:68px;height:68px;border-radius:50%;background:#1e1e1e;font-size:32px;line-height:68px;text-align:center}
+.ap-chk span{flex:1;text-align:center;font-size:16px;font-weight:500;line-height:24px;color:var(--gy)}
+.ap-chk b{display:block;color:var(--yl);font-weight:700}
+.ap-foot{background:#fff;color:#555;margin-top:120px;padding:40px 20px 190px;font-size:13px;line-height:1.7}
+.ap-foot b{display:block;color:#000;font-size:16px;font-weight:700;margin-bottom:14px}
+.ap-foot a{color:#555}
+.ap-foot .cp{margin-top:18px;color:#555;font-weight:500}
+.ap-fix{position:fixed;left:0;right:0;bottom:30px;z-index:30;padding:0 20px;text-align:center}
+.ap-fix .bub{display:inline-block;background:#fff;color:#3b5bdb;font-size:15px;font-weight:700;border-radius:999px;padding:9px 18px;margin-bottom:12px;position:relative;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.ap-fix .bub:after{content:'';position:absolute;left:50%;bottom:-7px;margin-left:-7px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}
+.ap-btn{display:block;width:100%;max-width:335px;height:55px;line-height:55px;margin:0 auto;background:var(--ac);color:#fff;border:0;border-radius:74px;font-size:18px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;font-family:inherit;padding:0}
 .ap-btn:disabled{opacity:.45;cursor:default}
-.ap-foot{max-width:640px;margin:0 auto;padding:30px 22px 10px;color:#6f7d9c;font-size:11.5px;line-height:1.7;border-top:1px solid #16234a}
-.ap-foot b{color:#aab5cc}.ap-foot a{color:#aab5cc}
-/* 신청서 (전체 화면) */
-#apSheet{position:fixed;inset:0;z-index:50;background:#f4f6fb;overflow-y:auto;color:#111}
+#apSheet{position:fixed;inset:0;z-index:50;background:#fff;overflow-y:auto;color:#000;font-family:'Pre',sans-serif}
 #apSheet[hidden]{display:none}
-.ap-sh-top{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #e6e9f0;z-index:2}
-.ap-sh-top b{font-size:15px;color:var(--nv)}.ap-sh-top button{background:none;border:0;font-size:22px;color:#6b7280;cursor:pointer;line-height:1}
-.ap-form{max-width:520px;margin:16px auto 40px;background:#fff;border-radius:20px;padding:24px 18px;box-shadow:0 6px 24px rgba(11,31,77,.06)}
-.ap-form h2{font-size:21px;margin:0 0 6px;letter-spacing:-.5px;color:#111}.ap-form .d{font-size:14px;color:#6b7280;margin:0 0 18px}
-.ap-steps{display:flex;gap:8px;margin-bottom:8px}.ap-steps span{flex:1;text-align:center;font-size:12px;font-weight:800;color:#9ca3af;border-bottom:3px solid #e5e7eb;padding-bottom:8px}
-.ap-steps span.on{color:var(--nv);border-color:var(--ac)}
-.ap-q{font-size:16.5px;font-weight:800;margin:22px 0 10px;color:#111}.ap-q small{font-size:12px;color:#9ca3af;font-weight:600;margin-left:6px}
-.ap-in{width:100%;border:1.5px solid #e2e6ee;border-radius:12px;padding:15px 14px;font-size:16px;font-family:inherit;background:#fff;color:#111}
+.ap-sh-top{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 20px;border-bottom:1px solid #eee;z-index:2}
+.ap-sh-top b{font-size:16px;font-weight:700}.ap-sh-top button{background:none;border:0;font-size:22px;color:#777;cursor:pointer;line-height:1}
+.ap-form{max-width:375px;margin:0 auto 40px;padding:28px 20px}
+.ap-form .d{font-size:17px;font-weight:700;color:var(--ac);margin:0 0 8px}
+.ap-form h2{font-size:24px;font-weight:700;margin:0 0 22px;color:#000;line-height:1.3}
+.ap-steps{display:flex;gap:10px;margin-bottom:6px}.ap-steps span{flex:1;font-size:15px;font-weight:700;color:#bbb;border-bottom:3px solid #eee;padding:0 0 10px}
+.ap-steps span.on{color:var(--ac);border-color:var(--ac)}
+.ap-q{font-size:19px;font-weight:700;margin:30px 0 12px;color:#555}.ap-q small{font-size:14px;color:#727272;font-weight:400;margin-left:6px}
+.ap-note{font-size:14px;color:#727272;margin:-4px 0 10px}
+.ap-in{width:100%;height:50px;border:1px solid #ddd;border-radius:8px;padding:0 14px;font-size:17px;font-weight:600;font-family:inherit;background:#fff;color:#000}
+.ap-in::placeholder{color:#bbb;font-weight:500}
 .ap-in:focus{outline:0;border-color:var(--ac)}
-.ap-opt{display:grid;gap:8px}.ap-opt.g2{grid-template-columns:1fr 1fr}
-.ap-opt button{border:1.5px solid #e2e6ee;background:#fff;border-radius:12px;padding:14px 10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;color:#111;line-height:1.35}
-.ap-opt button small{display:block;font-size:12px;color:#6b7280;font-weight:600;margin-top:3px}
-.ap-opt button[aria-pressed=true]{border-color:var(--ac);background:#eef4ff;color:var(--nv)}
-.ap-msg{color:#dc2626;font-size:14px;margin:12px 0 0;min-height:1em}
-.ap-agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#6b7280;line-height:1.55;margin:18px 0 6px}
-.ap-agree input{margin-top:3px;width:18px;height:18px;flex:none}
+.ap-opt{display:grid;gap:10px}.ap-opt.g2{grid-template-columns:1fr 1fr}
+.ap-opt button{position:relative;border:1px solid #ddd;background:#fff;border-radius:8px;font-family:inherit;cursor:pointer;color:#555}
+.ap-opt:not(.g2) button{display:flex;align-items:center;min-height:56px;padding:0 44px 0 16px;text-align:left;font-size:15px;font-weight:600}
+.ap-opt:not(.g2) button small{display:inline;margin-left:6px;color:var(--ac);font-size:13px;font-weight:500}
+.ap-opt:not(.g2) button:after{content:'';position:absolute;right:16px;top:50%;margin-top:-10px;width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;box-sizing:border-box}
+.ap-opt:not(.g2) button[aria-pressed=true]:after{border:6px solid var(--ac)}
+.ap-opt.g2 button{height:50px;font-size:20px;font-weight:500;color:#bbb}
+.ap-opt button[aria-pressed=true]{border-color:var(--ac);color:#000}
+.ap-msg{color:#e03131;font-size:14px;margin:12px 0 0;min-height:1em}
+.ap-agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#727272;line-height:1.55;margin:20px 0 6px}
+.ap-agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:#2fd1cd}
 .ap-done{text-align:center;padding:30px 6px}.ap-done b{display:block;font-size:22px;margin:10px 0}
-.ap-back{background:none;border:0;color:#6b7280;font-size:14px;margin-top:12px;cursor:pointer;font-family:inherit;width:100%}
-@media(min-width:720px){.ap-hero .kw{font-size:40px}.ap-hero h1{font-size:36px}.ap-sec h2{font-size:32px}.ap-fund,.ap-case{flex-basis:44%}}
-
-/* r250a bizkor 390px 크기 맞춤 (sizes.md) */
-.ap-top{height:60px;padding:0 27px}.ap-top b{font-size:18px;font-weight:700}.ap-top a{font-size:14px;font-weight:700;padding:4px 12px;border-radius:13px;line-height:17px}
-.ap-hero{min-height:764px;padding:0 27px 100px;box-sizing:border-box}
-.ap-hero .kw{font-size:40px;font-weight:800;line-height:1;min-height:40px;margin-bottom:30px}
-.ap-hero h1{font-size:26px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin:0 0 20px}
-.ap-hero p{font-size:18px;font-weight:500;line-height:1.5;color:#aab5cc}
-.ap-sec{padding:100px 27px 0;max-width:640px}
-.ap-sec h2{font-size:28px;font-weight:700;line-height:1.2;letter-spacing:-.6px;margin:0 0 24px}.ap-sec h2 span{font-weight:800}
-.ap-sec .sub{font-size:15px;font-weight:500;line-height:1.5}
-.ap-bul{max-width:335px}.ap-bul li{font-size:15px;font-weight:500;line-height:1.2;margin-bottom:16px}
-.ap-row{margin:0 -27px;padding:30px 27px 6px}
-.ap-fund{flex:0 0 260px;min-height:114px;padding:16px 18px;border-radius:14px}.ap-fund b{font-size:17px;margin:8px 0 8px}
-.ap-rvw{margin:40px -27px 0}.ap-rv{gap:12px;padding:0 22px 4px}
-.ap-rc{flex:0 0 330px;height:393px;background:#fff;border:0;border-radius:0;display:flex;flex-direction:column}
-.ap-rc .ph{aspect-ratio:auto;height:259px;flex:none;overflow:hidden}
-.ap-rc .ph:after{content:'';position:absolute;left:-30%;right:-10%;bottom:-38%;height:78%;border-radius:50%;background:rgba(37,82,200,.82);z-index:1}
-.ap-rc .ph b{z-index:2;background:none;padding:0 14px 16px;font-size:21px;font-weight:700;line-height:1.45;letter-spacing:-.5px;text-shadow:0 1px 6px rgba(0,0,0,.25)}
-.ap-rc .tx{padding:14px 14px 0;color:#111}
-.ap-rc small{background:#2f6bff;font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px}
-.ap-rc i{display:none}
-.ap-rc p{margin-top:26px;padding-top:12px;border-top:2px solid #d6d9df;width:100%;font-size:11.5px;line-height:1.6;color:#8b929e}
-.ap-rc .tx p{border-top:0;position:relative}.ap-rc .tx p:before{content:'';position:absolute;left:0;top:0;width:42px;height:2px;background:#cfd3da}
-.ap-new{font-size:15px;font-weight:700;padding:0;width:66px;height:34px;line-height:34px;margin-bottom:10px}
-.ap-steps5{margin:30px auto 0;max-width:335px;border:0;padding:0}
-.ap-steps5 div{min-height:110px;padding:20px 18px;margin:0 0 12px;border-radius:16px}.ap-steps5 em{font-size:30px}.ap-steps5 b{font-size:16px}.ap-steps5 span{font-size:14px}
-.ap-chk{max-width:335px;margin:40px auto 0}
-.ap-chk li{display:flex;align-items:center;gap:15px;min-height:89px;background:none;padding:0;margin:0;font-size:16px;font-weight:500;line-height:24px}
-.ap-chk li:before{content:'✓';position:static;flex:none;width:88px;height:88px;line-height:88px;font-size:34px;border-radius:50%;background:var(--bg2);color:var(--ac2);box-shadow:inset 0 0 0 2px #1c2c55}
-.ap-chk li span{flex:1}.ap-chk b{display:inline;font-weight:700}
-.ap-fix{bottom:30px;padding:0 20px;background:none}
-.ap-fix .bub{font-size:15px;font-weight:700;padding:9px 16px;margin-bottom:9px}
-.ap-fix .ap-btn{max-width:335px;height:55px;padding:0;line-height:55px;font-size:18px;font-weight:700;border-radius:74px}
-.ap{padding-bottom:150px}
-.ap-form{max-width:375px;padding:24px 20px;margin:0 auto 40px;border-radius:0;box-shadow:none}
-.ap-form h2{font-size:24px;font-weight:700}.ap-form .d{font-size:17px;font-weight:700;color:var(--nv);margin:0 0 6px}
-.ap-steps span{font-size:15px;font-weight:700;padding:8px 0 10px}
-.ap-q{font-size:19px;font-weight:700;margin:26px 0 12px}.ap-q small{font-size:14px;font-weight:400}
-.ap-in{height:50px;padding:0 14px;font-size:17px;font-weight:600;border-radius:10px}
-.ap-opt button{min-height:56px;font-size:15px;font-weight:600;border-radius:10px}
-.ap-opt.g2 button{height:50px;min-height:50px;font-size:20px;font-weight:500;padding:0}
-#apSheet .ap-btn{height:55px;padding:0;line-height:55px;font-size:18px;font-weight:700;border-radius:74px}
-.ap-opt{gap:10px}.ap-opt:not(.g2) button{display:flex;align-items:center;justify-content:flex-start;text-align:left;padding:0 16px;position:relative}
-.ap-opt:not(.g2) button small{display:inline;margin:0 0 0 6px;color:#2f6bff;font-size:13px;font-weight:500}
-.ap-opt:not(.g2) button:after{content:'';position:absolute;right:16px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;border:1.5px solid #9ca3af;box-sizing:border-box}
-.ap-opt:not(.g2) button[aria-pressed=true]:after{border:5px solid var(--ac)}
-@media(min-width:720px){.ap-hero .kw{font-size:48px}.ap-hero h1{font-size:34px}.ap-sec h2{font-size:34px}}
+.ap-back{background:none;border:0;color:#999;font-size:14px;margin-top:12px;cursor:pointer;font-family:inherit;width:100%}
+#apSheet .ap-btn{max-width:none}
+@media(min-width:720px){.ap-hero .kw{font-size:44px;line-height:44px}.ap-hero h1{font-size:34px;line-height:1.25}.ap-sec h2{font-size:34px;line-height:1.25}.ap-fund{flex-basis:280px}}
 </style>
 </head>
 <body>
 <div class="ap">
-<header class="ap-top"><b>한국정책자문센터<i>KPAC</i></b><a href="tel:18661912">☎ 문의</a></header>
+<header class="ap-top"><b>한국정책자문센터</b><a href="tel:18661912">💬 문의하기</a></header>
 <div class="ap-tick" id="apTick" hidden><ul id="apTickL"></ul></div>
 
 <section class="ap-hero">
-  <div class="kw" id="apKw">정책자금</div>
-  <h1>힘든 시기에도<br>매년 꾸준히 챙기고 계신가요?</h1>
-  <p>자금 여유가 충분하시다면,<br>지금 이 페이지를 닫으셔도 괜찮습니다.</p>
+  <div class="kw" id="apKw">정책 자금</div>
+  <h1>사업이 힘든 상황이라도<br>매년 2회 이상 받고 계신가요?</h1>
+  <p>이미 사업 자금이 넉넉하시다면,<br>이 페이지를 나가셔도 좋습니다.</p>
 </section>
 
 <section class="ap-sec">
-  <h2>조건 좋은 정책자금은<br><span>소리 없이 공고되고</span><br><span>금세 마감</span>돼요</h2>
+  <h2>조건 좋은 정책자금은<br><span>조용히 공지</span>되고<br><span>빠르게 소진</span>돼요</h2>
   <ul class="ap-bul">
-    <li>예전에 거절되셨어도, 한 달에 한 번은 다시 확인해 보는 게 좋습니다.</li>
-    <li>새 자금이 나왔거나 매출·신용점수가 바뀌었다면 이번엔 결과가 달라질 수 있어요.</li>
+    <li>과거 정책자금이 거절되었더라도,<br>매월 한 번씩 재확인하는 것이 중요합니다.</li>
+    <li>새로 나온 정책자금이나 매출 증가, 신용 점수 변화가 있으면 이번에는 결과가 달라질 수 있어요!</li>
   </ul>
   <div class="ap-row">
-    <div class="ap-fund"><small>각 시·도 신용보증재단 (지자체 협약)</small><b>지자체 소상공인 특례보증</b><i>11월 접수 중</i></div>
-    <div class="ap-fund"><small>소상공인시장진흥공단</small><b>일시적경영애로자금 (직접대출)</b><i>예산 소진 시 마감</i></div>
-    <div class="ap-fund"><small>경기신용보증재단</small><b>금융기관 특별출연 협약보증</b><i>접수 중</i></div>
+    <div class="ap-fund"><small>26년 4분기 지자체 특례보증</small><i>접수중</i><b>소상공인 특례보증</b><em>전국</em></div>
+    <div class="ap-fund"><small>소상공인시장진흥공단</small><i>접수중</i><b>일시적경영애로자금</b><em>전국</em></div>
+    <div class="ap-fund"><small>경기신용보증재단</small><i>접수중</i><b>특별출연 협약보증</b><em>경기</em></div>
+    <div class="ap-fund"><small>서울신용보증재단</small><i>접수중</i><b>위기극복 안심통장</b><em>서울</em></div>
+    <div class="ap-fund"><small>인천신용보증재단</small><i>접수중</i><b>비즈플러스 카드보증</b><em>인천</em></div>
   </div>
 </section>
 
 <section class="ap-sec">
-  <h2>비슷한 상황에서<br><span>정책자금으로 다시 일어선</span><br>대표님들</h2>
+  <h2>여러분과 같은 상황에서<br><span>정책자금으로 역전한</span><br><span>대표님들</span>입니다</h2>
   <div class="ap-rvw">
     <div class="ap-rv" id="apRv">
-      <div class="ap-rc"><div class="ph"><img src="ap-rv-factory.webp" alt="제조업 예시 이미지" loading="lazy" width="720" height="480"><b>은행 대출은 다 막혔는데<br>기술보증으로 다시 일어섰어요</b></div><div class="tx"><small>제조업 | 일반 대출이 막혔던 상황</small><p>자본잠식으로 은행 대출이 사실상 막혀 있던 제조업체. 재무제표를 처음부터 다시 분석하고, 기술평가보증으로 자금 길을 새로 열었습니다.</p></div></div>
-      <div class="ap-rc"><div class="ph"><img src="ap-rv-kitchen.webp" alt="음식점 예시 이미지" loading="lazy" width="720" height="480"><b>매출이 확 꺾였던 해에도<br>보증 한도를 늘렸어요</b></div><div class="tx"><small>개인사업자 | 매출 급락 후 회복</small><p>일시적으로 매출이 크게 떨어졌던 개인사업자. 떨어진 이유를 제대로 소명하고, 다시 오르는 매출을 근거로 보증 한도를 늘렸습니다.</p></div></div>
-      <div class="ap-rc"><div class="ph"><img src="ap-rv-warehouse.webp" alt="사업장 예시 이미지" loading="lazy" width="720" height="480"><b>재무제표가 약해 보여도<br>정책자금 승인 받았어요</b></div><div class="tx"><small>기술기업 | 재무 지표가 약했던 상황</small><p>대표님 돈이 회사에 묶여 서류상 재무가 약해 보이던 기업. 그 돈을 자본으로 돌려 재무를 개선하고 심사를 통과했습니다.</p></div></div>
-      <div class="ap-rc"><div class="ph"><img src="ap-rv-approval.webp" alt="실제 정책자금 승인 화면 (정보 가림)" loading="lazy" width="720" height="480" style="object-position:top"><b>말로만 하는 거 아니에요<br>실제 승인 통보 화면</b></div><div class="tx"><small>실제 자료 | 개인정보 가림</small><p>저희와 진행한 대표님들이 신보 · 소진공 · 지역신보에서 받은 실제 승인 통보입니다.</p></div></div>
-      <div class="ap-rc"><div class="ph"><img src="ap-rv-thanks.webp" alt="승인 후 고객님이 보내주신 메시지" loading="lazy" width="720" height="480"><b>승인 소식 듣고<br>직접 보내주신 감사 인사</b></div><div class="tx"><small>실제 고객 메시지 | 개인정보 가림</small><p>승인 후 대표님들이 직접 보내 주신 카카오톡입니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-factory.webp" alt="제조업 예시 이미지" loading="lazy" width="720" height="480"><b>은행에선 다 막혔다더니<br>기술보증으로 승인</b></div><div class="tx"><small>제조업 | 대표님</small><i>“은행에서는 [자본잠식이라 어렵다]” → 기술평가보증 승인</i><p>자본잠식으로 은행 대출이 사실상 막혀 있던 상황. 재무제표를 처음부터 다시 분석하고, 기술평가보증으로 자금 길을 새로 열었습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-kitchen.webp" alt="음식점 예시 이미지" loading="lazy" width="720" height="480"><b>매출이 확 꺾였다더니<br>보증 한도 증액 승인</b></div><div class="tx"><small>개인사업자 | 대표님</small><i>“[매출이 떨어져서 어렵다]” → 보증 한도 증액 승인</i><p>일시적으로 매출이 크게 떨어졌던 상황. 떨어진 이유를 제대로 소명하고, 다시 오르는 매출을 근거로 보증 한도를 늘렸습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-warehouse.webp" alt="사업장 예시 이미지" loading="lazy" width="720" height="480"><b>재무가 약하다더니<br>정책자금 승인</b></div><div class="tx"><small>기술기업 | 대표님</small><i>“[재무 지표가 약해서 어렵다]” → 재무 개선 후 승인</i><p>대표님 돈이 회사에 묶여 서류상 재무가 약해 보이던 상황. 그 돈을 자본으로 돌려 재무를 개선하고 심사를 통과했습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-approval.webp" alt="실제 정책자금 승인 화면 (정보 가림)" loading="lazy" width="720" height="480" style="object-position:top"><b>말로만 하는 거 아니에요<br>실제 승인 통보 화면</b></div><div class="tx"><small>실제 자료 | 개인정보 가림</small><i>신보 · 소진공 · 지역신보 실제 승인 통보</i><p>한국정책자문센터와 진행한 대표님들이 받은 실제 승인 통보 화면입니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-thanks.webp" alt="승인 후 고객님이 보내주신 메시지" loading="lazy" width="720" height="480"><b>승인 소식 듣고<br>직접 보내주신 감사 인사</b></div><div class="tx"><small>실제 고객 메시지 | 개인정보 가림</small><i>승인 후 대표님이 직접 보내 주신 카톡</i><p>승인 후 대표님들이 직접 보내 주신 카카오톡입니다.</p></div></div>
     </div>
     <div class="ap-dots" id="apDots"></div>
   </div>
-  <p class="ap-cap">업종 사진은 이해를 돕기 위한 예시 이미지입니다 · 승인 화면과 후기는 실제 자료(개인정보 가림)입니다</p>
+  <p class="ap-cap">업종 사진은 예시 이미지입니다 · 승인 화면과 메시지는 실제 자료(개인정보 가림)입니다</p>
 </section>
 
 <section class="ap-sec">
   <div class="ap-new">NEW</div>
-  <h2>2026 정책자금<br><span>무료 사전 진단</span></h2>
-  <p class="sub">매출 1억 미만 소상공인부터<br>매출 100억 이상 중소기업까지</p>
-  <p class="sub" style="margin-top:14px">선착순으로 마감되는 자금은<br><b style="color:#fff">매달 다시 확인</b>하셔야 합니다.</p>
-  <div class="ap-steps5">
-    <div><em>01</em><p style="margin:0"><b>3가지만 답하면 사전 진단</b><span>업종 · 업력 · 작년 매출</span></p></div>
-    <div><em>02</em><p style="margin:0"><b>받을 수 있는 정책자금 한 번에 비교</b><span>지금 신청 가능한 것만 골라 드려요</span></p></div>
-    <div><em>03</em><p style="margin:0"><b>기존 대출 구조까지 함께 점검</b><span>대환이 필요한지도 같이 봐요</span></p></div>
-    <div><em>04</em><p style="margin:0"><b>상담 · 진단 무료</b><span>계약 전에는 비용을 청구하지 않아요</span></p></div>
-    <div><em>05</em><p style="margin:0"><b>사단법인 한국경영컨설턴트협회 회원사</b><span>협회 윤리 기준에 따라 상담해요</span></p></div>
+  <h2>26년 4분기<br><span>정책자금 사전진단</span></h2>
+  <p class="sub">매출 1억 미만 소상공인부터,<br>매출 100억 이상 중소기업까지</p>
+  <p class="sub" style="margin-top:22px"><u>선착순으로 소진</u>되는 정책자금은<br><u>매월 재확인이 필요합니다.</u></p>
+  <div class="ap-box5">
+    <div><em>01.</em><span class="ic">🤝</span><p style="margin:0"><b>은행에서 어렵다던 업체들도</b><strong>기술보증 · 한도 증액 승인</strong></p></div>
+    <div><em>02.</em><span class="ic">📝</span><p style="margin:0"><b>매달 새로 나오는 정책자금 공고 반영</b><strong>선착순 자금도 놓치지 않게</strong></p></div>
+    <div><em>03.</em><span class="ic">📞</span><p style="margin:0"><b>지금까지 누적 상담</b><strong>2,000건 이상</strong></p></div>
+    <div><em>04.</em><span class="ic">💸</span><p style="margin:0"><b>상담 · 사전 진단은</b><strong>계약 전 비용 0원</strong></p></div>
+    <div><em>05.</em><span class="ic">✅</span><p style="margin:0"><b>사단법인 한국경영컨설턴트협회</b><strong>중기부 허가 협회 회원사</strong></p></div>
   </div>
 </section>
 
 <section class="ap-sec">
-  <h2>예산이 마감되기 전에<br>운영자금 미리 준비하고<br><span>사업에만 집중하세요</span></h2>
-  <p class="sub">몰라서 신청을 못 하는 경우가 생각보다 많습니다.<br>받을 수 있는지부터 먼저 확인해 보세요.</p>
+  <h2>예산 소진 전에<br>사업 운영자금 마련하고<br><span>회사 성장에만 집중하세요</span></h2>
+  <p class="sub">방법을 몰랐을 뿐, 받을 수 있는 대표님이 생각보다 많습니다.</p>
 </section>
 
 <section class="ap-sec">
-  <h2>1가지라도 해당하신다면,<br><span>지금 확인해 보세요</span></h2>
+  <h2><span>1가지 이상 해당하신다면,</span><br>주저하지 마세요.</h2>
   <ul class="ap-chk">
-    <li><span><b>「그런 자금이 있는 줄도 몰라서」</b> 나와는 상관없다고 생각하셨던 분</span></li>
-    <li><span><b>「이미 한 번 거절돼서」</b> 포기하셨던 분</span></li>
-    <li><span><b>「매출이 계속 줄어서」</b> 제2금융·사금융 대출을 알아보고 계신 분</span></li>
-    <li><span><b>「사업이 힘들어도」</b> 끝까지 버텨 보실 분</span></li>
+    <li><span class="ic">🤷</span><span><b>'그런 게 있는지도 몰라서'</b>나와는 상관없겠지 생각하셨던 분</span></li>
+    <li><span class="ic">😞</span><span><b>'이미 정책자금 부결되어서'</b>포기하셨던 분</span></li>
+    <li><span class="ic">📉</span><span><b>'매출이 점점 줄어들고 있어서'</b>사금융권 대출을 알아보고 계신 분</span></li>
+    <li><span class="ic">🏃</span><span><b>'사업이 힘든 상황이라도'</b>절대 포기 안 하실 분</span></li>
   </ul>
 </section>
 
-<div class="ap-foot">
-  <b>한국정책자문센터(KPAC)</b> · 대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
+<footer class="ap-foot">
+  <b>한국정책자문센터</b>
+  대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
   사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)<br>
-  당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 실제 경험으로 동일한 결과를 보장하지 않습니다.<br>
-  <a href="privacy.html">개인정보처리방침</a> · <a href="services.html#terms">서비스 이용 안내</a> · © 2026 KPAC
-</div>
+  당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 경험으로 동일한 결과를 보장하지 않습니다.<br>
+  <a href="privacy.html">개인정보처리방침</a> · <a href="services.html#terms">서비스 이용 안내</a>
+  <div class="cp">Copyright ⓒ 한국정책자문센터 All rights reserved</div>
+</footer>
 
-<div class="ap-fix"><div class="bub">🗓 2026년 4분기 자금 접수 진행 중</div><a href="#apForm" class="ap-btn" data-go>3가지만 답하고 무료로 확인하기</a></div>
+<div class="ap-fix"><div class="bub">🗓 26년 4분기 정책자금 접수기간</div><a href="#apForm" class="ap-btn" data-go>지금 정책자금 확인하기 👆</a></div>
 </div>
 
 <div id="apSheet" hidden>
   <div class="ap-sh-top"><b>한국정책자문센터</b><button type="button" id="apX" aria-label="닫기">✕</button></div>
   <div class="ap-form" id="apForm">
-    <p class="d">지금 확보할 수 있는 정책자금 확인하기</p>
-    <h2>운영 중인 사업장 정보를 알려 주세요</h2>
-    <div class="ap-steps"><span class="on" id="st1">STEP 01</span><span id="st2">STEP 02</span></div>
+    <p class="d">당장 확보 가능한 정책자금 알아보기</p>
+    <h2>운영 중인 사업장 정보를 알려주세요</h2>
+    <div class="ap-steps"><span class="on" id="st1">STEP 01.</span><span id="st2">STEP 02.</span></div>
     <div id="s1">
-      <div class="ap-q">어떤 사업을 하고 계신가요?<small>직접 입력</small></div>
-      <input class="ap-in" id="f_ind" maxlength="40" placeholder="예) 음식점, 제조업, 쇼핑몰, 미용실">
-      <div class="ap-q">사업한 지 얼마나 되셨나요?<small>하나 선택</small></div>
+      <div class="ap-q">어떤 사업 중이신가요?<small>직접 입력</small></div>
+      <input class="ap-in" id="f_ind" maxlength="40" placeholder="예: 수산물 도매업, 요식업, 제조업">
+      <div class="ap-q">회사의 업력(나이)은?<small>하나 선택</small></div>
       <div class="ap-opt" data-k="age">
         <button type="button" data-v="3년 미만">창업한 지 3년 미만<small>(초기 기업 혜택 대상)</small></button>
         <button type="button" data-v="3~7년">창업 3년 이상 ~ 7년 이하<small>(성장기 집중지원 대상)</small></button>
         <button type="button" data-v="7년 초과">창업한 지 7년 초과<small>(중소기업 지원 대상)</small></button>
       </div>
-      <div class="ap-q">작년(25년) 매출은요?<small>올해 개업이면 지금까지 매출</small></div>
+      <div class="ap-q">작년(25년) 매출은?<small>하나 선택</small></div>
+      <p class="ap-note">*올해 개업 시 지금까지 매출 선택</p>
       <div class="ap-opt g2" data-k="rev">
-        <button type="button" data-v="1억 미만">1억 미만</button><button type="button" data-v="1~2억">1~2억</button>
-        <button type="button" data-v="2~3억">2~3억</button><button type="button" data-v="3~5억">3~5억</button>
+        <button type="button" data-v="1억 미만">1억 미만</button><button type="button" data-v="1~2억">1-2억</button>
+        <button type="button" data-v="2~3억">2-3억</button><button type="button" data-v="3~5억">3-5억</button>
         <button type="button" data-v="5억 이상">5억 이상</button>
       </div>
       <p class="ap-msg" id="m1"></p>
-      <button type="button" class="ap-btn" id="next" style="margin-top:14px;box-shadow:none">다음 단계로</button>
+      <button type="button" class="ap-btn" id="next" style="margin-top:14px">다음</button>
     </div>
     <div id="s2" hidden>
       <div class="ap-q">회사명</div><input class="ap-in" id="f_co" maxlength="60" placeholder="상호 (없으면 비워 두셔도 돼요)">
@@ -265,7 +239,7 @@ body{margin:0;background:var(--bg)}
       <select class="ap-in" id="f_rg"><option value="">시·도 선택</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select>
       <label class="ap-agree"><input type="checkbox" id="f_ag"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 / 목적: 상담 예약 및 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
       <p class="ap-msg" id="m2"></p>
-      <button type="button" class="ap-btn" id="send" style="box-shadow:none">무료 확인 신청하기</button>
+      <button type="button" class="ap-btn" id="send">무료 확인 신청하기</button>
       <button type="button" class="ap-back" id="back">← 이전으로</button>
     </div>
     <div id="s3" class="ap-done" hidden><div style="font-size:42px">✅</div><b>신청이 접수됐어요</b><p>담당 컨설턴트가 확인 후 연락드릴게요.<br>급하시면 <a href="tel:18661912">1866-1912</a>로 전화 주세요.</p></div>
