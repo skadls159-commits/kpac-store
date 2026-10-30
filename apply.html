@@ -148,6 +148,10 @@ body{margin:0;background:var(--bg)}
 .ap-opt button{min-height:56px;font-size:15px;font-weight:600;border-radius:10px}
 .ap-opt.g2 button{height:50px;min-height:50px;font-size:20px;font-weight:500;padding:0}
 #apSheet .ap-btn{height:55px;padding:0;line-height:55px;font-size:18px;font-weight:700;border-radius:74px}
+.ap-opt{gap:10px}.ap-opt:not(.g2) button{display:flex;align-items:center;justify-content:flex-start;text-align:left;padding:0 16px;position:relative}
+.ap-opt:not(.g2) button small{display:inline;margin:0 0 0 6px;color:#2f6bff;font-size:13px;font-weight:500}
+.ap-opt:not(.g2) button:after{content:'';position:absolute;right:16px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;border:1.5px solid #9ca3af;box-sizing:border-box}
+.ap-opt:not(.g2) button[aria-pressed=true]:after{border:5px solid var(--ac)}
 @media(min-width:720px){.ap-hero .kw{font-size:48px}.ap-hero h1{font-size:34px}.ap-sec h2{font-size:34px}}
 </style>
 </head>
@@ -240,15 +244,15 @@ body{margin:0;background:var(--bg)}
       <input class="ap-in" id="f_ind" maxlength="40" placeholder="예) 음식점, 제조업, 쇼핑몰, 미용실">
       <div class="ap-q">사업한 지 얼마나 되셨나요?<small>하나 선택</small></div>
       <div class="ap-opt" data-k="age">
-        <button type="button" data-v="3년 미만">창업 3년 미만<small>초기 기업 혜택 대상</small></button>
-        <button type="button" data-v="3~7년">창업 3년 이상 ~ 7년 이하<small>성장기 집중지원 대상</small></button>
-        <button type="button" data-v="7년 초과">창업 7년 초과<small>중소기업 지원 대상</small></button>
+        <button type="button" data-v="3년 미만">창업한 지 3년 미만<small>(초기 기업 혜택 대상)</small></button>
+        <button type="button" data-v="3~7년">창업 3년 이상 ~ 7년 이하<small>(성장기 집중지원 대상)</small></button>
+        <button type="button" data-v="7년 초과">창업한 지 7년 초과<small>(중소기업 지원 대상)</small></button>
       </div>
       <div class="ap-q">작년(25년) 매출은요?<small>올해 개업이면 지금까지 매출</small></div>
       <div class="ap-opt g2" data-k="rev">
         <button type="button" data-v="1억 미만">1억 미만</button><button type="button" data-v="1~2억">1~2억</button>
         <button type="button" data-v="2~3억">2~3억</button><button type="button" data-v="3~5억">3~5억</button>
-        <button type="button" data-v="5억 이상" style="grid-column:1/-1">5억 이상</button>
+        <button type="button" data-v="5억 이상">5억 이상</button>
       </div>
       <p class="ap-msg" id="m1"></p>
       <button type="button" class="ap-btn" id="next" style="margin-top:14px;box-shadow:none">다음 단계로</button>
