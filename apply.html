@@ -54,6 +54,20 @@ body{margin:0;background:var(--bg)}
 .ap-case small{display:inline-block;color:#fff;background:var(--nv);font-weight:700;font-size:11.5px;border-radius:6px;padding:3px 8px}
 .ap-case b{display:block;font-size:17px;margin:12px 0 8px;line-height:1.45}
 .ap-case p{font-size:14px;line-height:1.65;color:#4b5563;margin:0}
+/* r249a 후기 슬라이더 · 사진 카드 (업종 사진: Pexels 무료 이미지 7178310·6287459·4487363 / 승인 화면·후기: KPAC 실제 자료) */
+.ap-rvw{position:relative;margin:26px -22px 0}
+.ap-rv{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 22px 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-behavior:smooth}
+.ap-rv::-webkit-scrollbar{display:none}
+.ap-rc{flex:0 0 84%;scroll-snap-align:center;background:var(--bg2);border:1px solid #1c2c55;border-radius:20px;overflow:hidden;text-align:left}
+.ap-rc .ph{position:relative;aspect-ratio:3/2;background:#0b1735}
+.ap-rc .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ap-rc .ph b{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(6,13,34,.92));font-size:19px;line-height:1.35;letter-spacing:-.4px;color:#fff}
+.ap-rc .tx{padding:14px 16px 18px}
+.ap-rc small{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:11.5px;border-radius:999px;padding:3px 10px}
+.ap-rc i{display:block;font-style:normal;font-weight:800;font-size:15.5px;margin:10px 0 6px;line-height:1.45}
+.ap-rc p{font-size:13.5px;line-height:1.6;color:#9aa6bf;margin:0}
+.ap-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}.ap-dots span{width:7px;height:7px;border-radius:9px;background:#2a3a66;transition:all .3s}.ap-dots span.on{width:20px;background:var(--ac2)}
+.ap-cap{font-size:11.5px;color:#6f7d9c;margin:10px 0 0}
 .ap-new{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:5px 16px;margin-bottom:16px}
 .ap-steps5{margin:30px 0 0;border:2px solid #1c2c55;border-radius:22px;padding:14px;text-align:left}
 .ap-steps5 div{display:flex;gap:14px;align-items:center;background:var(--bg2);border-radius:14px;padding:16px;margin:8px 0}
@@ -120,11 +134,17 @@ body{margin:0;background:var(--bg)}
 
 <section class="ap-sec">
   <h2>비슷한 상황에서<br><span>정책자금으로 다시 일어선</span><br>대표님들</h2>
-  <div class="ap-row">
-    <div class="ap-case"><small>제조업 · 자본잠식</small><b>자본잠식 상태에서 기술평가보증으로 재기</b><p>일반 대출이 막혔던 제조업체. 재무제표를 다시 분석해 부채 구조를 정리하고 기술평가보증으로 조달 경로를 새로 잡았습니다.</p></div>
-    <div class="ap-case"><small>개인사업자 · 매출 급락 후 회복</small><b>매출이 꺾인 뒤 회복기에 보증 증액</b><p>일시적인 매출 하락을 특수 상황으로 소명하고, 최근 회복 추세를 근거로 보증 한도 증액을 신청했습니다.</p></div>
-    <div class="ap-case"><small>기술기업 · 가수금</small><b>가수금을 자본으로, 재무 신뢰도 회복</b><p>대표자 가수금 비중이 높아 재무 지표가 약했던 기업. 가수금을 자본으로 전환해 재무구조를 개선하고 심사에 대응했습니다.</p></div>
+  <div class="ap-rvw">
+    <div class="ap-rv" id="apRv">
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-factory.webp" alt="제조업 예시 이미지" loading="lazy" width="720" height="480"><b>“일반 대출은 막혔다”<br>→ 기술평가보증으로 재기</b></div><div class="tx"><small>제조업 · 자본잠식</small><i>자본잠식 상태에서 다시 조달 길을 열었어요</i><p>재무제표를 다시 분석해 부채 구조를 정리하고, 기술평가보증으로 조달 경로를 새로 잡았습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-kitchen.webp" alt="음식점 예시 이미지" loading="lazy" width="720" height="480"><b>“매출이 꺾였는데…”<br>→ 회복기에 보증 증액</b></div><div class="tx"><small>개인사업자 · 매출 급락 후 회복</small><i>일시적인 하락을 소명하고 한도를 늘렸어요</i><p>매출 하락을 특수 상황으로 소명하고, 최근 회복 추세를 근거로 보증 한도 증액을 신청했습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-warehouse.webp" alt="사업장 예시 이미지" loading="lazy" width="720" height="480"><b>“가수금 때문에 재무가 약하다”<br>→ 자본 전환으로 개선</b></div><div class="tx"><small>기술기업 · 가수금</small><i>재무 신뢰도를 회복하고 심사에 대응했어요</i><p>대표자 가수금 비중이 높아 지표가 약했던 기업. 가수금을 자본으로 전환해 재무구조를 개선했습니다.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-approval.webp" alt="실제 정책자금 승인 화면 (정보 가림)" loading="lazy" width="720" height="480" style="object-position:top"><b>실제 승인 통보 화면</b></div><div class="tx"><small>실제 자료 · 정보 가림</small><i>신보 · 소진공 · 지역신보 승인 통보</i><p>저희와 진행한 고객사의 실제 승인 통보 화면입니다. 사업자 정보는 가렸어요.</p></div></div>
+      <div class="ap-rc"><div class="ph"><img src="ap-rv-thanks.webp" alt="승인 후 고객님이 보내주신 메시지" loading="lazy" width="720" height="480"><b>승인 후 보내주신 감사 인사</b></div><div class="tx"><small>고객 후기 · 실제 메시지</small><i>승인 후 대표님들이 직접 보내주신 카톡</i><p>실사 후기, 승인 소식을 전해 주신 실제 메시지입니다. 개인정보는 가렸어요.</p></div></div>
+    </div>
+    <div class="ap-dots" id="apDots"></div>
   </div>
+  <p class="ap-cap">업종 사진은 이해를 돕기 위한 예시 이미지입니다 · 승인 화면과 후기는 실제 자료(개인정보 가림)입니다</p>
 </section>
 
 <section class="ap-sec">
@@ -134,7 +154,7 @@ body{margin:0;background:var(--bg)}
   <p class="sub" style="margin-top:14px">선착순으로 마감되는 자금은<br><b style="color:#fff">매달 다시 확인</b>하셔야 합니다.</p>
   <div class="ap-steps5">
     <div><em>01</em><p style="margin:0"><b>3가지만 답하면 사전 진단</b><span>업종 · 업력 · 작년 매출</span></p></div>
-    <div><em>02</em><p style="margin:0"><b>정책자금 · 보증 · 지원사업 한 번에 비교</b><span>지금 신청 가능한 것만 골라 드려요</span></p></div>
+    <div><em>02</em><p style="margin:0"><b>받을 수 있는 정책자금 한 번에 비교</b><span>지금 신청 가능한 것만 골라 드려요</span></p></div>
     <div><em>03</em><p style="margin:0"><b>기존 대출 구조까지 함께 점검</b><span>대환이 필요한지도 같이 봐요</span></p></div>
     <div><em>04</em><p style="margin:0"><b>상담 · 진단 무료</b><span>계약 전에는 비용을 청구하지 않아요</span></p></div>
     <div><em>05</em><p style="margin:0"><b>사단법인 한국경영컨설턴트협회 회원사</b><span>협회 윤리 기준에 따라 상담해요</span></p></div>
@@ -157,7 +177,7 @@ body{margin:0;background:var(--bg)}
 </section>
 
 <div class="ap-foot">
-  <b>한국정책자문센터(KPAC)</b> · 대표 이남인 · 사업자등록번호 111-13-97163 · 경기도 남양주시 · 대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
+  <b>한국정책자문센터(KPAC)</b> · 대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
   사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)<br>
   당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 실제 경험으로 동일한 결과를 보장하지 않습니다.<br>
   <a href="privacy.html">개인정보처리방침</a> · <a href="services.html#terms">서비스 이용 안내</a> · © 2026 KPAC
@@ -231,7 +251,14 @@ body{margin:0;background:var(--bg)}
     $('apTickL').innerHTML=L.map(function(x){return '<li>'+e(x.ind)+' '+e(x.co)+'<em>NEW</em>'+e(x.ago)+' '+e(x.nm)+' 대표님 신청</li>'}).join('');$('apTick').hidden=false;
     var i=0;setInterval(function(){i=(i+1)%L.length;$('apTickL').style.transform='translateY(-'+(i*36)+'px)';},2800);
   }).catch(function(){});
-  function openF(){$('apSheet').hidden=false;document.body.style.overflow='hidden';$('apSheet').scrollTop=0;}function closeF(){$('apSheet').hidden=true;document.body.style.overflow='';}[].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(e){e.preventDefault();openF();});});$('apX').onclick=closeF;if(location.hash==='#apForm')openF();var KW=['정책자금','운영자금','보증 자금','지원사업'],ki=0;setInterval(function(){ki=(ki+1)%KW.length;var k=$('apKw');k.style.opacity=0;setTimeout(function(){k.textContent=KW[ki];k.style.opacity=1;},250);},2200);
+  function openF(){$('apSheet').hidden=false;document.body.style.overflow='hidden';$('apSheet').scrollTop=0;}function closeF(){$('apSheet').hidden=true;document.body.style.overflow='';}[].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(e){e.preventDefault();openF();});});$('apX').onclick=closeF;if(location.hash==='#apForm')openF();var KW=['정책 자금','사업 자금','인건비 지원금'],ki=0;setInterval(function(){ki=(ki+1)%KW.length;var k=$('apKw');k.style.opacity=0;setTimeout(function(){k.textContent=KW[ki];k.style.opacity=1;},250);},2200);
+  /* r249a 후기 슬라이더: 자동 넘김 + 손으로 밀기 + 점 */
+  (function(){var rv=$('apRv'),dt=$('apDots');if(!rv)return;var C=rv.children,n=C.length,cur=0,hold=0;dt.innerHTML=new Array(n+1).join('<span></span>');var D=dt.children;
+    function mark(i){cur=i;for(var k=0;k<n;k++)D[k].className=k===i?'on':'';}
+    function go(i){var c=C[i];rv.scrollTo({left:c.offsetLeft-(rv.clientWidth-c.clientWidth)/2,behavior:'smooth'});mark(i);}
+    rv.addEventListener('scroll',function(){var m=rv.scrollLeft+rv.clientWidth/2,b=0,bd=1e9;for(var k=0;k<n;k++){var d=Math.abs(C[k].offsetLeft+C[k].clientWidth/2-m);if(d<bd){bd=d;b=k;}}if(b!==cur)mark(b);},{passive:true});
+    ['touchstart','pointerdown'].forEach(function(e){rv.addEventListener(e,function(){hold=Date.now();},{passive:true});});
+    mark(0);setInterval(function(){if(Date.now()-hold<6000||document.hidden)return;go((cur+1)%n);},3200);})();
   var V={age:'',rev:''};
   [].forEach.call(document.querySelectorAll('.ap-opt'),function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;fStart();V[g.dataset.k]=b.dataset.v;[].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});$('m1').textContent='';});});
   $('f_ind').addEventListener('input',fStart);
