@@ -95,6 +95,8 @@ body{margin:0;background:#000}
 .ap-btn:disabled{opacity:.45;cursor:default}
 #apSheet{position:fixed;inset:0;z-index:50;background:#fff;overflow-y:auto;color:#000;font-family:'Pre',sans-serif}
 #apSheet[hidden]{display:none}
+#apSheet *{box-sizing:border-box;letter-spacing:normal}
+.ap-q{display:flex;justify-content:space-between;align-items:baseline}
 .ap-sh-top{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 20px;border-bottom:1px solid #eee;z-index:2}
 .ap-sh-top b{font-size:16px;font-weight:700}.ap-sh-top button{background:none;border:0;font-size:22px;color:#777;cursor:pointer;line-height:1}
 .ap-form{max-width:375px;margin:0 auto 40px;padding:28px 20px}
@@ -103,6 +105,7 @@ body{margin:0;background:#000}
 .ap-steps{display:flex;gap:10px;margin-bottom:6px}.ap-steps span{flex:1;font-size:15px;font-weight:700;color:#bbb;border-bottom:3px solid #eee;padding:0 0 10px}
 .ap-steps span.on{color:var(--ac);border-color:var(--ac)}
 .ap-q{font-size:19px;font-weight:700;margin:30px 0 12px;color:#555}.ap-q small{font-size:14px;color:#727272;font-weight:400;margin-left:6px}
+.ap-q{display:flex;justify-content:space-between;align-items:baseline}
 .ap-note{font-size:14px;color:#727272;margin:-4px 0 10px}
 .ap-in{width:100%;height:50px;border:1px solid #ddd;border-radius:8px;padding:0 14px;font-size:17px;font-weight:600;font-family:inherit;background:#fff;color:#000}
 .ap-in::placeholder{color:#bbb;font-weight:500}
