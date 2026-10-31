@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>한국정책자문센터 | 우리 회사도 정책자금 가능할까요</title>
+<meta name="description" content="같은 조건으로도 결과가 갈리는 이유, 한국정책자문센터가 무료로 진단해 드립니다.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048988442"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('set',{url_passthrough:true});
+gtag('config','AW-18048988442',{url_passthrough:true});
+try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kpac_src:_q.get('src')||'',kpac_ad:_q.get('ad')||_q.get('utm_content')||'',page_title:'검색광고 · apply-a (대표 랜딩)'});}catch(e){gtag('config','G-WCTPRG3HYE');}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+@font-face{font-family:'Pretendard';font-weight:400 900;font-display:swap;
+  src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');}
+
+:root{
+  --navy-950:#080B1F; --navy-900:#0B1130; --navy-850:#0E1440; --navy-800:#131A4D; --navy-700:#1B245F;
+  --blue-600:#2451E8; --blue-500:#3D6BFF; --blue-300:#8FADFF; --blue-100:#E3EAFF;
+  --accent-purple:#8B5CF6; --accent-teal:#06B6D4;
+  --ink-900:#10131F; --ink-700:#333A4E; --ink-500:#5B6478;
+  --line:#E2E5F0; --paper:#FFFFFF; --paper-2:#EEF2FC;
+  --ease:cubic-bezier(.22,.9,.32,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Pretendard',sans-serif;color:var(--ink-900);background:var(--paper);line-height:1.6;word-break:keep-all;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+.num{font-variant-numeric:tabular-nums;font-weight:700;}
+section{padding:88px 20px;}
+.wrap{max-width:760px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);font-weight:700;margin-bottom:16px;}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--blue-600);}
+h2{font-size:clamp(22px,4.2vw,30px);font-weight:800;line-height:1.45;color:var(--navy-900);letter-spacing:-.01em;}
+.lead{color:var(--ink-500);font-size:15.5px;line-height:1.85;margin-top:14px;}
+
+/* ---------- utility bar ---------- */
+.utilbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,11,31,.92);backdrop-filter:blur(6px);
+  padding:11px 20px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#fff;}
+.utilbar .logo{font-weight:800;letter-spacing:.02em;display:flex;align-items:center;}
+.utilbar .tel{color:var(--blue-300);font-weight:700;}
+
+/* ---------- hero ---------- */
+.hero{padding:96px 20px 60px;color:#fff;position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 88% -15%, rgba(61,107,255,.30), transparent 55%),
+    radial-gradient(700px 420px at 5% 100%, rgba(139,92,246,.18), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 58px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 84px),
+    linear-gradient(155deg, #080B1F 0%, #0B1130 55%, #1B245F 100%);}
+.hero .wrap{text-align:center;}
+.hero .eyebrow{color:var(--blue-300);justify-content:center;}
+.hero .eyebrow::before{background:var(--blue-300);}
+.hero h1{font-size:clamp(26px,5.4vw,38px);font-weight:800;line-height:1.42;letter-spacing:-.01em;}
+.hero h1 em{font-style:normal;color:var(--blue-300);}
+.hero p{margin-top:18px;color:rgba(255,255,255,.7);font-size:15.5px;line-height:1.85;max-width:520px;margin-left:auto;margin-right:auto;}
+.cta-btn{display:inline-block;margin-top:30px;background:var(--blue-500);color:#fff;
+  font-weight:800;font-size:15.5px;padding:16px 32px;border-radius:10px;text-decoration:none;
+  box-shadow:0 14px 30px rgba(61,107,255,.30);transition:transform .2s var(--ease),background .2s;}
+.cta-btn:hover{transform:translateY(-2px);background:var(--blue-600);}
+.cta-sub{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.58);}
+
+.trustbar{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;}
+.trustbar div{background:rgba(255,255,255,.03);padding:22px 10px;text-align:center;}
+.trustbar b{display:block;font-size:clamp(20px,4vw,27px);color:var(--blue-300);}
+.trustbar span{font-size:11.5px;color:rgba(255,255,255,.62);margin-top:5px;display:block;}
+
+/* ---------- 협회 소속 사진 ---------- */
+.assoc-badge{display:inline-flex;align-items:center;gap:10px;background:var(--paper-2);border-radius:100px;
+  padding:8px 16px 8px 8px;margin-top:6px;}
+.assoc-badge img{height:24px;width:auto;display:block;}
+.assoc-badge span{font-size:12.5px;font-weight:700;color:var(--navy-900);}
+.assoc-layout{margin-top:28px;display:flex;flex-direction:column;gap:24px;}
+.assoc-photo-wrap{width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:0 16px;box-sizing:border-box;}
+.assoc-photo{max-width:820px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 16px 36px rgba(11,17,48,.1);cursor:pointer;}
+.assoc-photo img{width:100%;display:block;}
+.assoc-copy .lead:first-of-type{margin-top:14px;}
+.assoc-note{margin-top:12px;font-size:11.5px;color:var(--ink-500);line-height:1.7;}
+
+/* ---------- hero video (첫 화면 신뢰) ---------- */
+.hero-video{max-width:230px;margin:0 auto 24px;}
+.hero-video .hv-item{border-radius:14px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.4);border:1.5px solid rgba(255,255,255,.15);}
+.hero-video video{width:100%;aspect-ratio:9/14;object-fit:cover;display:block;background:#000;}
+.urgent-strip{background:#FFA53D;color:#1A1200;text-align:center;font-size:12.5px;font-weight:800;
+  padding:10px 16px;letter-spacing:.01em;}
+.pain{background:var(--paper-2);}
+.persona-grid{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:680px){.persona-grid{grid-template-columns:1fr;}}
+.persona-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 20px;text-align:center;
+  opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.persona-card.in{opacity:1;transform:translateY(0);}
+.persona-card:nth-child(1){transition-delay:.05s;}
+.persona-card:nth-child(2){transition-delay:.15s;}
+.persona-card:nth-child(3){transition-delay:.25s;}
+.persona-card .p-emoji{width:56px;height:56px;border-radius:50%;font-size:26px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.persona-card:nth-child(1) .p-emoji{background:rgba(61,107,255,.12);}
+.persona-card:nth-child(2) .p-emoji{background:rgba(139,92,246,.12);}
+.persona-card:nth-child(3) .p-emoji{background:rgba(6,182,212,.12);}
+.persona-card .p-tag{display:inline-block;font-size:12px;font-weight:800;padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+.persona-card:nth-child(1) .p-tag{background:rgba(61,107,255,.1);color:var(--blue-600);}
+.persona-card:nth-child(2) .p-tag{background:rgba(139,92,246,.1);color:var(--accent-purple);}
+.persona-card:nth-child(3) .p-tag{background:rgba(6,182,212,.1);color:#0891A8;}
+.persona-card h3{font-size:16.5px;font-weight:800;color:var(--navy-900);line-height:1.5;margin-bottom:10px;}
+.persona-card p{font-size:13.5px;font-weight:500;color:var(--ink-700);line-height:1.75;}
+
+/* ---------- reasons ---------- */
+.reasons-grid{margin-top:32px;display:grid;gap:14px;}
+.reason-card{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:#fff;
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:flex-start;}
+.reason-num{font-weight:700;font-size:14px;color:#fff;background:var(--navy-900);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+.reason-card h3{font-size:15.5px;font-weight:800;color:var(--navy-900);margin-bottom:6px;}
+.reason-card p{font-size:14px;color:var(--ink-500);line-height:1.75;}
+
+/* ---------- reel video (실제 영상 재생) ---------- */
+.reel-strip{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:520px;margin-left:auto;margin-right:auto;}
+.reel-card{border-radius:14px;overflow:hidden;background:var(--navy-900);}
+.reel-card video{width:100%;aspect-ratio:9/14;object-fit:cover;display:block;background:#000;}
+.reel-card .cap{padding:9px 8px 11px;color:#fff;font-size:11px;font-weight:700;line-height:1.35;text-align:center;}
+
+.mid-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy-900);
+  border-radius:14px;padding:16px 18px;margin-bottom:28px;flex-wrap:wrap;}
+.mid-cta span{color:#fff;font-size:14px;font-weight:700;}
+.cta-btn-small{background:var(--blue-500);color:#fff;font-weight:800;font-size:13.5px;padding:10px 18px;
+  border-radius:8px;text-decoration:none;white-space:nowrap;}
+
+/* ---------- proof / cases ---------- */
+.proof-img{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 44px rgba(11,17,48,.10);}
+.proof-cap{text-align:center;font-size:12.5px;color:var(--ink-500);margin-top:12px;}
+
+/* ---------- 승인내역 (구조화 카드 + 원본 썸네일) ---------- */
+.approval-detail{margin-top:28px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;}
+.approval-clean{background:var(--navy-900);border-radius:16px;padding:26px 24px;color:#fff;position:relative;overflow:hidden;}
+.stamp{position:absolute;top:50%;left:50%;width:150px;height:150px;border-radius:50%;border:5px solid #FF6B5E;
+  color:#FF6B5E;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;
+  background:rgba(255,107,94,.07);z-index:2;pointer-events:none;
+  transform:translate(-50%,-50%) rotate(-14deg) scale(0);
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+.stamp.show{transform:translate(-50%,-50%) rotate(-14deg) scale(1);}
+.approval-clean .ac-head{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--blue-300);font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px;}
+.approval-clean .ac-head::before{content:'✓';width:20px;height:20px;border-radius:50%;background:var(--blue-500);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;}
+.ac-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.ac-row:last-child{border-bottom:none;}
+.ac-row .ac-label{font-size:13px;color:rgba(255,255,255,.55);}
+.ac-row .ac-val{font-size:15px;font-weight:700;color:#fff;}
+.ac-highlight .ac-val{color:var(--blue-300);font-size:17px;}
+.approval-thumb-solo{margin-top:28px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  position:relative;max-width:420px;margin-left:auto;margin-right:auto;}
+.approval-thumb-solo img{width:100%;height:auto;display:block;}
+.thumb-extra{position:absolute;right:6px;bottom:6px;width:70px;height:72px;border-radius:5px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.6);box-shadow:0 4px 10px rgba(0,0,0,.25);}
+.thumb-extra img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:640px){.approval-detail{grid-template-columns:1fr;}}
+
+/* ---------- 공식 인증 배지 그리드 ---------- */
+.cert-grid{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.cert-card{border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:pointer;position:relative;
+  background:#fff;transition:transform .2s var(--ease);}
+.cert-card:hover{transform:translateY(-3px);}
+.cert-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;}
+.cert-card .cert-cap{padding:8px 10px 10px;font-size:11px;font-weight:700;color:var(--ink-700);line-height:1.4;text-align:center;}
+@media(max-width:520px){.cert-grid{grid-template-columns:repeat(3,1fr);gap:7px;}.cert-card .cert-cap{font-size:9.5px;padding:6px 4px 8px;}}
+
+/* ---------- 후기 (메인 크게, 나머지는 이전 위치에서 살짝만 축소) ---------- */
+.testi-main-wrap{margin-top:28px;width:100vw;position:relative;left:50%;transform:translateX(-50%);
+  padding:0 16px;box-sizing:border-box;}
+.testi-main-wrap .testi-tile{max-width:900px;margin:0 auto;}
+.testi-tile{border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:pointer;
+  box-shadow:0 12px 28px rgba(11,17,48,.1);background:#fff;}
+.testi-tile img{width:100%;display:block;}
+.testi-sub-row{margin-top:16px;width:100vw;position:relative;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;gap:14px;padding:0 16px;box-sizing:border-box;}
+.testi-sub-row .testi-tile{max-width:480px;margin:0 auto;width:100%;}
+.testi-short{max-width:220px;}
+
+/* ---------- lightbox ---------- */
+.lightbox{position:fixed;inset:0;background:rgba(8,11,31,.9);z-index:110;display:none;align-items:center;
+  justify-content:center;padding:24px;cursor:zoom-out;}
+.lightbox.show{display:flex;}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:10px;box-shadow:0 30px 70px rgba(0,0,0,.5);}
+
+.case-grid{margin-top:36px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.case-card{background:#fff;padding:26px 24px;border-left:3px solid var(--blue-500);}
+.case-card:nth-child(2){border-left-color:var(--accent-purple);}
+.case-card:nth-child(3){border-left-color:var(--accent-teal);}
+.case-tag{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--blue-600);font-weight:700;margin-bottom:10px;}
+.case-card:nth-child(2) .case-tag{color:var(--accent-purple);}
+.case-card:nth-child(3) .case-tag{color:var(--accent-teal);}
+.case-card h3{font-size:16px;font-weight:800;color:var(--navy-900);margin-bottom:10px;line-height:1.5;}
+.case-card p{font-size:13.5px;color:var(--ink-500);line-height:1.8;}
+.ba-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch;margin:14px 0;}
+.ba-before,.ba-after{padding:12px 13px;border-radius:10px;font-size:12.5px;line-height:1.55;font-weight:600;}
+.ba-before{background:#FDEEEC;color:#B7392B;}
+.ba-after{background:#EAF1FF;color:var(--blue-600);}
+.ba-tag{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;margin-bottom:5px;opacity:.7;}
+.ba-arrow{color:var(--ink-400);font-size:16px;font-weight:700;display:flex;align-items:center;}
+@media(max-width:480px){.ba-row{grid-template-columns:1fr;}.ba-arrow{justify-self:center;transform:rotate(90deg);padding:2px 0;}}
+.case-result{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-500);}
+.case-result b{color:var(--navy-900);font-weight:800;display:block;font-size:13.5px;}
+.case-note{margin-top:20px;font-size:12.5px;color:var(--ink-500);background:var(--paper-2);
+  border-left:3px solid var(--blue-500);padding:16px 18px;line-height:1.8;border-radius:0 10px 10px 0;}
+
+/* ---------- steps ---------- */
+.steps{background:var(--paper-2);}
+.step-list{margin-top:32px;border-left:2px solid var(--line);margin-left:14px;}
+.step-item{position:relative;padding:0 0 22px 30px;}
+.step-item:last-child{padding-bottom:0;}
+.step-item::before{content:attr(data-n);position:absolute;left:-15px;top:-2px;width:28px;height:28px;
+  border-radius:50%;background:var(--navy-900);color:var(--blue-300);font-size:12.5px;
+  font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step-item h3{font-size:15.5px;font-weight:800;color:var(--navy-900);margin:2px 0 0;}
+
+/* ---------- golden time ---------- */
+.golden{color:#fff;background:linear-gradient(155deg, #080B1F 0%, #1B245F 100%);}
+.golden .eyebrow{color:var(--blue-300);}
+.golden .eyebrow::before{background:var(--blue-300);}
+.golden h2{color:#fff;}
+.golden .lead{color:rgba(255,255,255,.68);}
+.budget-card{margin-top:30px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;padding:26px 24px;text-align:center;}
+.budget-card .amt{font-size:clamp(40px,11vw,64px);font-weight:900;color:#FFA53D;letter-spacing:-.02em;line-height:1.1;}
+.budget-card .amt-label{font-size:12.5px;color:rgba(255,255,255,.62);margin-top:6px;}
+.urgent-note{margin-top:18px;background:rgba(61,107,255,.10);border:1px solid rgba(61,107,255,.28);
+  border-radius:12px;padding:16px 18px;font-size:13.5px;color:#D6E0FF;line-height:1.8;}
+.urgent-note b{color:var(--blue-300);}
+
+/* ---------- compare ---------- */
+.compare-table{margin-top:32px;width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.compare-table th,.compare-table td{padding:14px 10px;text-align:center;border:1px solid var(--line);}
+.compare-table thead th{background:var(--paper-2);color:var(--ink-700);font-size:12.5px;font-weight:700;}
+.compare-table td:first-child,.compare-table th:first-child{text-align:left;font-weight:600;color:var(--ink-700);}
+.compare-table .kpac-col{background:rgba(61,107,255,.06);font-weight:800;color:var(--navy-900);}
+.compare-table thead .kpac-col{background:var(--navy-900);color:var(--blue-300);}
+
+/* ---------- selective ---------- */
+.selective{background:var(--paper-2);}
+.select-grid{margin-top:30px;display:grid;gap:14px;}
+.select-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
+.select-card h3{font-size:14.5px;font-weight:800;color:var(--navy-900);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;}
+.select-card h3::before{content:'○';color:var(--blue-500);font-size:11px;}
+.select-card p{font-size:13.5px;color:var(--ink-500);line-height:1.75;}
+.honest-box{margin-top:22px;padding:20px 22px;background:var(--navy-900);border-radius:14px;color:#fff;font-size:13.5px;line-height:1.85;}
+.honest-box b{color:var(--blue-300);}
+
+/* ---------- testimonial ---------- */
+.testi-img{border-radius:14px;overflow:hidden;box-shadow:0 20px 44px rgba(11,17,48,.14);}
+
+/* ---------- form ---------- */
+.formsec{color:#fff;background:linear-gradient(155deg, #080B1F 0%, #0B1130 60%, #1B245F 100%);}
+.formsec h2{color:#fff;}
+.formsec .eyebrow{color:var(--blue-300);}
+.formsec .eyebrow::before{background:var(--blue-300);}
+.formsec .lead{color:rgba(255,255,255,.66);}
+form{margin-top:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:28px 24px;}
+.f-row{margin-bottom:16px;}
+.f-row label{display:block;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:7px;font-weight:600;}
+.f-row input[type=text],.f-row input[type=tel],.f-row select{
+  width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);color:#fff;font-size:14.5px;font-family:inherit;}
+.f-row input::placeholder{color:rgba(255,255,255,.35);}
+.f-row select option{color:#0B1130;}
+.radio-group{display:flex;gap:10px;}
+.radio-opt{flex:1;position:relative;}
+.radio-opt input{position:absolute;opacity:0;}
+.radio-opt label{display:block;text-align:center;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);font-size:13.5px;font-weight:600;cursor:pointer;transition:all .15s var(--ease);margin:0;}
+.radio-opt input:checked + label{background:var(--blue-500);border-color:var(--blue-500);color:#fff;}
+.radio-opt.danger input:checked + label{background:#E8493D;border-color:#E8493D;color:#fff;}
+.check-row{display:flex;align-items:flex-start;gap:10px;padding:14px;background:rgba(255,255,255,.04);
+  border-radius:10px;border:1px solid rgba(255,255,255,.1);}
+.check-row input{margin-top:3px;flex:none;}
+.check-row label{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6;font-weight:400;margin:0;}
+.submit-btn{width:100%;margin-top:20px;background:var(--blue-500);color:#fff;font-weight:800;
+  font-size:15.5px;padding:16px;border:none;border-radius:10px;cursor:pointer;transition:transform .2s var(--ease),background .2s;}
+.submit-btn:hover{transform:translateY(-2px);background:var(--blue-600);}
+.submit-btn:disabled{background:rgba(255,255,255,.12);color:rgba(255,255,255,.35);cursor:not-allowed;transform:none;}
+.form-fineprint{margin-top:14px;font-size:11.5px;color:rgba(255,255,255,.5);text-align:center;line-height:1.7;}
+
+#formSuccess{display:none;text-align:center;padding:50px 20px;}
+#formSuccess.show{display:block;}
+#formSuccess .check{width:56px;height:56px;border-radius:50%;background:var(--blue-500);color:#fff;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:26px;font-weight:800;}
+#formSuccess h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;}
+#formSuccess p{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.8;}
+
+/* ---------- 국세체납 팝업 ---------- */
+.modal-overlay{position:fixed;inset:0;background:rgba(8,11,31,.62);backdrop-filter:blur(3px);
+  z-index:100;display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.show{display:flex;}
+.modal-box{background:#fff;border-radius:18px;max-width:380px;width:100%;padding:30px 26px;text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,.3);}
+.modal-box .icon{width:50px;height:50px;border-radius:50%;background:#FDECEA;color:#E8493D;font-size:24px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.success-check{width:54px;height:54px;border-radius:50%;background:var(--blue-500);color:#fff;font-size:26px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.kakao-btn{display:block;background:#FEE500;color:#191600;font-weight:800;font-size:14px;padding:13px;
+  border-radius:10px;text-decoration:none;margin-bottom:10px;}
+.modal-box h3{font-size:16.5px;font-weight:800;color:var(--navy-900);margin-bottom:10px;}
+.modal-box p{font-size:13.5px;color:var(--ink-500);line-height:1.8;margin-bottom:20px;}
+.modal-box button{background:var(--navy-900);color:#fff;border:none;border-radius:10px;padding:12px 22px;
+  font-size:13.5px;font-weight:700;cursor:pointer;width:100%;}
+
+/* ---------- sticky cta ---------- */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--navy-900);padding:14px 20px;
+  display:flex;align-items:center;justify-content:center;gap:14px;transform:translateY(100%);
+  transition:transform .3s var(--ease);box-shadow:0 -8px 24px rgba(0,0,0,.2);}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta span{color:rgba(255,255,255,.8);font-size:12.5px;display:none;}
+.sticky-cta a{background:var(--blue-500);color:#fff;font-weight:800;font-size:14px;
+  padding:12px 26px;border-radius:10px;text-decoration:none;}
+@media(min-width:560px){.sticky-cta span{display:block;}}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-950);color:rgba(255,255,255,.55);padding:32px 20px 90px;text-align:center;font-size:12px;line-height:1.9;}
+.footer-link{display:inline-block;margin-top:12px;color:#FEE500;text-decoration:underline;font-size:12px;}
+footer b{color:rgba(255,255,255,.78);}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media(max-width:520px){section{padding:64px 18px;}.hero{padding:80px 18px 52px;}}
+
+.reel-card{display:block;position:relative;text-decoration:none;}
+.reel-card img{width:100%;aspect-ratio:9/14;object-fit:cover;display:block;background:#000;}
+.reel-card .play{position:absolute;left:50%;top:42%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(8,11,31,.62);border:1.5px solid rgba(255,255,255,.8);}
+.reel-card .play::after{content:'';position:absolute;left:18px;top:13px;border-left:14px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;}
+.mss{margin-top:16px;display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-top:2px solid #C9A64B;border-radius:12px;padding:12px 16px;box-shadow:0 6px 16px rgba(11,17,48,.06);}
+.mss img{height:24px;width:auto;}.mss i{width:1px;height:30px;background:var(--line);}
+.mss b{display:block;font-size:13px;color:var(--navy-900);font-weight:800;line-height:1.4;}.mss span{display:block;font-size:11.5px;color:var(--ink-500);}
+.foot{background:var(--navy-950);color:rgba(255,255,255,.55);padding:32px 20px 110px;text-align:center;font-size:12px;line-height:1.9;}
+.foot b{color:rgba(255,255,255,.8);}.foot a{color:rgba(255,255,255,.7);}
+.f-msg{margin-top:12px;font-size:13px;color:#FFB4B4;min-height:18px;text-align:center;}
+</style>
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Tz2MMQxD2MjS2A8NhoAY5G"});</script>
+</head>
+<body>
+
+<div class="utilbar">
+  <div class="logo">KPAC <span style="opacity:.6;font-weight:400;">한국정책자문센터</span></div>
+  <div class="tel">1866-1912</div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" data-sec="hero">
+  <div class="wrap">
+    <div class="eyebrow">KOREA POLICY ADVISORY CENTER</div>
+    <h1>정책자금, 신청은 다 하는데<br>왜 <em>결과는 다르게</em> 나올까요</h1>
+    <p>모른 채로 넘어가면, 계속 못 받는 채로 남습니다.</p>
+    <a href="#form" class="cta-btn">내가 진짜 되는지, 1분만에 확인하기 →</a>
+    <div class="cta-sub">진단은 무료이며, 상담 여부는 진단 결과를 보고 결정하셔도 됩니다</div>
+
+    <div class="trustbar">
+      <div><b class="num" data-count="2000" data-suffix="건+">0</b><span>누적 상담</span></div>
+      <div><b>0원</b><span>계약 전 비용</span></div>
+      <div><b>협회</b><span>중기부 허가 협회 회원사</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 마감임박 미니배너 ================= -->
+<div class="urgent-strip">⏰ 정책자금 예산, 소진되면 그 해는 끝입니다 — 마감 임박</div>
+
+<!-- ================= 문제 공감 ================= -->
+<section class="pain" data-sec="pain">
+  <div class="wrap reveal">
+    <div class="eyebrow">다들 겪는 문제입니다</div>
+    <h2>못 받는 게 아니라,<br>몰라서 못 받는 겁니다</h2>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="p-emoji">🏢</div>
+        <div class="p-tag">법인 대표님</div>
+        <h3>"이미 한도가 꽉 찼다는데,<br>방법을 모르겠고"</h3>
+        <p>기존 대출 한도는 이미 다 썼는데, 추가로 더 받을 방법이 있는지조차 모르겠습니다.</p>
+      </div>
+      <div class="persona-card">
+        <div class="p-emoji">🏪</div>
+        <div class="p-tag">소상공인·개인사업자</div>
+        <h3>"내가 진짜 대상인지도<br>모르겠고"</h3>
+        <p>정책자금이 있다는 건 알지만, 제가 진짜 받을 수 있는 조건인지는 확신이 서지 않습니다.</p>
+      </div>
+      <div class="persona-card">
+        <div class="p-emoji">😮‍💨</div>
+        <div class="p-tag">재도전하시는 분</div>
+        <h3>"다시 알아볼 엄두가<br>안 나고"</h3>
+        <p>예전에 한 번 거절당한 뒤로는 다시 알아볼 엄두가 나지 않습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 영상으로 확인 ================= -->
+<section data-sec="video">
+  <div class="wrap reveal">
+    <div class="eyebrow">영상으로 확인해보세요</div>
+    <h2>대표님이 직접 설명드립니다</h2>
+    <div class="reel-strip">
+      <a class="reel-card" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">
+        <img src="/lpa-v-credit.webp" alt="" loading="lazy" width="360" height="560"><span class="play" aria-hidden="true"></span>
+        <div class="cap">신용점수 별<br>정책자금</div>
+      </a>
+      <a class="reel-card" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">
+        <img src="/lpa-v-age39.webp" alt="" loading="lazy" width="360" height="560"><span class="play" aria-hidden="true"></span>
+        <div class="cap">만 39세, 받을 수 있는<br>혜택 총정리</div>
+      </a>
+      <a class="reel-card" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">
+        <img src="/lpa-v-mfg.webp" alt="" loading="lazy" width="360" height="560"><span class="play" aria-hidden="true"></span>
+        <div class="cap">제조업이면<br>이대로만 따라하세요</div>
+      </a>
+      <a class="reel-card" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener">
+        <img src="/lpa-v-job.webp" alt="" loading="lazy" width="360" height="560"><span class="play" aria-hidden="true"></span>
+        <div class="cap">직종별<br>정책자금</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 실제 승인사례 ================= -->
+<section class="pain" data-sec="cases">
+  <div class="wrap reveal">
+    <div class="mid-cta">
+      <span>우리 회사도 가능할까요?</span>
+      <a href="#form" class="cta-btn-small">1분만에 확인하기 →</a>
+    </div>
+    <div class="eyebrow">실제 승인 사례</div>
+    <h2>법인부터 소상공인까지, 실전 컨설팅 결과</h2>
+
+    <div class="testi-main-wrap">
+      <div class="testi-tile" onclick="openLightbox('/lpa-kt-main.webp')"><img loading="lazy" src="/lpa-kt-main.webp" alt="고객 후기 카카오톡 대화"></div>
+    </div>
+    <div class="testi-sub-row">
+      <div class="testi-tile" onclick="openLightbox('/lpa-kt-2.webp')"><img loading="lazy" src="/lpa-kt-2.webp" alt="실사 후기 카카오톡"></div>
+      <div class="testi-tile" onclick="openLightbox('/lpa-kt-3.webp')"><img loading="lazy" src="/lpa-kt-3.webp" alt="제조업 코드 세팅 완료 후기 카카오톡"></div>
+    </div>
+
+    <div class="approval-thumb-solo">
+      <img loading="lazy" src="/lpa-ap-1.webp" alt="정책자금 승인 원본 화면" onclick="openLightbox(this.src)">
+      <div class="thumb-extra"><img loading="lazy" src="/lpa-ap-2.webp" alt=""></div>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card" onclick="openLightbox('/lpa-cert-venture.webp')"><img loading="lazy" src="/lpa-cert-venture.webp" alt="벤처기업확인서"><div class="cert-cap">벤처기업확인서</div></div>
+      <div class="cert-card" onclick="openLightbox('/lpa-cert-rnd.webp')"><img loading="lazy" src="/lpa-cert-rnd.webp" alt="연구개발전담부서 인정서"><div class="cert-cap">연구개발전담부서<br>인정서</div></div>
+      <div class="cert-card" onclick="openLightbox('/lpa-cert-mainbiz.webp')"><img loading="lazy" src="/lpa-cert-mainbiz.webp" alt="경영혁신형 중소기업(MAIN-BIZ) 확인서"><div class="cert-cap">MAIN-BIZ<br>확인서</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STEP 프로세스 ================= -->
+<section class="steps" data-sec="steps">
+  <div class="wrap reveal">
+    <div class="eyebrow">진행 과정</div>
+    <h2>복잡한 건 저희 몫입니다.<br>대표님은 확인만 하시면 됩니다</h2>
+    <div class="step-list">
+      <div class="step-item" data-n="1"><h3>상황을 명확히 진단합니다</h3></div>
+      <div class="step-item" data-n="2"><h3>재무 상황을 꼼꼼히 분석합니다</h3></div>
+      <div class="step-item" data-n="3"><h3>기관 맞춤 전략을 설계합니다</h3></div>
+      <div class="step-item" data-n="4"><h3>서류 제출과 심사까지 함께합니다</h3></div>
+      <div class="step-item" data-n="5"><h3>승인은 끝이 아니라 시작입니다</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 후킹: 왜 다른가 + 협회 소속 (연속) ================= -->
+<section data-sec="why">
+  <div class="wrap reveal">
+    <div class="eyebrow">왜 다른가</div>
+    <h2>한국정책자문센터가<br>압도적으로 잘할 수밖에 없는 이유입니다</h2>
+    <p class="lead"><b>회사 상황이 다른데 똑같은 방식으로만 접수하는 컨설팅들이 문제입니다.</b><br>저희는 기업마다 다른 재무 상황에 맞춰 진단부터 다르게 시작합니다.</p>
+
+    <div class="assoc-layout">
+      <div class="assoc-photo-wrap">
+        <div class="assoc-photo"><img loading="lazy" src="/lpa-assoc.webp" alt="비영리 사단법인 한국경영컨설턴트협회 창단식" onclick="openLightbox('/lpa-assoc.webp')"></div>
+      </div>
+      <div class="assoc-copy">
+        <div class="eyebrow">ASSOCIATION</div>
+        <h2>정책자금 분야, 국내 유일 비영리 사단법인</h2>
+        <p class="assoc-note">한국정책자문센터는 중소벤처기업부 허가 비영리 사단법인인 한국경영컨설턴트협회(KMCA) 회원사로, 컨설턴트 한 명의 역량에 기대지 않고 협회 차원의 검증된 전문가 네트워크를 기반으로 운영됩니다.</p>
+        <div class="mss"><img src="/img-mss-mi.png" alt="중소벤처기업부" width="130" height="27"><i></i><div><b>허가 협회 등록 (등록번호 : 제2026-3호)</b><span>사단법인 한국경영컨설턴트협회 회원사</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 골든타임 (폼 직전 최종 푸시) ================= -->
+<section class="golden" data-sec="golden">
+  <div class="wrap reveal">
+    <div class="eyebrow">지금 해야 하는 이유</div>
+    <h2>정책자금은 예산이 소진되면<br>그 해는 더 받을 수 없습니다</h2>
+    <p class="lead">정책자금 예산은 정해진 규모 안에서 운영됩니다. 예산이 소진되면, 같은 조건이어도 더 이상 받을 수 없습니다.</p>
+    <div class="budget-card">
+      <div class="amt num" id="budgetAmt" data-target="44313">0억원</div>
+      <div class="amt-label">정책자금 예산</div>
+    </div>
+    <div class="urgent-note"><b>미루는 사이 예산은 계속 소진되고 있습니다.</b><br>지금 확인하세요. 필요하면 저희가 해결해드립니다.</div>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="formsec" id="form" data-sec="form">
+  <div class="wrap reveal">
+    <div class="eyebrow">무료 진단 신청</div>
+    <h2>우리 회사, 가능한지 지금 확인해보세요</h2>
+    <p class="lead">아래 정보를 남겨주시면 순서대로 연락드립니다.</p>
+
+    <form id="leadForm">
+      <div class="f-row">
+        <label>성함</label>
+        <input type="text" id="f_name" placeholder="홍길동" required>
+      </div>
+      <div class="f-row">
+        <label>연락처</label>
+        <input type="tel" id="f_phone" placeholder="010-0000-0000" required>
+      </div>
+      <div class="f-row">
+        <label>업종</label>
+        <input type="text" id="f_industry" placeholder="예: 제조업, 도소매업, 음식점업 등" required>
+      </div>
+      <div class="f-row">
+        <label>사업자등록번호</label>
+        <input type="text" id="f_bizno" placeholder="111-11-11111" inputmode="numeric" maxlength="12" required>
+      </div>
+      <div class="f-row">
+        <label>지역</label>
+        <select id="f_region" required>
+          <option value="" disabled selected>지역을 선택해주세요</option>
+          <option value="서울">서울특별시</option><option value="부산">부산광역시</option><option value="인천">인천광역시</option>
+          <option value="대구">대구광역시</option><option value="광주">광주광역시</option><option value="대전">대전광역시</option>
+          <option value="울산">울산광역시</option><option value="세종">세종특별자치시</option><option value="경기">경기도</option>
+          <option value="강원">강원도</option><option value="충북">충청북도</option><option value="충남">충청남도</option>
+          <option value="경북">경상북도</option><option value="경남">경상남도</option><option value="전북">전라북도</option>
+          <option value="전남">전라남도</option><option value="제주">제주특별자치도</option>
+        </select>
+      </div>
+      <div class="f-row">
+        <label>국세 또는 지방세 체납 중이신가요?</label>
+        <div class="radio-group">
+          <div class="radio-opt">
+            <input type="radio" name="f_arrears" id="a_no" value="아니오" required>
+            <label for="a_no">아니오</label>
+          </div>
+          <div class="radio-opt danger">
+            <input type="radio" name="f_arrears" id="a_yes" value="예">
+            <label for="a_yes">예</label>
+          </div>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="check-row">
+          <input type="checkbox" id="f_agree" required>
+          <label for="f_agree">개인정보 수집·이용에 동의합니다. (상담 목적 외 사용하지 않으며, 상담 종료 후 관련 법령에 따라 파기됩니다)</label>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">내가 진짜 되는지 확인하기 →</button>
+      <div class="f-msg" id="fMsg"></div>
+      <div class="form-fineprint">개인정보는 암호화되어 안전하게 처리됩니다.</div>
+    </form>
+  </div>
+</section>
+
+<div class="foot">
+  <b>한국정책자문센터 (KPAC)</b> · 대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>
+  사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)<br>
+  당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 정책자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 경험으로 동일한 결과를 보장하지 않습니다.<br>
+  <a href="/privacy.html">개인정보처리방침</a> · <a href="/services.html#terms">서비스 이용 안내</a><br>
+  <a href="https://open.kakao.com/o/gbN365Ci" target="_blank" rel="noopener" class="footer-link">정책자금·지원금 정보공유 오픈채팅방 참여하기</a>
+</div>
+
+<div class="sticky-cta" id="stickyCta">
+  <span>내가 진짜 되는지, 지금 확인하세요</span>
+  <a href="#form">1분만에 확인하기 →</a>
+</div>
+
+<!-- 신청 완료 팝업 -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <div class="success-check">✓</div>
+    <h3>신청이 접수되었습니다</h3>
+    <p>남겨주신 연락처로 순서대로 연락드리겠습니다.<br>급하신 경우 아래로 바로 연락 주셔도 됩니다.</p>
+    <a href="https://pf.kakao.com/_dxjMDn/chat" class="kakao-btn" id="kakaoChannelBtn" target="_blank" rel="noopener">💬 카카오톡 1:1 빠른 상담</a>
+    <button type="button" onclick="document.getElementById('successModal').classList.remove('show')">확인했습니다</button>
+  </div>
+</div>
+
+<!-- 국세체납 팝업 -->
+<div class="modal-overlay" id="arrearsModal">
+  <div class="modal-box">
+    <div class="icon">!</div>
+    <h3>신청이 제한될 수 있습니다</h3>
+    <p>국세·지방세 체납 또는 연체가 있는 경우 정책자금 신청이 제한됩니다.<br>
+    다만 상황에 따라 가능한 경우도 있으니, 그대로 신청해 주시면 확인 후 정확히 안내드리겠습니다.</p>
+    <button type="button" onclick="document.getElementById('arrearsModal').classList.remove('show')">확인했습니다</button>
+  </div>
+</div>
+
+<!-- 이미지 라이트박스 -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ---------------- 라이트박스 ----------------
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+
+// ---------------- 스크롤 리빌 ----------------
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+revealEls.forEach(el=>io.observe(el));
+
+// 문제공감 리스트 순차 등장
+const painItems = document.querySelectorAll('.persona-card');
+const painIo = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); painIo.unobserve(e.target); } });
+},{threshold:.2});
+painItems.forEach(el=>painIo.observe(el));
+
+// ---------------- 숫자 카운트업 ----------------
+function animateCount(el, target, suffix, duration){
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-p, 3);
+    el.textContent = Math.round(eased * target).toLocaleString() + (suffix||'');
+    if(p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const countEls = document.querySelectorAll('[data-count]');
+const countIo = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target;
+      animateCount(el, parseInt(el.dataset.count,10), el.dataset.suffix, 1400);
+      countIo.unobserve(el);
+    }
+  });
+},{threshold:.4});
+countEls.forEach(el=>countIo.observe(el));
+
+// 예산 카드 (조/억 단위 포맷)
+const budgetEl = document.getElementById('budgetAmt');
+const budgetIo = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const target = parseInt(budgetEl.dataset.target,10); // 단위: 억
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now-start)/1600, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        const v = Math.round(eased * target);
+        const jo = Math.floor(v/10000);
+        const eok = v % 10000;
+        budgetEl.textContent = (jo>0 ? jo+'조 ' : '') + eok.toLocaleString() + '억원';
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      budgetIo.unobserve(budgetEl);
+    }
+  });
+},{threshold:.4});
+budgetIo.observe(budgetEl);
+
+// ---------------- sticky CTA ----------------
+const stickyCta = document.getElementById('stickyCta');
+const heroEl = document.querySelector('.hero');
+const formEl = document.getElementById('form');
+window.addEventListener('scroll', ()=>{
+  const heroBottom = heroEl.getBoundingClientRect().bottom;
+  const formTop = formEl.getBoundingClientRect().top;
+  if(heroBottom < 0 && formTop > window.innerHeight){ stickyCta.classList.add('show'); }
+  else{ stickyCta.classList.remove('show'); }
+});
+
+// ---------------- 국세체납 팝업 로직 ----------------
+const arrearsModal = document.getElementById('arrearsModal');
+const submitBtn = document.getElementById('submitBtn');
+document.querySelectorAll('input[name=f_arrears]').forEach(r=>{
+  r.addEventListener('change', ()=>{
+    if(r.value === '예' && r.checked){
+      arrearsModal.classList.add('show');
+    } else if(r.checked){
+      submitBtn.disabled = false;
+    }
+  });
+});
+
+// ---------------- 사업자등록번호 자동 하이픈(000-00-00000) ----------------
+document.getElementById('f_bizno').addEventListener('input', function(e){
+  let v = e.target.value.replace(/\D/g,'').slice(0,10);
+  if(v.length > 5) v = v.slice(0,3)+'-'+v.slice(3,5)+'-'+v.slice(5);
+  else if(v.length > 3) v = v.slice(0,3)+'-'+v.slice(3);
+  e.target.value = v;
+});
+
+</script>
+
+
+
+<script>
+(function(){
+  var API='https://kpac-crm-server-production.up.railway.app';
+  var $=function(i){return document.getElementById(i)};
+  var KEYS=['src','ad','adg','utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','fbclid','ttclid'];
+  var AP=new URLSearchParams(location.search),cur={},hasAd=false;
+  KEYS.forEach(function(k){var v=AP.get(k);if(v){cur[k]=String(v).slice(0,200);hasAd=true;}});
+  cur.ref=(document.referrer||'').slice(0,200);cur.url=location.href.split('#')[0].slice(0,600);cur.t=Date.now();
+  var LK='kpac_attr_last_v1',stored=null;try{var o=JSON.parse(localStorage.getItem(LK)||'null');if(o&&Date.now()-(o.t||0)<30*864e5)stored=o;}catch(e){}
+  if(hasAd){try{localStorage.setItem(LK,JSON.stringify(cur));}catch(e){}}
+  var A=hasAd?cur:(stored||cur),TEST=AP.get('test')==='1';
+  function chan(){var s=String(A.src||A.utm_source||'').toLowerCase(),m=String(A.utm_medium||'').toLowerCase();if(/youtube|_yt\b|^yt|demand/.test(s+' '+m))return '유튜브/랜딩';if(/meta|facebook|insta|^fb/.test(s)||A.fbclid)return '메타/랜딩';return '구글검색/랜딩';}
+  function adF(){return {src:A.src||A.utm_source||'google_ads',ad:A.ad||A.utm_content||'',utm_source:chan(),utm_medium:A.utm_medium||'cpc',utm_campaign:A.utm_campaign||'',utm_term:A.utm_term||'',utm_content:A.utm_content||'',gclid:A.gclid||A.gbraid||A.wbraid||'',fbclid:A.fbclid||'',referrer:(A.ref||'').slice(0,200),landing:(A.url||location.href).slice(0,480)};}
+  var SID='la'+Date.now().toString(36)+Math.random().toString(36).slice(2,8),T0=Date.now(),maxS=0,fs=0,sub=0;
+  function beacon(fin){try{var b={session_id:SID,channel:'kpac.store 검색광고 apply-a (대표 랜딩)',device:(/Mobi|Android|iPhone/i.test(navigator.userAgent)?'mobile':'pc'),referrer:(document.referrer||'').slice(0,150),dwell:Math.round((Date.now()-T0)/1000),scroll:maxS,form_start:fs,submitted:sub,lead_id:sub?SID:'',cta:fin||'',attr:{first:A,last:A}};if(TEST)b.test=true;var s=JSON.stringify(b);if(!(navigator.sendBeacon&&navigator.sendBeacon(API+'/api/r150c/lp',s)))fetch(API+'/api/r150c/lp',{method:'POST',body:s,keepalive:true}).catch(function(){});}catch(e){}}
+  beacon('page_view');
+  addEventListener('scroll',function(){var h=document.documentElement;var p=Math.round((h.scrollTop+innerHeight)/h.scrollHeight*100);if(p>maxS)maxS=p;},{passive:true});
+  var sentEnd=false;function end(){if(sentEnd||sub)return;sentEnd=true;beacon('leave');}
+  addEventListener('pagehide',end);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')end();});
+  var form=$('leadForm');form.addEventListener('focusin',function(){if(!fs){fs=1;beacon('form_start');}});
+  $('f_phone').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,11);if(v.length>7)v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);else if(v.length>3)v=v.slice(0,3)+'-'+v.slice(3);e.target.value=v;});
+  var busy=false;
+  form.addEventListener('submit',function(e){e.preventDefault();if(busy)return;var m=$('fMsg');
+    var nm=$('f_name').value.trim(),ph=$('f_phone').value.trim(),ind=$('f_industry').value.trim(),bz=$('f_bizno').value.trim(),rg=$('f_region').value,ar=(document.querySelector('input[name=f_arrears]:checked')||{}).value||'';
+    busy=true;var bt=$('submitBtn');bt.disabled=true;bt.textContent='신청 중…';m.textContent='';
+    var p={name:nm,phone:ph,region:rg,industry:ind,biz_no:bz,tax_arrears:ar,page:'kpac.store 검색광고 apply-a',lead_id:SID,extra:'업종: '+ind+' / 사업자번호: '+bz+' / 지역: '+rg+' / 체납: '+ar};
+    var F=adF();for(var k in F){if(F[k])p[k]=F[k];}if(TEST)p.test=true;
+    fetch(API+'/api/intake',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(p)}).then(function(r){return r.json().then(function(j){return {s:r.status,j:j}})}).then(function(x){
+      if(x.s===200&&x.j.ok){sub=1;beacon('submit');
+        if(!x.j.dup&&!TEST){try{gtag('event','conversion',{send_to:'AW-18048988442/iDYiCNiihN4cEJrqtp5D',value:1.0,currency:'KRW'});gtag('event','generate_lead',{send_to:'G-WCTPRG3HYE',currency:'KRW',value:1,lead_channel:String(F.src||''),lead_ad:String(F.ad||'')});}catch(e){}}
+        form.reset();busy=false;bt.disabled=false;bt.textContent='내가 진짜 되는지 확인하기 →';$('successModal').classList.add('show');return;}
+      busy=false;bt.disabled=false;bt.textContent='내가 진짜 되는지 확인하기 →';m.textContent=(x.j&&x.j.error)||'신청이 안 됐어요. 1866-1912로 연락 주세요.';
+    }).catch(function(){busy=false;bt.disabled=false;bt.textContent='내가 진짜 되는지 확인하기 →';m.textContent='연결이 원활하지 않아요. 잠시 후 다시 시도해 주세요.';});
+  });
+})();
+</script>
+</body>
+</html>
