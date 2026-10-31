@@ -246,6 +246,7 @@ svg{flex:none}
 .lightbox{position:fixed;inset:0;background:rgba(9,20,52,.92);z-index:110;display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lightbox.show{display:flex}
 .lightbox img{max-width:100%;max-height:90vh;border-radius:8px}
+.m-bar{grid-template-columns:1fr!important}/* r263a 전화 버튼 제거 */
 </style>
 <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Tz2MMQxD2MjS2A8NhoAY5G"});</script>
 </head>
@@ -257,7 +258,6 @@ svg{flex:none}
       <img src="data:image/png;base64,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" alt="" width="34" height="34">
       <span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span>
     </a>
-    <a href="tel:18661912" class="nav-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>1866-1912</a>
   </div>
 </header>
 
@@ -274,7 +274,6 @@ svg{flex:none}
       <div><b class="num" data-count="2000" data-suffix="건+">0</b><span>누적 상담</span></div>
       <div><b>0원</b><span>계약 전 비용</span></div>
     </div>
-    <div class="cred"><img src="/img-mss-mi.png" alt="중소벤처기업부" width="128" height="26"><i></i><div class="cred-tx"><b>중소벤처기업부 허가 협회 등록</b><span class="org">사단법인 한국경영컨설턴트협회 회원사</span><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 1.6 2.9-.1.9 2.7 2.3 1.8-.9 2.7.9 2.7-2.3 1.8-.9 2.7-2.9-.1L12 21l-2.4-1.6-2.9.1-.9-2.7-2.3-1.8.9-2.7-.9-2.7 2.3-1.8.9-2.7 2.9.1z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>등록번호 제2026-3호</span></div></div>
   </div>
 </section>
 
@@ -296,7 +295,7 @@ svg{flex:none}
 <!-- ================= 영상 ================= -->
 <section class="section" data-sec="video">
   <div class="wrap reveal">
-    <div class="head"><p class="label">영상으로 확인해보세요</p><h2>대표가 직접 설명드립니다</h2></div>
+    <div class="head"><p class="label">영상으로 확인해보세요</p><h2>정책자금, 영상으로 먼저 알아보세요</h2></div>
     <div class="reel-grid">
       <a class="reel" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener"><div class="reel-img"><img src="/lpa-v-credit.webp" alt="" loading="lazy" width="360" height="560"></div><span class="reel-cap">신용점수 별 정책자금</span></a>
       <a class="reel" href="https://www.youtube.com/@kpac_ceo" target="_blank" rel="noopener"><div class="reel-img"><img src="/lpa-v-age39.webp" alt="" loading="lazy" width="360" height="560"></div><span class="reel-cap">만 39세, 받을 수 있는 혜택 총정리</span></a>
@@ -422,7 +421,7 @@ svg{flex:none}
 <footer class="footer">
   <div class="wrap">
     <span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span>
-    <div class="f-info">대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>중소벤처기업부 허가 협회 등록 제2026-3호<br>사단법인 한국경영컨설턴트협회 회원사</div>
+    <div class="f-info">대표전화 1866-1912 · consult@kpac.store<br>중소벤처기업부 허가 협회 등록 제2026-3호<br>사단법인 한국경영컨설턴트협회 회원사</div>
     <div class="f-legal">당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 정책자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 경험으로 동일한 결과를 보장하지 않습니다.</div>
     <div class="f-links"><a href="/privacy.html">개인정보처리방침</a><a href="/services.html#terms">서비스 이용 안내</a></div>
     <a href="https://open.kakao.com/o/gbN365Ci" target="_blank" rel="noopener" class="f-chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.7c-.1.3.3.6.6.4l4.3-2.9c.5.1 1 .1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>정책자금·지원금 정보공유 오픈채팅방 참여하기</a>
@@ -430,7 +429,6 @@ svg{flex:none}
 </footer>
 
 <div class="m-bar" id="stickyCta">
-  <a href="tel:18661912" class="mb-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
   <a href="#form" class="mb-cta">1분만에 확인하기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 
