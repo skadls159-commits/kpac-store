@@ -24,11 +24,12 @@ try{var _q=new URLSearchParams(location.search);gtag('config','G-WCTPRG3HYE',{kp
 --gutter:clamp(20px,5vw,40px);--font:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--font);color:var(--ink);background:#fff;line-height:1.7;font-size:16px;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden;padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+body{margin:0;font-family:var(--font);color:var(--ink);background:#fff;line-height:1.7;font-size:16px;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit;color:inherit;letter-spacing:inherit}
 h1,h2,h3,p{margin:0}
+p,li,span{text-wrap:pretty}
 h1,h2,h3{letter-spacing:-.03em;line-height:1.35;text-wrap:balance;font-weight:700}
 .wrap{width:100%;max-width:calc(820px + var(--gutter)*2);margin:0 auto;padding:0 var(--gutter)}
 .num{font-variant-numeric:tabular-nums}
@@ -62,7 +63,7 @@ svg{flex:none}
 .logo-text{display:flex;flex-direction:column;line-height:1.15}
 .logo-text b{font-size:16px;font-weight:700;letter-spacing:-.02em;color:#fff}
 .logo-text small{font-size:8.5px;font-weight:500;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-top:3px}
-.nav-tel{display:flex;align-items:center;gap:6px;font-weight:700;font-size:15px;color:#fff}
+.nav-tel{display:flex;align-items:center;gap:6px;white-space:nowrap;font-weight:700;font-size:15px;color:#fff;min-height:44px;padding:0 2px}
 .nav-tel svg{width:16px;height:16px;opacity:.8}
 @media (min-width:769px){.nav{height:72px}.logo img{width:34px;height:34px}.logo-text b{font-size:17px}.logo-text small{font-size:9.5px;letter-spacing:.12em}}
 
@@ -71,19 +72,33 @@ svg{flex:none}
 .hero-bg{position:absolute;inset:0 0 auto 0;height:78%;z-index:-2;background:var(--deep) url('/img-hero-building.jpg') center 20%/cover no-repeat}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,16,44,.55) 0%,rgba(7,16,44,.7) 40%,rgba(7,16,44,.94) 75%,var(--deep) 100%)}
 .hero-meta{font-size:13px;color:rgba(255,255,255,.62);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16);letter-spacing:.06em;font-weight:600}
-.hero h1{font-size:clamp(30px,5vw,50px);line-height:1.3;letter-spacing:-.04em}
+.hero h1{font-size:clamp(27px,7.4vw,50px);line-height:1.3;letter-spacing:-.04em}
 .hero h1 em{font-style:normal;color:var(--sky)}
 .hero-sub{margin-top:18px;font-size:clamp(16px,1.6vw,18px);line-height:1.8;color:rgba(255,255,255,.76);max-width:540px}
 .hero-cta{margin-top:30px;display:flex}
 .hero-cta .btn{min-height:56px;font-size:16.5px}
 @media (max-width:768px){.hero-cta .btn{flex:1 1 100%}}
 .hero-note{margin-top:14px;font-size:14px;color:rgba(255,255,255,.55)}
-.trustbar{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.2)}
+.trustbar{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);max-width:520px;border-top:1px solid rgba(255,255,255,.2)}
 .trustbar div{padding:18px 12px 0;border-left:1px solid rgba(255,255,255,.14)}
 .trustbar div:first-child{border-left:0;padding-left:0}
 .trustbar b{display:block;font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
 .trustbar span{display:block;font-size:12.5px;color:rgba(255,255,255,.6);margin-top:4px;line-height:1.45}
 
+
+/* 협회 인증 배지 (명함 · 보고서와 같은 디자인) */
+.cred{margin-top:24px;display:flex;align-items:center;gap:18px;background:#fff;border-top:3px solid #C9A64B;border-radius:10px;padding:16px 20px;color:var(--navy);box-shadow:0 12px 32px rgba(0,0,0,.28);max-width:520px}
+.cred img{height:26px;width:auto;flex:none}
+.cred i{width:1px;align-self:stretch;background:var(--line);flex:none}
+.cred-tx b{display:block;font-size:16px;font-weight:700;letter-spacing:-.025em;line-height:1.4;color:var(--navy)}
+.cred-tx .org{display:block;font-size:13px;color:var(--ink-3);line-height:1.5;margin-top:2px}
+.cred-tx .no{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px;font-weight:700;letter-spacing:.01em;color:#7A5E14;background:#FBF6E8;border:1px solid #E9D9A6;border-radius:999px;padding:3px 10px 3px 8px}
+.cred-tx .no svg{width:13px;height:13px;color:#B8912F}
+.cred.light{box-shadow:0 1px 2px rgba(11,26,68,.04);border:1px solid var(--line);border-top:3px solid #C9A64B;margin-top:22px}
+@media (max-width:480px){.cred{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 18px}.cred i{width:100%;height:1px;align-self:auto}.cred img{height:24px}.cred-tx b{font-size:16.5px}}
+
+@media (max-width:374px){.logo-text small{display:none}.logo-text b{font-size:15px}.hero-meta{font-size:11px;letter-spacing:.03em;white-space:nowrap}.nav-tel{font-size:14px}}
+.logo-text small{white-space:nowrap}
 /* urgent strip */
 .urgent-strip{background:var(--accent);color:#fff;font-size:14px;font-weight:600;padding:12px var(--gutter);display:flex;align-items:center;justify-content:center;gap:8px;text-align:center}
 .urgent-strip svg{width:17px;height:17px}
@@ -200,7 +215,7 @@ svg{flex:none}
 .f-info a{color:rgba(255,255,255,.8)}
 .f-legal{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45)}
 .f-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 16px}
-.f-links a{color:rgba(255,255,255,.7);text-decoration:underline;text-underline-offset:3px}
+.f-links a{color:rgba(255,255,255,.7);text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:6px 0}
 .f-chat{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--kakao);font-weight:600}
 .f-chat svg{width:16px;height:16px}
 
@@ -258,8 +273,8 @@ svg{flex:none}
     <div class="trustbar">
       <div><b class="num" data-count="2000" data-suffix="건+">0</b><span>누적 상담</span></div>
       <div><b>0원</b><span>계약 전 비용</span></div>
-      <div><b>허가 협회</b><span>중기부 허가 협회 회원사</span></div>
     </div>
+    <div class="cred"><img src="/img-mss-mi.png" alt="중소벤처기업부" width="128" height="26"><i></i><div class="cred-tx"><b>중소벤처기업부 허가 협회 등록</b><span class="org">사단법인 한국경영컨설턴트협회 회원사</span><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 1.6 2.9-.1.9 2.7 2.3 1.8-.9 2.7.9 2.7-2.3 1.8-.9 2.7-2.9-.1L12 21l-2.4-1.6-2.9.1-.9-2.7-2.3-1.8.9-2.7-.9-2.7 2.3-1.8.9-2.7 2.9.1z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>등록번호 제2026-3호</span></div></div>
   </div>
 </section>
 
@@ -350,7 +365,7 @@ svg{flex:none}
         <p class="label">소속 협회</p>
         <h3>정책자금 분야, 국내 유일<br>비영리 사단법인 소속</h3>
         <p>한국정책자문센터는 중소벤처기업부 허가 비영리 사단법인인 한국경영컨설턴트협회(KMCA) 회원사로, 컨설턴트 한 명의 역량에 기대지 않고 협회 차원의 검증된 전문가 네트워크를 기반으로 운영됩니다.</p>
-        <div class="mss"><img src="/img-mss-mi.png" alt="중소벤처기업부" width="130" height="27"><i></i><div><b>허가 협회 등록 (등록번호 : 제2026-3호)</b><span>사단법인 한국경영컨설턴트협회 회원사</span></div></div>
+        <div class="cred light"><img src="/img-mss-mi.png" alt="중소벤처기업부" width="128" height="26"><i></i><div class="cred-tx"><b>중소벤처기업부 허가 협회 등록</b><span class="org">사단법인 한국경영컨설턴트협회 회원사</span><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 1.6 2.9-.1.9 2.7 2.3 1.8-.9 2.7.9 2.7-2.3 1.8-.9 2.7-2.9-.1L12 21l-2.4-1.6-2.9.1-.9-2.7-2.3-1.8.9-2.7-.9-2.7 2.3-1.8.9-2.7 2.9.1z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>등록번호 제2026-3호</span></div></div>
       </div>
     </div>
   </div>
@@ -375,12 +390,11 @@ svg{flex:none}
     <div class="head"><p class="label">무료 진단 신청</p><h2>우리 회사, 가능한지<br>지금 확인해보세요</h2><p>아래 정보를 남겨주시면 순서대로 연락드립니다.</p></div>
     <form id="leadForm" class="form" novalidate>
       <h3>무료 사전 진단 신청</h3>
-      <p class="fsub">연락처만 있어도 신청돼요 · 나머지는 아는 만큼만 적어 주세요</p>
+      <p class="fsub">연락처만 있어도 신청돼요. 나머지는 아는 만큼만 적어 주세요.</p>
       <div class="f-grid">
         <div class="f-field"><label for="f_name">성함</label><input type="text" id="f_name" placeholder="홍길동" autocomplete="name"></div>
         <div class="f-field"><label for="f_phone">연락처 <em>*</em></label><input type="tel" id="f_phone" placeholder="010-0000-0000" autocomplete="tel" inputmode="tel"></div>
-        <div class="f-field"><label for="f_industry">업종</label><input type="text" id="f_industry" placeholder="예: 제조업, 도소매업, 음식점업"></div>
-        <div class="f-field"><label for="f_bizno">사업자등록번호<small>(선택)</small></label><input type="text" id="f_bizno" placeholder="111-11-11111" inputmode="numeric" maxlength="12"></div>
+        <div class="f-field full"><label for="f_industry">업종</label><input type="text" id="f_industry" placeholder="예: 제조업, 도소매업, 음식점업"></div>
         <div class="f-field full"><label for="f_region">지역</label>
           <select id="f_region">
             <option value="" selected>지역을 선택해주세요</option>
@@ -408,7 +422,7 @@ svg{flex:none}
 <footer class="footer">
   <div class="wrap">
     <span class="logo-text"><b>한국정책자문센터</b><small>KOREA POLICY ADVISORY CENTER</small></span>
-    <div class="f-info">대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>사단법인 한국경영컨설턴트협회 회원사 (중소벤처기업부 허가 협회 · 제2026-3호)</div>
+    <div class="f-info">대표전화 <a href="tel:18661912">1866-1912</a> · consult@kpac.store<br>중소벤처기업부 허가 협회 등록 제2026-3호<br>사단법인 한국경영컨설턴트협회 회원사</div>
     <div class="f-legal">당사는 정부·공공기관이 아닌 민간 경영컨설팅 회사이며, 정책자금의 심사·승인은 각 운용기관이 결정합니다. 사례는 개별 기업의 경험으로 동일한 결과를 보장하지 않습니다.</div>
     <div class="f-links"><a href="/privacy.html">개인정보처리방침</a><a href="/services.html#terms">서비스 이용 안내</a></div>
     <a href="https://open.kakao.com/o/gbN365Ci" target="_blank" rel="noopener" class="f-chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.7c-.1.3.3.6.6.4l4.3-2.9c.5.1 1 .1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>정책자금·지원금 정보공유 오픈채팅방 참여하기</a>
@@ -473,8 +487,6 @@ addEventListener('scroll',bars,{passive:true});bars();
 var arrearsModal=document.getElementById('arrearsModal');
 document.querySelectorAll('input[name=f_arrears]').forEach(function(r){r.addEventListener('change',function(){if(r.value==='예'&&r.checked)arrearsModal.classList.add('show');});});
 
-// ---------------- 사업자등록번호 자동 하이픈(000-00-00000) · 선택 입력 ----------------
-document.getElementById('f_bizno').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,10);if(v.length>5)v=v.slice(0,3)+'-'+v.slice(3,5)+'-'+v.slice(5);else if(v.length>3)v=v.slice(0,3)+'-'+v.slice(3);e.target.value=v;});
 </script>
 
 <script>
@@ -500,10 +512,10 @@ document.getElementById('f_bizno').addEventListener('input',function(e){var v=e.
   $('f_phone').addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'').slice(0,11);if(v.length>7)v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);else if(v.length>3)v=v.slice(0,3)+'-'+v.slice(3);e.target.value=v;});
   var busy=false,BTN_HTML="내가 진짜 되는지 확인하기 <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>";
   form.addEventListener('submit',function(e){e.preventDefault();if(busy)return;var m=$('fMsg');
-    var nm=$('f_name').value.trim(),ph=$('f_phone').value.trim(),ind=$('f_industry').value.trim(),bz=$('f_bizno').value.trim(),rg=$('f_region').value,ar=(document.querySelector('input[name=f_arrears]:checked')||{}).value||'';
+    var nm=$('f_name').value.trim(),ph=$('f_phone').value.trim(),ind=$('f_industry').value.trim(),rg=$('f_region').value,ar=(document.querySelector('input[name=f_arrears]:checked')||{}).value||'';
     var pd=ph.replace(/\D/g,'');if(pd.length<8){m.textContent='연락처를 확인해 주세요.';$('f_phone').focus();return;}if(!$('f_agree').checked){m.textContent='개인정보 수집·이용에 동의해 주세요.';return;}
     busy=true;var bt=$('submitBtn');bt.disabled=true;bt.textContent='신청 중…';m.textContent='';
-    var p={name:nm,phone:ph,region:rg,industry:ind,biz_no:bz,tax_arrears:ar,page:'kpac.store 검색광고 apply',lead_id:SID,extra:'업종: '+ind+' / 사업자번호: '+bz+' / 지역: '+rg+' / 체납: '+ar};
+    var p={name:nm,phone:ph,region:rg,industry:ind,tax_arrears:ar,page:'kpac.store 검색광고 apply',lead_id:SID,extra:'업종: '+ind+' / 지역: '+rg+' / 체납: '+ar};
     var F=adF();for(var k in F){if(F[k])p[k]=F[k];}if(TEST)p.test=true;
     fetch(API+'/api/intake',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(p)}).then(function(r){return r.json().then(function(j){return {s:r.status,j:j}})}).then(function(x){
       if(x.s===200&&x.j.ok){sub=1;beacon('submit');
