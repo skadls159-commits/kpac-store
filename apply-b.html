@@ -123,7 +123,7 @@ section{padding:72px 0}
 .sticky .btn{max-width:528px;margin:0 auto;height:56px}
 .sticky small{display:block;text-align:center;font-size:11.5px;color:var(--ink5);margin-bottom:6px;font-weight:600}
 /* reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}.rv.vis{opacity:1;transform:none}
 /* sheet */
 .sheet{position:fixed;inset:0;z-index:80;background:#fff;overflow-y:auto}
 .sheet[hidden]{display:none}
@@ -326,7 +326,7 @@ select.in{appearance:none;-webkit-appearance:none;background:#fff url("data:imag
   addEventListener('pagehide',end);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')end();});
   function fStart(){if(!fs){fs=1;beacon('form_start');}}
   /* reveal */
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}})},{threshold:.12});
   [].forEach.call(document.querySelectorAll('.rv'),function(el){io.observe(el)});
   /* ticker (CRM 실제 신규 · 마스킹) */
   fetch(API+'/api/r247b/ticker',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
