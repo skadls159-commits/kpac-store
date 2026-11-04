@@ -102,7 +102,7 @@ window.karrotPixel.track('ViewPage');
 .p3-chk li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--ink-3)}
 .p3-chk li b{display:block;color:var(--navy);font-size:17px;margin-bottom:4px}
 .p3-assoc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.p3-assoc img.ph{border-radius:14px;width:100%;height:auto}
+.p3-assoc img.p3-ph{border-radius:14px;width:100%;height:auto}
 .p3-cred{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:#fff;margin:18px 0;max-width:100%}
 .p3-cred img{height:22px;width:auto;flex:none}
 .p3-cred .dv{width:1px;height:20px;background:var(--line);flex:none}
@@ -136,6 +136,23 @@ window.karrotPixel.track('ViewPage');
 .p3-doc{box-shadow:0 4px 16px rgba(11,26,68,.06)}
 .p3-doc .tx b{color:#1D4ED8}
 .p3-now li b{color:#1D4ED8}
+</style>
+<style>
+.p3-assoc h2{font-size:clamp(22px,2.6vw,28px)!important}
+.p3-assoc p{font-size:15px}
+.p3-assoc img.p3-ph{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 40%;display:block}
+@media(max-width:900px){
+ .p4-band{padding:14px 0}
+ .p4-band .wrap{gap:10px;flex-wrap:nowrap}
+ .p4-band h3{font-size:15px;line-height:1.4}
+ .p4-band p{display:none}
+ .p4-band .btn{min-height:38px;font-size:13.5px;padding:0 12px;flex:none}
+ .p3-assoc{gap:14px}
+ [data-ga="assoc"]{padding-top:44px;padding-bottom:44px}
+ .p3-assoc h2{font-size:19px!important;margin-top:0}
+ .p3-assoc .label{margin:0 0 4px!important;font-size:13px}
+ .p3-assoc p{font-size:13.5px;line-height:1.6;margin-top:8px!important}
+}
 </style>
 </head>
 <style>
@@ -246,7 +263,7 @@ window.karrotPixel.track('ViewPage');
 
 
 <section class="section" data-ga="assoc"><div class="wrap p3-assoc">
- <div><img class="ph" src="https://kpac.store/img-founding.jpg" alt="(사)한국경영컨설턴트협회 창단식" loading="lazy"></div>
+ <div><img class="p3-ph" src="https://kpac.store/img-founding.jpg" alt="(사)한국경영컨설턴트협회 창단식" loading="lazy"></div>
  <div>
   <p class="label">소속 협회</p>
   <h2 style="font-size:clamp(26px,3.4vw,34px)">(사)한국경영컨설턴트협회 소속</h2>
