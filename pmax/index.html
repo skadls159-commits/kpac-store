@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <script>/* r300d 이 페이지 안에서만 이동: #링크(kpac-attr.js 가 kpac.store 주소로 바꿔도)는 페이지 안 스크롤 · 다른 페이지 링크는 새 창 */
-window.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var raw=a.getAttribute('href')||'';if(/^(tel:|mailto:|javascript:)/i.test(raw))return;var u;try{u=new URL(a.href,location.href);}catch(x){return;}var hash=raw.charAt(0)==='#'?raw:(u.hash||'');var home=/(^|\.)kpac\.store$/.test(u.hostname)&&(u.pathname==='/'||u.pathname==='/index.html');var same=u.origin===location.origin&&u.pathname===location.pathname;if(hash&&(raw.charAt(0)==='#'||home||same)){e.preventDefault();e.stopImmediatePropagation();var id=hash.slice(1);var el=id==='top'?null:document.getElementById(id);var y=el?el.getBoundingClientRect().top+window.scrollY-80:0;window.scrollTo({top:y,behavior:'smooth'});return;}a.target='_blank';a.rel='noopener';},true);
+window.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var raw=a.getAttribute('href')||'';if(/^(tel:|mailto:|javascript:)/i.test(raw))return;var u;try{u=new URL(a.href,location.href);}catch(x){return;}var hash=raw.charAt(0)==='#'?raw:(u.hash||'');var home=/(^|\.)kpac\.store$/.test(u.hostname)&&(u.pathname==='/'||u.pathname==='/index.html');var same=u.origin===location.origin&&u.pathname===location.pathname;if(hash&&(raw.charAt(0)==='#'||home||same)){try{var c311=e.target.closest('[data-cta]');if(c311&&window.gtag)gtag('event','cta_click',{page_variant:'pmax',cta:c311.getAttribute('data-cta')});}catch(x){} /* r311a: 아래 버튼 측정이 이 줄 때문에 안 돌아서 여기서 기록 */e.preventDefault();e.stopImmediatePropagation();var id=hash.slice(1);var el=id==='top'?null:document.getElementById(id);var y=el?el.getBoundingClientRect().top+window.scrollY-80:0;window.scrollTo({top:y,behavior:'smooth'});return;}a.target='_blank';a.rel='noopener';},true);
 </script>
 <script src="https://kpac.store/kpac-attr.js"></script><!-- r177b 출처 기억 -->
 <meta charset="UTF-8">
@@ -339,7 +339,7 @@ window.karrotPixel.track('ViewPage');
   function lab177c(){ /* r177c: 예전 랜딩(앱스스크립트)처럼 한글 채널로 → CRM 출처 「유튜브 · 창업3년」/「구글 검색」 */ var s=String(A.src||A.utm_source||'').toLowerCase(), m=String(A.utm_medium||'').toLowerCase(); if(/youtube|_yt\b|^yt|ytis|ytv|demand/.test(s+' '+m)) return '유튜브/랜딩'; if(/google|adwords/.test(s)||A.gclid||A.gbraid||A.wbraid) return '구글검색/랜딩'; if(/meta|facebook|insta|^fb/.test(s)||A.fbclid) return '메타/랜딩'; if(/daangn|karrot|당근/.test(s)) return '당근/랜딩'; return A.utm_source||''; }
   function adFields(){return {src:A.src||A.utm_source||(A.gclid||A.gbraid||A.wbraid?'google_ads':''), ad:A.ad||A.utm_content||'', utm_source:lab177c(), utm_medium:A.utm_medium||'', utm_campaign:A.utm_campaign||'', utm_term:A.utm_term||'', utm_content:A.utm_content||'', gclid:A.gclid||A.gbraid||A.wbraid||'', fbclid:A.fbclid||'', ttclid:A.ttclid||'', referrer:(A.ref||'').slice(0,200), landing:(A.url||location.href).slice(0,480)};}
   function conv(){
-    try{if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18048988442/iDYiCNiihN4cEJrqtp5D','value':1.0,'currency':'KRW'}); var F=adFields(); gtag('event','generate_lead',{send_to:'G-WCTPRG3HYE',currency:'KRW',value:1,lead_channel:String(F.src||''),lead_ad:String(F.ad||'')});}}catch(x){}
+    try{if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18048988442/iDYiCNiihN4cEJrqtp5D','value':1.0,'currency':'KRW'}); var F=adFields(); gtag('event','generate_lead',{send_to:'G-WCTPRG3HYE',page_variant:'pmax',currency:'KRW',value:1,lead_channel:String(F.src||''),lead_ad:String(F.ad||'')});}}catch(x){}
     try{if(typeof fbq==='function') fbq('track','Lead');}catch(x){}
     try{if(window.karrotPixel) window.karrotPixel.track('CompleteRegistration');}catch(x){}
   }
@@ -446,7 +446,7 @@ document.addEventListener('DOMContentLoaded',function(){
  var marks=[25,50,75,90],hit={};window.addEventListener('scroll',function(){var h=document.documentElement;var p=Math.round(((window.scrollY||h.scrollTop)/Math.max(1,h.scrollHeight-innerHeight))*100);marks.forEach(function(m){if(p>=m&&!hit[m]){hit[m]=1;ev('scroll_depth',{percent:m});}});},{passive:true});
  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(a)ev('cta_click',{cta:a.getAttribute('data-cta')});},true);
  if(bk){var st=0;var f=function(){if(!st){st=1;ev('form_start',{});}};bk.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.bk-day,.bk-slot'))f();},true);bk.addEventListener('focusin',f,true);}
- var t=setInterval(function(){var K=window.KPAC_TRACK;if(K&&K.done&&!K.done.r300){var d=K.done;K.done=function(){ev('generate_lead',{});return d.apply(this,arguments);};K.done.r300=1;clearInterval(t);}},500);setTimeout(function(){clearInterval(t);},20000);
+ /* r311a: 예약 완료(generate_lead)는 conv() 한 번만 기록 (여기서 또 보내서 2번 찍히던 것 뺌) */
 });})();</script>
 </body>
 </html>
