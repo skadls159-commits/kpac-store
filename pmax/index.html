@@ -232,6 +232,33 @@ window.karrotPixel.track('ViewPage');
   </div>
  </div>
 </section>
+<section class="section gray" id="book"><div class="wrap"><div class="head" style="margin-bottom:0"><p class="label">무료 진단 예약</p><h2>통화 편한 시간을 골라 주세요</h2><p>시간을 고르면 바로 예약이 확정되고, 그 시간에 컨설턴트가 직접 전화드립니다.</p></div></div><div class="wrap">
+<div class="bk" id="bk">
+ <div class="lform reveal">
+  <div class="bk-form">
+   <h2>상담 시간 예약</h2><p>날짜와 시간을 고르시면 예약이 바로 확정됩니다.</p>
+   <div class="bk-who" id="bkWho" hidden></div>
+   <div class="lf-grid" id="bkInfo">
+    <div><label for="b_name">대표자명 <em>*</em></label><input id="b_name" autocomplete="name"></div>
+    <div><label for="b_phone">연락처 <em>*</em></label><input id="b_phone" type="tel" inputmode="numeric" placeholder="010-0000-0000" autocomplete="tel"></div> <div><label for="b_region">지역 <em>*</em></label><select id="b_region" style="width:100%;height:48px;border:1px solid #d6dbe6;border-radius:10px;padding:0 12px;font-size:16px;background:#fff"><option value="">시·도 선택</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div> <!-- r176c 지역 -->
+   </div>
+   <div class="bk-sec"><span class="bk-lbl">날짜</span><div class="bk-days" id="bkDays"></div></div>
+   <div class="bk-sec"><span class="bk-lbl">시간</span><div class="bk-grp">오전</div><div class="bk-slots" id="bkAm"></div><div class="bk-grp">오후</div><div class="bk-slots" id="bkPm"></div></div>
+   <label class="agree" id="bkAgreeWrap"><input type="checkbox" id="b_agree"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 / 목적: 상담 예약 및 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
+   <p class="bk-pick" id="bkPick">날짜와 시간을 선택해 주세요</p>
+   <button type="button" class="btn btn-primary" id="bkGo" disabled>예약하기</button>
+   <div class="lf-msg" id="bkMsg" role="status"></div>
+  </div>
+  <div class="bk-done">
+   <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+   <h2>예약이 확정되었습니다</h2><p>카카오톡으로 예약 확정 안내를 보내드렸습니다.</p>
+   <div class="bk-rows"><div><span>상담 일시</span><b id="bkWhen"></b></div><div><span>진행 방식</span><b>전화 상담</b></div><div><span>연락 번호</span><b>배정된 컨설턴트가 직접 연락</b></div></div>
+   <p style="margin-top:16px;font-size:14px;color:var(--ink-3)">상담 전날 카카오톡으로 한 번 더 안내드립니다.</p>
+  </div>
+ </div>
+</div>
+</div></section>
+<!-- r313e: 예약 폼을 「지금 접수 중인 정책자금」 바로 뒤로 (대표 11/17 「올려」) -->
 <div class="p3-orgs" data-ga="orgs"><div class="wrap"><p class="cap">함께 검토하는 정책자금 · 지원 기관</p></div><div class="p3-track"><span>중소벤처기업진흥공단</span><span>소상공인시장진흥공단</span><span>신용보증기금</span><span>기술보증기금</span><span>지역신용보증재단</span><span>한국무역보험공사</span><span>한국무역협회 무역진흥자금</span><span>관광진흥개발기금 (문화체육관광부)</span><span>한국콘텐츠진흥원</span><span>농림수산업자신용보증기금</span><span>창업진흥원</span><span>중소기업기술정보진흥원</span><span>KOTRA</span><span>한국산업은행</span><span>IBK기업은행</span><span>한국수출입은행</span><span>한국에너지공단</span><span>한국환경산업기술원</span><span>한국해양진흥공사</span><span>17개 시도 지자체</span><span>중소벤처기업진흥공단</span><span>소상공인시장진흥공단</span><span>신용보증기금</span><span>기술보증기금</span><span>지역신용보증재단</span><span>한국무역보험공사</span><span>한국무역협회 무역진흥자금</span><span>관광진흥개발기금 (문화체육관광부)</span><span>한국콘텐츠진흥원</span><span>농림수산업자신용보증기금</span><span>창업진흥원</span><span>중소기업기술정보진흥원</span><span>KOTRA</span><span>한국산업은행</span><span>IBK기업은행</span><span>한국수출입은행</span><span>한국에너지공단</span><span>한국환경산업기술원</span><span>한국해양진흥공사</span><span>17개 시도 지자체</span></div></div>
 
 <section class="section p4-soft" data-ga="why"><div class="wrap">
@@ -269,33 +296,7 @@ window.karrotPixel.track('ViewPage');
   <p style="margin-top:14px;color:var(--ink-3)">한국정책자문센터는 (사)한국경영컨설턴트협회(KMCA) 소속입니다. 컨설턴트 한 사람의 역량에 기대지 않고, 협회 전문가 네트워크가 함께 검토하고 진행합니다.</p>
   <div class="p3-cred"><img src="https://kpac.store/img-mss-mi.png" alt="중소벤처기업부"><span class="dv" aria-hidden="true"></span><span class="t">허가 협회 등록 (등록번호 : 제2026-3호) · (사)한국경영컨설턴트협회 회원사</span></div>
  </div>
-</div></section><section class="section gray" id="book"><div class="wrap"><div class="head" style="margin-bottom:0"><p class="label">무료 진단 예약</p><h2>통화 편한 시간을 골라 주세요</h2><p>시간을 고르면 바로 예약이 확정되고, 그 시간에 컨설턴트가 직접 전화드립니다.</p></div></div><div class="wrap">
-<div class="bk" id="bk">
- <div class="lform reveal">
-  <div class="bk-form">
-   <h2>상담 시간 예약</h2><p>날짜와 시간을 고르시면 예약이 바로 확정됩니다.</p>
-   <div class="bk-who" id="bkWho" hidden></div>
-   <div class="lf-grid" id="bkInfo">
-    <div><label for="b_name">대표자명 <em>*</em></label><input id="b_name" autocomplete="name"></div>
-    <div><label for="b_phone">연락처 <em>*</em></label><input id="b_phone" type="tel" inputmode="numeric" placeholder="010-0000-0000" autocomplete="tel"></div> <div><label for="b_region">지역 <em>*</em></label><select id="b_region" style="width:100%;height:48px;border:1px solid #d6dbe6;border-radius:10px;padding:0 12px;font-size:16px;background:#fff"><option value="">시·도 선택</option><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div> <!-- r176c 지역 -->
-   </div>
-   <div class="bk-sec"><span class="bk-lbl">날짜</span><div class="bk-days" id="bkDays"></div></div>
-   <div class="bk-sec"><span class="bk-lbl">시간</span><div class="bk-grp">오전</div><div class="bk-slots" id="bkAm"></div><div class="bk-grp">오후</div><div class="bk-slots" id="bkPm"></div></div>
-   <label class="agree" id="bkAgreeWrap"><input type="checkbox" id="b_agree"><span>상담을 위한 개인정보 수집 · 이용에 동의합니다. (수집항목: 성명 · 연락처 / 목적: 상담 예약 및 안내 / 보유기간: 상담 종료 후 1년) <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
-   <p class="bk-pick" id="bkPick">날짜와 시간을 선택해 주세요</p>
-   <button type="button" class="btn btn-primary" id="bkGo" disabled>예약하기</button>
-   <div class="lf-msg" id="bkMsg" role="status"></div>
-  </div>
-  <div class="bk-done">
-   <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-   <h2>예약이 확정되었습니다</h2><p>카카오톡으로 예약 확정 안내를 보내드렸습니다.</p>
-   <div class="bk-rows"><div><span>상담 일시</span><b id="bkWhen"></b></div><div><span>진행 방식</span><b>전화 상담</b></div><div><span>연락 번호</span><b>배정된 컨설턴트가 직접 연락</b></div></div>
-   <p style="margin-top:16px;font-size:14px;color:var(--ink-3)">상담 전날 카카오톡으로 한 번 더 안내드립니다.</p>
-  </div>
- </div>
-</div>
-</div></section>
-<section class="section" id="faq" data-ga="faq"><div class="wrap faq-layout">
+</div></section><section class="section" id="faq" data-ga="faq"><div class="wrap faq-layout">
   <div class="head"><p class="label">FAQ</p><h2>자주 묻는 질문</h2><p>더 궁금한 점은 <a href="tel:18661912" style="color:var(--ink);font-weight:600">1866-1912</a>로 전화 주세요.</p></div>
   <div class="faq">
     <details><summary>상담이나 진단에 비용이 드나요?</summary><div class="a">상담과 사전 진단은 무료입니다. 계약 전에는 어떤 비용도 받지 않으며, 진단 결과를 보시고 진행 여부를 정하시면 됩니다.</div></details>
